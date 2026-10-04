@@ -28,8 +28,8 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 flex items-center justify-center relative transition-transform duration-300 group-hover:scale-105">
-            <LogoIcon className="w-full h-full text-primary" />
+          <div className="w-12 h-12 flex items-center justify-center relative transition-transform duration-300 group-hover:scale-105">
+            <LogoIcon className="w-full h-full text-primary animate-[spin_8s_linear_infinite]" />
           </div>
         </Link>
 
@@ -39,7 +39,7 @@ export default function Navbar() {
             href="#contact"
             className="flex items-center h-10 bg-primary text-background font-mono font-bold tracking-widest uppercase px-6 text-xs hover:bg-primary/90 transition-colors active:scale-[0.96]"
           >
-            Let's Connect
+            Start a project
           </a>
         </div>
 
@@ -62,7 +62,7 @@ export default function Navbar() {
             href="#contact"
             className="w-full text-center bg-primary text-background font-mono font-bold tracking-widest uppercase px-4 py-4 text-xs hover:bg-primary/90 transition-colors active:scale-[0.96]"
           >
-            Let's Connect
+            Start a project
           </a>
         </div>
       )}
