@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { GithubIcon, NewTwitterIcon, Menu01Icon, Cancel01Icon } from "hugeicons-react";
+import { Menu01Icon, Cancel01Icon } from "hugeicons-react";
 import { cn } from "@/lib/utils";
 import LogoIcon from "@/components/LogoIcon";
 
@@ -31,31 +31,10 @@ export default function Navbar() {
           <div className="w-8 h-8 flex items-center justify-center relative transition-transform duration-300 group-hover:scale-105">
             <LogoIcon className="w-full h-full text-primary" />
           </div>
-          <span className="font-mono font-bold text-sm tracking-widest uppercase">
-            Christopher Shola
-          </span>
         </Link>
 
         {/* Right side */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <a
-              href="https://github.com/kristophershola"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center justify-center h-10 w-10 border border-foreground/10 bg-transparent text-foreground/50 hover:text-foreground hover:bg-foreground/5 transition-colors"
-            >
-              <GithubIcon className="w-4 h-4" />
-            </a>
-            <a
-              href="https://x.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center justify-center h-10 w-10 border border-foreground/10 bg-transparent text-foreground/50 hover:text-foreground hover:bg-foreground/5 transition-colors"
-            >
-              <NewTwitterIcon className="w-4 h-4" />
-            </a>
-          </div>
           <a
             href="#contact"
             className="flex items-center h-10 bg-primary text-background font-mono font-bold tracking-widest uppercase px-6 text-xs hover:bg-primary/90 transition-colors active:scale-[0.96]"
@@ -79,27 +58,9 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border/50 shadow-lg p-4 flex flex-col gap-4 animate-fade-in-up">
-          <div className="flex items-center justify-center gap-8 p-4 border-t border-border/50 mt-2">
-            <a
-              href="https://github.com/kristophershola"
-              target="_blank"
-              rel="noreferrer"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <GithubIcon className="w-6 h-6" />
-            </a>
-            <a
-              href="https://x.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <NewTwitterIcon className="w-6 h-6" />
-            </a>
-          </div>
           <a
             href="#contact"
-            className="w-full text-center bg-primary text-background font-mono font-bold tracking-widest uppercase px-4 py-4 text-xs hover:bg-primary/90 transition-colors active:scale-[0.96] mt-2"
+            className="w-full text-center bg-primary text-background font-mono font-bold tracking-widest uppercase px-4 py-4 text-xs hover:bg-primary/90 transition-colors active:scale-[0.96]"
           >
             Let's Connect
           </a>
