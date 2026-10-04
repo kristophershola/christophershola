@@ -28,8 +28,8 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 flex items-center justify-center relative transition-transform duration-300 group-hover:scale-105">
-            <LogoIcon className="w-full h-full text-primary animate-[spin_8s_linear_infinite]" />
+          <div className="w-16 h-16 flex items-center justify-center relative transition-transform duration-300 group-hover:scale-105">
+            <LogoIcon className="w-full h-full text-primary animate-[spin_3s_linear_infinite]" />
           </div>
         </Link>
 
