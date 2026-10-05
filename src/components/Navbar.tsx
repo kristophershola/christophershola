@@ -37,7 +37,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#contact"
-            className="flex items-center h-10 font-bold tracking-widest uppercase px-6 text-xs text-primary hover:text-foreground/60 transition-colors active:scale-[0.96]"
+            className="flex items-center h-10 font-mono font-bold tracking-widest uppercase px-6 text-xs text-primary hover:text-foreground/60 transition-colors active:scale-[0.96]"
           >
             Start a project
           </a>
@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border/50 shadow-lg p-4 flex flex-col gap-4 animate-fade-in-up">
           <a
             href="#contact"
-            className="w-full text-center font-bold tracking-widest uppercase px-4 py-4 text-xs text-primary hover:text-foreground/60 transition-colors active:scale-[0.96]"
+            className="w-full text-center font-mono font-bold tracking-widest uppercase px-4 py-4 text-xs text-primary hover:text-foreground/60 transition-colors active:scale-[0.96]"
           >
             Start a project
           </a>
