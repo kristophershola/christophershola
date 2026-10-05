@@ -70,9 +70,9 @@ export default function AbujaClock() {
               exit="exit"
               transition={{
                 type: "spring",
-                stiffness: 200,
-                damping: 16,
-                mass: 1.2,
+                stiffness: 500,
+                damping: 25,
+                mass: 0.6,
               }}
               className="absolute inset-0 flex items-center justify-center"
             >
