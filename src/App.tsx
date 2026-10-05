@@ -16,7 +16,7 @@ export default function App() {
             Portfolio under construction. Sections coming one by one.
           </p>
         </section>
-        <section className="relative w-full h-[70vh] overflow-hidden md:w-1/2 md:h-auto">
+        <section className="relative flex w-full h-[70vh] items-center justify-center overflow-hidden p-6 md:w-1/2 md:h-auto md:p-12">
           <MasonryGrid />
         </section>
       </main>
