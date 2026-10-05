@@ -7,8 +7,8 @@ export default function App() {
     <>
       <CustomCursor />
       <Navbar />
-      <main className="flex min-h-screen flex-col pt-8 md:flex-row">
-        <section className="flex w-full flex-col justify-center gap-6 px-4 py-16 md:w-1/2 md:px-6 md:py-0">
+      <main className="flex h-dvh overflow-hidden flex-col pt-8 md:flex-row">
+        <section className="flex w-full min-h-0 flex-col justify-center gap-6 px-4 py-8 md:w-1/2 md:px-6 md:py-0">
           <h1 className="font-mono font-bold text-5xl md:text-7xl tracking-widest uppercase">
             Christopher Shola
           </h1>
@@ -16,7 +16,7 @@ export default function App() {
             Portfolio under construction. Sections coming one by one.
           </p>
         </section>
-        <section className="relative flex w-full h-[70vh] items-center justify-center overflow-hidden p-6 md:w-1/2 md:h-auto md:p-12">
+        <section className="relative flex w-full min-h-0 flex-1 flex-col items-center justify-center overflow-hidden p-8 md:w-1/2 md:flex-none md:p-16">
           <MasonryGrid />
         </section>
       </main>
