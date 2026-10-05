@@ -21,15 +21,15 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-border/50 shadow-sm py-1"
-          : "bg-transparent border-transparent py-2"
+          ? "bg-background/80 backdrop-blur-md border-border/50 shadow-sm py-0.5"
+          : "bg-transparent border-transparent py-1"
       )}
     >
       <div className="w-full px-4 md:px-6 flex items-center justify-between">
         {/* Location + time */}
         <Link
           to="/"
-          className="flex items-center group font-mono font-medium text-sm tracking-widest uppercase text-primary hover:text-foreground/60 transition-colors"
+          className="flex items-center group font-mono font-medium text-xs tracking-widest uppercase text-primary hover:text-foreground/60 transition-colors"
         >
           <AbujaClock />
         </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#contact"
-            className="flex items-center h-10 font-mono font-medium tracking-widest uppercase px-6 text-sm text-primary hover:text-foreground/60 transition-colors active:scale-[0.96]"
+            className="flex items-center h-10 font-mono font-medium tracking-widest uppercase px-6 text-xs text-primary hover:text-foreground/60 transition-colors active:scale-[0.96]"
           >
             Start a project
           </a>
@@ -61,7 +61,7 @@ export default function Navbar() {
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border/50 shadow-lg p-4 flex flex-col gap-4 animate-fade-in-up">
           <a
             href="#contact"
-            className="w-full text-center font-mono font-medium tracking-widest uppercase px-4 py-4 text-sm text-primary hover:text-foreground/60 transition-colors active:scale-[0.98]"
+            className="w-full text-center font-mono font-medium tracking-widest uppercase px-4 py-4 text-xs text-primary hover:text-foreground/60 transition-colors active:scale-[0.98]"
           >
             Start a project
           </a>
