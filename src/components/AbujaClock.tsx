@@ -18,7 +18,10 @@ export default function AbujaClock() {
 
   return (
     <span>
-      Abuja, {time}
+      Abuja,{" "}
+      <span key={time} className="inline-block animate-time-fade">
+        {time}
+      </span>
     </span>
   );
 }
