@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Menu01Icon, Cancel01Icon } from "hugeicons-react";
 import { cn } from "@/lib/utils";
 import AbujaClock from "@/components/AbujaClock";
@@ -27,12 +26,9 @@ export default function Navbar() {
     >
       <div className="w-full px-4 md:px-6 flex items-center justify-between">
         {/* Location + time */}
-        <Link
-          to="/"
-          className="flex items-center group font-mono font-medium text-xs tracking-widest uppercase text-primary hover:text-foreground/60 transition-colors"
-        >
+        <span className="flex items-center font-mono font-medium text-xs tracking-widest uppercase text-primary">
           <AbujaClock />
-        </Link>
+        </span>
 
         {/* Right side */}
         <div className="hidden md:flex items-center gap-4">
