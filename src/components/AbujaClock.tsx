@@ -56,7 +56,18 @@ export default function AbujaClock() {
   }
 
   return (
-    <span className="tabular-nums">
+    <motion.span
+      className="tabular-nums"
+      variants={digitVariants}
+      initial="initial"
+      animate="animate"
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 25,
+        mass: 0.6,
+      }}
+    >
       Abuja,{" "}
       {digits.map((char, index) => (
         <span key={index} className="relative inline-block">
@@ -81,6 +92,6 @@ export default function AbujaClock() {
           </AnimatePresence>
         </span>
       ))}
-    </span>
+    </motion.span>
   );
 }
