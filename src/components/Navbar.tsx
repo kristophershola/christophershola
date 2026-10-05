@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu01Icon, Cancel01Icon } from "hugeicons-react";
 import { cn } from "@/lib/utils";
-import LogoIcon from "@/components/LogoIcon";
+import AbujaClock from "@/components/AbujaClock";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,11 +26,12 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-16 h-16 flex items-center justify-center relative transition-transform duration-300 group-hover:scale-105">
-            <LogoIcon className="w-full h-full text-primary animate-[spin_3s_linear_infinite]" />
-          </div>
+        {/* Location + time */}
+        <Link
+          to="/"
+          className="flex items-center group font-mono font-bold text-base md:text-lg tracking-widest uppercase text-primary hover:text-foreground/60 transition-colors"
+        >
+          <AbujaClock />
         </Link>
 
         {/* Right side */}
