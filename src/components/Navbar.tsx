@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#contact"
-            className="flex items-center h-10 font-mono font-medium tracking-widest uppercase px-6 text-xs text-primary hover:text-foreground/60 transition-colors active:scale-[0.96]"
+            className="flex items-center h-10 font-mono font-medium tracking-widest uppercase text-xs text-primary hover:text-foreground/60 transition-colors active:scale-[0.96]"
           >
             Start a project
           </a>
