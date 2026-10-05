@@ -16,14 +16,14 @@ export default function AbujaClock() {
     return () => clearInterval(id);
   }, []);
 
-  const [main, seconds] = [time.slice(0, 6), time.slice(6)];
-
   return (
     <span>
-      Abuja, {main}
-      <span key={seconds} className="inline-block animate-time-fade">
-        {seconds}
-      </span>
+      Abuja,{" "}
+      {time.split("").map((char, index) => (
+        <span key={`${index}-${char}`} className="inline-block animate-time-fade">
+          {char}
+        </span>
+      ))}
     </span>
   );
 }
