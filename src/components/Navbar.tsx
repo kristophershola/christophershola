@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu01Icon, Cancel01Icon } from "hugeicons-react";
 import { cn } from "@/lib/utils";
 import AbujaClock from "@/components/AbujaClock";
+import CreateMeetingMenu from "@/components/CreateMeetingMenu";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,12 +33,7 @@ export default function Navbar() {
 
         {/* Right side */}
         <div className="hidden md:flex items-center gap-4">
-          <a
-            href="#contact"
-            className="flex items-center h-11 px-6 rounded-[10px] bg-[#0000ff] font-mono font-medium tracking-widest uppercase text-sm text-white transition-colors hover:bg-[#0000cc] active:scale-[0.96]"
-          >
-            Start a project
-          </a>
+          <CreateMeetingMenu />
         </div>
 
         {/* Mobile Toggle */}
@@ -55,12 +51,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border/50 shadow-lg p-4 flex flex-col gap-4 animate-fade-in-up">
-          <a
-            href="#contact"
-            className="flex w-full items-center justify-center h-11 px-6 rounded-[10px] bg-[#0000ff] font-mono font-medium tracking-widest uppercase text-sm text-white transition-colors hover:bg-[#0000cc] active:scale-[0.98]"
-          >
-            Start a project
-          </a>
+          <CreateMeetingMenu />
         </div>
       )}
     </header>
