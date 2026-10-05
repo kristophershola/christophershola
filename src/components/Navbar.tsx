@@ -25,11 +25,11 @@ export default function Navbar() {
           : "bg-transparent border-transparent py-5"
       )}
     >
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
+      <div className="w-full px-4 md:px-6 flex items-center justify-between">
         {/* Location + time */}
         <Link
           to="/"
-          className="flex items-center group font-mono font-bold text-base md:text-lg tracking-widest uppercase text-primary hover:text-foreground/60 transition-colors"
+          className="flex items-center group font-mono font-bold text-sm tracking-widest uppercase text-primary hover:text-foreground/60 transition-colors"
         >
           <AbujaClock />
         </Link>
