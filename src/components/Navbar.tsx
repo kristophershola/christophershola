@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
-import { Menu01Icon, Cancel01Icon } from "hugeicons-react";
 import { cn } from "@/lib/utils";
 import AbujaClock from "@/components/AbujaClock";
-import CreateMeetingMenu from "@/components/CreateMeetingMenu";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,30 +27,7 @@ export default function Navbar() {
         <span className="flex items-center font-mono font-medium text-sm tracking-widest uppercase text-primary">
           <AbujaClock />
         </span>
-
-        {/* Right side */}
-        <div className="hidden md:flex items-center gap-4">
-          <CreateMeetingMenu />
-        </div>
-
-        {/* Mobile Toggle */}
-        <div className="flex md:hidden items-center gap-4">
-          <button
-            className="text-foreground p-1"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {mobileMenuOpen ? <Cancel01Icon className="w-6 h-6" /> : <Menu01Icon className="w-6 h-6" />}
-          </button>
-        </div>
       </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border/50 shadow-lg p-4 flex flex-col gap-4 animate-fade-in-up">
-          <CreateMeetingMenu />
-        </div>
-      )}
     </header>
   );
 }
