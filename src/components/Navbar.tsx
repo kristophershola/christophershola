@@ -50,7 +50,7 @@ export default function Navbar() {
           data-cal-namespace="30min"
           data-cal-link="shola-x-cc7czl/30min"
           data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
-          className="inline-flex h-10 shrink-0 cursor-pointer items-center justify-center whitespace-nowrap rounded-md bg-transparent bg-gradient-to-r from-primary via-primary/60 to-primary px-3 font-mono text-xs font-medium tracking-wide text-primary-foreground transition-[background-position,transform] duration-300 [background-size:200%_auto] hover:bg-transparent hover:bg-[position:99%_center] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:px-4 sm:text-sm"
+          className="inline-flex h-10 shrink-0 cursor-pointer items-center justify-center whitespace-nowrap rounded-lg bg-transparent bg-gradient-to-r from-primary via-primary/60 to-primary px-3 font-mono text-xs font-medium tracking-wide text-primary-foreground transition-[background-position,transform] duration-300 [background-size:200%_auto] hover:bg-transparent hover:bg-[position:99%_center] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:px-4 sm:text-sm"
         >
           Start A Project
         </button>
