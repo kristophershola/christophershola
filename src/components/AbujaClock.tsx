@@ -32,8 +32,6 @@ const digitVariants = {
 
 const spring = { type: "spring" as const, stiffness: 500, damping: 25, mass: 0.6 };
 
-const entryTransition = (index: number) => ({ ...spring, delay: index * 0.04 });
-
 export default function AbujaClock() {
   const [time, setTime] = useState(() => formatter.format(new Date()));
   const [prevDigits, setPrevDigits] = useState<string[]>([]);
@@ -61,27 +59,9 @@ export default function AbujaClock() {
 
   return (
     <span className="tabular-nums">
-      {"Abuja, ".split("").map((char, i) => (
-        <motion.span
-          key={`label-${i}`}
-          variants={digitVariants}
-          initial="initial"
-          animate="animate"
-          transition={entryTransition(i)}
-          className="inline-block"
-        >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
-      ))}
+      Abuja,&nbsp;
       {digits.map((char, index) => (
-        <motion.span
-          key={index}
-          variants={digitVariants}
-          initial="initial"
-          animate="animate"
-          transition={entryTransition(7 + index)}
-          className="relative inline-block"
-        >
+        <span key={index} className="relative inline-block">
           <span className="invisible">{char}</span>
           <AnimatePresence mode="popLayout" initial={false}>
             <motion.span
@@ -96,7 +76,7 @@ export default function AbujaClock() {
               {char}
             </motion.span>
           </AnimatePresence>
-        </motion.span>
+        </span>
       ))}
     </span>
   );

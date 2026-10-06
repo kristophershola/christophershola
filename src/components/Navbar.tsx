@@ -32,6 +32,9 @@ export default function Navbar() {
         <button
           type="button"
           data-cursor-pointer
+          data-cal-link="shola-x-cc7czl/30min"
+          data-cal-namespace="30min"
+          data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
           className="inline-flex items-center gap-1.5 font-mono font-medium text-sm tracking-widest uppercase text-[#0000ff]"
         >
           <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" />
