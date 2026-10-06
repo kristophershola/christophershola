@@ -32,7 +32,7 @@ export default function Navbar() {
         <button
           type="button"
           data-cursor-pointer
-          className="inline-flex items-center gap-1.5 font-mono font-medium text-sm tracking-widest uppercase text-primary"
+          className="inline-flex items-center gap-1.5 font-mono font-medium text-sm tracking-widest uppercase text-[#0000ff]"
         >
           <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" />
           Start A Project
