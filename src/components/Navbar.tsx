@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import AbujaClock from "@/components/AbujaClock";
-import Button31 from "@/components/button/variant-31";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { PlusSignIcon } from "@hugeicons/core-free-icons";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,7 +29,14 @@ export default function Navbar() {
         <span className="flex items-center font-mono font-medium text-sm tracking-widest uppercase text-primary">
           <AbujaClock />
         </span>
-        <Button31 />
+        <button
+          type="button"
+          data-cursor-pointer
+          className="inline-flex items-center gap-1.5 font-mono font-medium text-sm tracking-widest uppercase text-primary"
+        >
+          <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" />
+          Start A Project
+        </button>
       </div>
     </header>
   );
