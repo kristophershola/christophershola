@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import AbujaClock from "@/components/AbujaClock";
+import Button31 from "@/components/button/variant-31";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,6 +28,7 @@ export default function Navbar() {
         <span className="flex items-center font-mono font-medium text-sm tracking-widest uppercase text-primary">
           <AbujaClock />
         </span>
+        <Button31 />
       </div>
     </header>
   );
