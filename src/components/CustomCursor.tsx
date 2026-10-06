@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import LogoIcon from "@/components/LogoIcon";
 
-const CLICKABLE_SELECTOR = "a, button, [role='button'], [data-cursor-pointer]";
+const CLICKABLE_SELECTOR = "a, [data-cursor-pointer]";
 
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
