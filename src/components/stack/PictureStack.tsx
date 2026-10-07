@@ -195,8 +195,8 @@ export default function PictureStack({
       )}
     >
       {/* Floating 3D Stack Container */}
-      <div className="relative flex flex-col items-center justify-center animate-float-deck translate-y-6 md:translate-y-8">
-        <div className="relative flex items-center justify-center w-[280px] h-[380px] sm:w-[320px] sm:h-[430px] md:w-[340px] md:h-[450px] lg:w-[360px] lg:h-[470px]">
+      <div className="relative flex flex-col items-center justify-center animate-float-deck">
+        <div className="relative flex items-center justify-center w-[250px] h-[340px] sm:w-[280px] sm:h-[380px] md:w-[305px] md:h-[410px] lg:w-[325px] lg:h-[435px]">
         {springs.map(({ x, y, rot, scale, opacity }, i) => {
           const item = items[i];
           const isGone = goneSet.has(i);
@@ -262,7 +262,7 @@ export default function PictureStack({
         {/* Ambient Ground Shadow that breathes with the floating motion */}
         <div
           aria-hidden="true"
-          className="pointer-events-none mt-6 h-4 w-48 rounded-full bg-neutral-900/10 blur-xl dark:bg-black/40 animate-float-shadow"
+          className="pointer-events-none mt-5 h-4 w-40 rounded-full bg-neutral-900/10 blur-xl dark:bg-black/40 animate-float-shadow"
         />
       </div>
     </div>
