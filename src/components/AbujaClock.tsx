@@ -58,18 +58,8 @@ export default function AbujaClock() {
   }
 
   return (
-    <span className="inline-flex items-center tabular-nums">
-      <span className="relative mr-2 flex h-2 w-2 items-center justify-center">
-        <span
-          className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-          style={{ background: "linear-gradient(135deg, #0000ff, #008e71, #00ff00)" }}
-        />
-        <span
-          className="relative inline-flex h-2 w-2 rounded-full shadow-[0_0_8px_#00e31c]"
-          style={{ background: "linear-gradient(135deg, #0000ff 0%, #00718e 50%, #00ff00 100%)" }}
-        />
-      </span>
-      <span>Abuja,&nbsp;</span>
+    <span className="tabular-nums">
+      Abuja,&nbsp;
       {digits.map((char, index) => (
         <span key={index} className="relative inline-block">
           <span className="invisible">{char}</span>

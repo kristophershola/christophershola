@@ -6,18 +6,6 @@ import TypewriterBio from "@/components/TypewriterBio";
 export default function App() {
   return (
     <>
-      {/* Ambient background accent glows */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed -top-40 -left-40 h-[480px] w-[480px] rounded-full blur-[140px] opacity-[0.07]"
-        style={{ background: "radial-gradient(circle, #001ce3 0%, #00718e 50%, #00ff00 100%)" }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed -bottom-40 -right-40 h-[480px] w-[480px] rounded-full blur-[140px] opacity-[0.06]"
-        style={{ background: "radial-gradient(circle, #00ff00 0%, #008e71 50%, #0000ff 100%)" }}
-      />
-
       <CursorTrail />
       <Navbar />
       <main className="flex h-dvh overflow-hidden flex-col pt-8 md:flex-row">

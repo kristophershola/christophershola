@@ -223,9 +223,7 @@ export default function PictureStack({
                   "group relative h-full w-full touch-none rounded-3xl border border-neutral-200/90 bg-white/95 p-3.5 shadow-2xl backdrop-blur-sm",
                   "transition-[border-color] duration-200 dark:border-neutral-800 dark:bg-zinc-900/95",
                   "shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)]",
-                  isTop
-                    ? "cursor-grab active:cursor-grabbing hover:border-neutral-400 hover:shadow-[0_25px_60px_-10px_rgba(0,113,142,0.3)] dark:hover:border-neutral-700"
-                    : "cursor-default"
+                  isTop ? "cursor-grab active:cursor-grabbing hover:border-neutral-400 dark:hover:border-neutral-700" : "cursor-default"
                 )}
               >
                 {/* Photo frame */}
@@ -237,11 +235,7 @@ export default function PictureStack({
                     className="h-full w-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Category Pill */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-1 text-[10px] font-mono tracking-wider text-white uppercase backdrop-blur-md border border-white/10 shadow-sm">
-                    <span
-                      className="h-1.5 w-1.5 rounded-full shadow-[0_0_6px_#00e31c]"
-                      style={{ background: "linear-gradient(135deg, #0000ff 0%, #008e71 50%, #00ff00 100%)" }}
-                    />
+                  <div className="absolute top-3 left-3 flex items-center gap-1 rounded-full bg-black/65 px-2.5 py-1 text-[10px] font-mono tracking-wider text-white uppercase backdrop-blur-md">
                     <span>{item.category}</span>
                   </div>
                   {/* Year Pill */}
@@ -266,17 +260,10 @@ export default function PictureStack({
         </div>
 
         {/* Ambient Ground Shadow that breathes with the floating motion */}
-        <div className="relative mt-5 flex items-center justify-center">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute h-6 w-48 rounded-full blur-2xl animate-float-shadow opacity-40"
-            style={{ background: "linear-gradient(90deg, #0000ff, #00718e, #00aa55, #00ff00)" }}
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none h-4 w-40 rounded-full bg-neutral-900/15 blur-xl dark:bg-black/40 animate-float-shadow"
-          />
-        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none mt-5 h-4 w-40 rounded-full bg-neutral-900/10 blur-xl dark:bg-black/40 animate-float-shadow"
+        />
       </div>
     </div>
   );
