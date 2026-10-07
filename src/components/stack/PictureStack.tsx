@@ -1,13 +1,7 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
 import { useSprings, animated, to } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  RotateCcw,
-  Shuffle,
-  Layers,
-} from "lucide-react";
+
 import { cn } from "@/lib/utils";
 import { PICTURE_STACK_DATA, type StackPicture } from "./data";
 
@@ -139,7 +133,6 @@ export default function PictureStack({
 
   // Find topmost visible card index
   const topVisibleIndex = items.findIndex((_, idx) => !goneSet.has(idx));
-  const currentCard = topVisibleIndex !== -1 ? items[topVisibleIndex] : null;
 
   // Drag gesture binding
   const bind = useDrag(
@@ -253,14 +246,9 @@ export default function PictureStack({
 
                 {/* Card Meta & Caption */}
                 <div className="flex h-[22%] w-full flex-col justify-center px-1 pt-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="truncate font-sans font-semibold text-sm sm:text-base text-neutral-900 dark:text-neutral-100">
-                      {item.title}
-                    </h3>
-                    <span className="font-mono text-[11px] text-muted-foreground">
-                      {String(i + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
-                    </span>
-                  </div>
+                  <h3 className="truncate font-sans font-semibold text-sm sm:text-base text-neutral-900 dark:text-neutral-100">
+                    {item.title}
+                  </h3>
                   <p className="truncate font-sans text-xs text-muted-foreground mt-0.5">
                     {item.description}
                   </p>
@@ -269,74 +257,6 @@ export default function PictureStack({
             </animated.div>
           );
         })}
-      </div>
-
-      {/* Control Bar & Feedback */}
-      <div className="mt-8 flex flex-col items-center gap-3">
-        {/* Buttons Toolbar */}
-        <div className="flex items-center gap-2 rounded-full border border-border bg-card/80 p-1.5 shadow-lg backdrop-blur-md dark:border-neutral-800 dark:bg-zinc-900/80">
-          <button
-            type="button"
-            onClick={() => handleSwipe(-1)}
-            disabled={topVisibleIndex === -1}
-            data-cursor-pointer="true"
-            title="Swipe Left (ArrowLeft)"
-            aria-label="Swipe Left"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-foreground/80 transition-all hover:bg-neutral-100 hover:text-foreground active:scale-95 disabled:opacity-40 dark:hover:bg-neutral-800"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </button>
-
-          <button
-            type="button"
-            onClick={handleUndo}
-            disabled={swipedList.length === 0}
-            data-cursor-pointer="true"
-            title="Undo (Ctrl+Z)"
-            aria-label="Undo last swipe"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-foreground/80 transition-all hover:bg-neutral-100 hover:text-foreground active:scale-95 disabled:opacity-40 dark:hover:bg-neutral-800"
-          >
-            <RotateCcw className="h-4 w-4" />
-          </button>
-
-          <button
-            type="button"
-            onClick={handleReset}
-            data-cursor-pointer="true"
-            title="Reset Deck (R)"
-            aria-label="Reset and reshuffle deck"
-            className="flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-mono tracking-wider uppercase text-foreground/80 transition-all hover:bg-neutral-100 hover:text-foreground active:scale-95 dark:hover:bg-neutral-800"
-          >
-            <Shuffle className="h-3.5 w-3.5" />
-            <span>Reset</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => handleSwipe(1)}
-            disabled={topVisibleIndex === -1}
-            data-cursor-pointer="true"
-            title="Swipe Right (ArrowRight)"
-            aria-label="Swipe Right"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-foreground/80 transition-all hover:bg-neutral-100 hover:text-foreground active:scale-95 disabled:opacity-40 dark:hover:bg-neutral-800"
-          >
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        </div>
-
-        {/* Status / Instruction Indicator */}
-        <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
-          <Layers className="h-3.5 w-3.5 text-primary" />
-          <span>
-            {currentCard
-              ? `Card ${topVisibleIndex + 1} of ${items.length} · Flick to discard`
-              : "All cards cleared · Restacking..."}
-          </span>
-          <span className="hidden sm:inline text-neutral-400 dark:text-neutral-600">|</span>
-          <span className="hidden sm:inline text-[11px] text-muted-foreground">
-            Keys: ← / → / Ctrl+Z
-          </span>
-        </div>
       </div>
     </div>
   );
