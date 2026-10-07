@@ -10,10 +10,7 @@ export default function App() {
       <Navbar />
       <main className="flex h-dvh overflow-hidden flex-col pt-8 md:flex-row">
         <section className="flex w-full min-h-0 flex-col justify-center px-6 py-8 sm:px-10 md:w-1/2 md:px-12 md:py-0 lg:px-16 overflow-y-auto">
-          <div className="flex flex-col gap-4 max-w-xl text-left">
-            <h1 className="font-mono font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-widest uppercase text-foreground">
-              Christopher Shola
-            </h1>
+          <div className="max-w-xl text-left">
             <TypewriterBio />
           </div>
         </section>
