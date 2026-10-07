@@ -69,6 +69,20 @@
   --ring: oklch(0.708 0 0);
 
   --radius: 0.625rem;
+
+  --gradient-accent-v: linear-gradient(
+    180deg,
+    #ff0000 0%,
+    #e3001c 11%,
+    #c60039 22%,
+    #aa0055 33%,
+    #8e0071 44%,
+    #71008e 56%,
+    #5500aa 67%,
+    #3900c6 78%,
+    #1c00e3 89%,
+    #0000ff 100%
+  );
 }
 
 @theme inline {
@@ -95,6 +109,18 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* Spectrum Gradient Palette */
+  --color-red: #ff0000;
+  --color-primary-scarlet: #e3001c;
+  --color-carmine: #c60039;
+  --color-cherry-rose: #aa0055;
+  --color-dark-magenta: #8e0071;
+  --color-purple: #71008e;
+  --color-indigo: #5500aa;
+  --color-medium-blue: #3900c6;
+  --color-ultrasonic-blue: #1c00e3;
+  --color-blue: #0000ff;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -175,11 +201,24 @@
 
 .blinking-cursor {
   display: inline-block;
-  width: 2px;
+  width: 2.5px;
   height: 1.15em;
-  background-color: currentColor;
-  margin-left: 2px;
+  background: linear-gradient(
+    180deg,
+    #ff0000 0%,
+    #e3001c 11%,
+    #c60039 22%,
+    #aa0055 33%,
+    #8e0071 44%,
+    #71008e 56%,
+    #5500aa 67%,
+    #3900c6 78%,
+    #1c00e3 89%,
+    #0000ff 100%
+  );
+  margin-left: 2.5px;
   vertical-align: -0.15em;
+  border-radius: 1px;
   animation: blink-cursor 0.75s infinite;
 }
 
