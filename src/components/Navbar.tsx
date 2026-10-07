@@ -35,9 +35,9 @@ export default function Navbar() {
           data-cal-link="shola-x-cc7czl/30min"
           data-cal-namespace="30min"
           data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
-          className="inline-flex items-center gap-1.5 font-mono font-medium text-sm tracking-widest uppercase text-[#0000ff]"
+          className="inline-flex items-center gap-1.5 rounded-full bg-black/65 px-3 py-1.5 text-xs font-mono tracking-wider text-white uppercase backdrop-blur-md transition-all duration-200 hover:bg-black/80 hover:scale-105 active:scale-95 shadow-sm"
         >
-          <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" />
+          <HugeiconsIcon icon={PlusSignIcon} size={14} color="currentColor" strokeWidth={2} />
           Start A Project
         </button>
       </div>
