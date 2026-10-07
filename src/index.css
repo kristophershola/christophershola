@@ -117,14 +117,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
-  @media (pointer: fine) {
-    *,
-    *::before,
-    *::after {
-      cursor: none;
-    }
-  }
 }
 
 @keyframes fade-in-up {
@@ -140,14 +132,4 @@
 
 .animate-fade-in-up {
   animation: fade-in-up 0.25s ease-out both;
-}
-
-@keyframes cursor-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-cursor-spin {
-  animation: cursor-spin 1.2s linear infinite;
 }

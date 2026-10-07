@@ -31,7 +31,6 @@ export default function Navbar() {
         </span>
         <button
           type="button"
-          data-cursor-pointer
           data-cal-link="shola-x-cc7czl/30min"
           data-cal-namespace="30min"
           data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'

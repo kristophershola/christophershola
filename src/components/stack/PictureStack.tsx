@@ -215,7 +215,6 @@ export default function PictureStack({
             >
               <animated.div
                 {...bind(i)}
-                data-cursor-pointer={isTop ? "true" : undefined}
                 style={{
                   transform: to([rot, scale], trans),
                 }}

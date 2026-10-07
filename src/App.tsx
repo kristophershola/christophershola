@@ -1,11 +1,9 @@
 import Navbar from "@/components/Navbar";
-import CustomCursor from "@/components/CustomCursor";
 import PictureStack from "@/components/stack/PictureStack";
 
 export default function App() {
   return (
     <>
-      <CustomCursor />
       <Navbar />
       <main className="flex h-dvh overflow-hidden flex-col pt-8 md:flex-row">
         <section className="flex w-full min-h-0 flex-col justify-center gap-6 px-4 py-8 md:w-1/2 md:px-6 md:py-0">
