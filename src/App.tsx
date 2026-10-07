@@ -9,7 +9,7 @@ export default function App() {
       <CursorTrail />
       <Navbar />
       <main className="flex h-dvh overflow-hidden flex-col pt-8 md:flex-row">
-        <section className="flex w-full min-h-0 flex-col justify-center px-6 py-8 sm:px-10 md:w-1/2 md:px-12 md:py-0 lg:px-16 overflow-y-auto">
+        <section className="flex w-full min-h-0 flex-col justify-center pl-4 pr-6 py-8 sm:pr-10 md:w-1/2 md:pl-6 md:pr-12 md:py-0 lg:pr-16 overflow-y-auto">
           <div className="max-w-xl text-left">
             <TypewriterBio />
           </div>

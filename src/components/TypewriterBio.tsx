@@ -89,20 +89,6 @@ export default function TypewriterBio({ className }: { className?: string }) {
     }
   }, [api, isDone, totalLength]);
 
-  // Restart typing
-  const handleRestart = useCallback(
-    (e: React.MouseEvent) => {
-      e.stopPropagation();
-      setIsDone(false);
-      setCharCount(0);
-      api.start({
-        from: { count: 0 },
-        to: { count: totalLength },
-        reset: true,
-      });
-    },
-    [api, totalLength]
-  );
 
   useEffect(() => {
     // Start animation upon mount
@@ -162,19 +148,6 @@ export default function TypewriterBio({ className }: { className?: string }) {
         {isDone && <span aria-hidden="true" className="blinking-cursor" />}
       </p>
 
-      {/* Subtle replay action if completed */}
-      {isDone && (
-        <span className="inline-block ml-3 align-baseline">
-          <button
-            type="button"
-            onClick={handleRestart}
-            title="Replay typing animation"
-            className="text-xs font-mono text-muted-foreground/60 transition-colors hover:text-foreground hover:underline"
-          >
-            [replay]
-          </button>
-        </span>
-      )}
     </div>
   );
 }
