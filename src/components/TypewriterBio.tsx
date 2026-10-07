@@ -11,7 +11,7 @@ interface Segment {
 }
 
 const RAW_BIO =
-  "and creative agency crafting bold brands and digital experiences through motion, clarity, and timeless craft. We help ambitious teams show the world who they are.";
+  "A global digital and creative agency crafting bold brands and digital experiences through motion, clarity, and timeless craft. We help ambitious teams show the world who they are.";
 
 export default function TypewriterBio({ className }: { className?: string }) {
   // Parse markdown links into structured segments with absolute character offsets
