@@ -133,3 +133,34 @@
 .animate-fade-in-up {
   animation: fade-in-up 0.25s ease-out both;
 }
+
+@keyframes float-deck {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.6deg);
+  }
+}
+
+.animate-float-deck {
+  animation: float-deck 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes float-shadow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(0.85);
+    opacity: 0.16;
+  }
+}
+
+.animate-float-shadow {
+  animation: float-shadow 6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
