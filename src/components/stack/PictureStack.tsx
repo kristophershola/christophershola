@@ -195,7 +195,7 @@ export default function PictureStack({
       )}
     >
       {/* Floating 3D Stack Container */}
-      <div className="relative flex flex-col items-center justify-center animate-float-deck">
+      <div className="relative flex flex-col items-center justify-center animate-float-deck translate-y-6 md:translate-y-8">
         <div className="relative flex items-center justify-center w-[280px] h-[380px] sm:w-[320px] sm:h-[430px] md:w-[340px] md:h-[450px] lg:w-[360px] lg:h-[470px]">
         {springs.map(({ x, y, rot, scale, opacity }, i) => {
           const item = items[i];
