@@ -152,7 +152,7 @@ export default function DisciplineEmphasis({
           backgroundColor: color,
           width: spring.underlineWidth.to((w) => `${w}%`),
         }}
-        className="absolute bottom-0 left-0 h-[2px] pointer-events-none"
+        className="absolute bottom-0 left-0 h-[1.5px] pointer-events-none"
       />
 
       {/* Monospace Index Tag (e.g. [01] in IBM Plex Mono) that springs in on hover */}

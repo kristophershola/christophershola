@@ -155,8 +155,8 @@ export default function TypewriterBio({ className }: { className?: string }) {
     <div
       onClick={handleFastForward}
       className={cn(
-        "relative text-left font-sans text-lg sm:text-xl md:text-2xl lg:text-[1.65rem]",
-        "leading-[1.45] text-foreground/90 select-text transition-colors tracking-tight font-normal",
+        "relative text-left font-sans text-sm sm:text-base md:text-lg",
+        "leading-[1.6] text-foreground/90 select-text transition-colors tracking-normal font-normal",
         !isDone && "cursor-pointer",
         className
       )}
