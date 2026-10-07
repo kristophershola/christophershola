@@ -196,7 +196,7 @@ export default function PictureStack({
     >
       {/* Floating 3D Stack Container */}
       <div className="relative flex flex-col items-center justify-center animate-float-deck">
-        <div className="relative flex items-center justify-center w-[250px] h-[340px] sm:w-[280px] sm:h-[380px] md:w-[305px] md:h-[410px] lg:w-[325px] lg:h-[435px]">
+        <div className="relative flex items-center justify-center w-[270px] h-[360px] sm:w-[300px] sm:h-[400px] md:w-[330px] md:h-[440px] lg:w-[350px] lg:h-[470px]">
         {springs.map(({ x, y, rot, scale, opacity }, i) => {
           const item = items[i];
           const isGone = goneSet.has(i);
@@ -220,39 +220,18 @@ export default function PictureStack({
                   transform: to([rot, scale], trans),
                 }}
                 className={cn(
-                  "group relative h-full w-full touch-none rounded-3xl border border-neutral-200/90 bg-white/95 p-3.5 shadow-2xl backdrop-blur-sm",
-                  "transition-[border-color] duration-200 dark:border-neutral-800 dark:bg-zinc-900/95",
-                  "shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)]",
-                  isTop ? "cursor-grab active:cursor-grabbing hover:border-neutral-400 dark:hover:border-neutral-700" : "cursor-default"
+                  "group relative h-full w-full touch-none overflow-hidden rounded-2xl shadow-2xl",
+                  "shadow-[0_20px_50px_-10px_rgba(0,0,0,0.2)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.75)]",
+                  "ring-1 ring-black/5 dark:ring-white/10",
+                  isTop ? "cursor-grab active:cursor-grabbing" : "cursor-default"
                 )}
               >
-                {/* Photo frame */}
-                <div className="relative h-[78%] w-full overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-800">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    draggable={false}
-                    className="h-full w-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Category Pill */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1 rounded-full bg-black/65 px-2.5 py-1 text-[10px] font-mono tracking-wider text-white uppercase backdrop-blur-md">
-                    <span>{item.category}</span>
-                  </div>
-                  {/* Year Pill */}
-                  <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-black/65 px-2.5 py-1 text-[10px] font-mono tracking-wider text-white backdrop-blur-md">
-                    <span>{item.year}</span>
-                  </div>
-                </div>
-
-                {/* Card Meta & Caption */}
-                <div className="flex h-[22%] w-full flex-col justify-center px-1 pt-2">
-                  <h3 className="truncate font-sans font-semibold text-sm sm:text-base text-neutral-900 dark:text-neutral-100">
-                    {item.title}
-                  </h3>
-                  <p className="truncate font-sans text-xs text-muted-foreground mt-0.5">
-                    {item.description}
-                  </p>
-                </div>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  draggable={false}
+                  className="h-full w-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105"
+                />
               </animated.div>
             </animated.div>
           );
@@ -262,7 +241,7 @@ export default function PictureStack({
         {/* Ambient Ground Shadow that breathes with the floating motion */}
         <div
           aria-hidden="true"
-          className="pointer-events-none mt-5 h-4 w-40 rounded-full bg-neutral-900/10 blur-xl dark:bg-black/40 animate-float-shadow"
+          className="pointer-events-none mt-5 h-4 w-44 rounded-full bg-neutral-900/10 blur-xl dark:bg-black/40 animate-float-shadow"
         />
       </div>
     </div>
