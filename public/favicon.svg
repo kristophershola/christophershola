@@ -1,1 +1,133 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.75 75.1"><defs><style>.cls-1{fill:#090b10;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M61.77,58a10,10,0,1,0,10-10A10,10,0,0,0,61.77,58Z"/><path class="cls-1" d="M69.64,29.91a7.06,7.06,0,1,0,7-7.06A7.05,7.05,0,0,0,69.64,29.91Z"/><path class="cls-1" d="M17.61,8.68A8.68,8.68,0,1,0,26.29,0,8.68,8.68,0,0,0,17.61,8.68Z"/><path class="cls-1" d="M48.54,11.68a7.59,7.59,0,1,0,7.58-7.59A7.58,7.58,0,0,0,48.54,11.68Z"/><path class="cls-1" d="M0,35.38A10.34,10.34,0,1,0,10.34,25,10.34,10.34,0,0,0,0,35.38Z"/><path class="cls-1" d="M22.39,61.53A13.57,13.57,0,1,0,36,48,13.58,13.58,0,0,0,22.39,61.53Z"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <!-- Circular Boundary Clip -->
+    <clipPath id="aurora-circle-clip">
+      <circle cx="50" cy="50" r="47" />
+    </clipPath>
+
+    <!-- Aurora Diffusion Blur Filter -->
+    <filter id="aurora-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="blur" />
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 1.25 0" />
+    </filter>
+
+    <!-- Deep Ambient Base Gradient -->
+    <linearGradient id="aurora-base" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#330000" />
+      <stop offset="25%" stop-color="#28000b" />
+      <stop offset="50%" stop-color="#1d0017" />
+      <stop offset="75%" stop-color="#110022" />
+      <stop offset="100%" stop-color="#000033" />
+    </linearGradient>
+
+    <!-- Wave 1: Red (#ff0000) -> Primary Scarlet (#e3001c) -> Carmine (#c60039) -->
+    <radialGradient id="aurora-red-scarlet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff0000" stop-opacity="1" />
+      <stop offset="45%" stop-color="#e3001c" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#c60039" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#c60039" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Wave 2: Cherry Rose (#aa0055) -> Dark Magenta (#8e0071) -> Purple (#71008e) -->
+    <radialGradient id="aurora-magenta-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3298" stop-opacity="0.95" />
+      <stop offset="35%" stop-color="#aa0055" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#8e0071" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#71008e" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Wave 3: Indigo (#5500aa) -> Medium Blue (#3900c6) -> Ultrasonic Blue (#1c00e3) -> Blue (#0000ff) -->
+    <radialGradient id="aurora-indigo-blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5500aa" stop-opacity="1" />
+      <stop offset="35%" stop-color="#3900c6" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#1c00e3" stop-opacity="0.85" />
+      <stop offset="90%" stop-color="#0000ff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#0000ff" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Wave 4: Luminous Cosmic Violet Center Core -->
+    <radialGradient id="aurora-electric-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff23d3" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#71008e" stop-opacity="0.7" />
+      <stop offset="80%" stop-color="#3900c6" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0000ff" stop-opacity="0" />
+    </radialGradient>
+
+    <style>
+      @keyframes aurora-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes aurora-spin-reverse {
+        0% { transform: rotate(360deg); }
+        100% { transform: rotate(0deg); }
+      }
+      @keyframes wave-motion-1 {
+        0%, 100% { transform: translate(-12px, -10px) scale(1) rotate(0deg); }
+        33% { transform: translate(14px, 12px) scale(1.22) rotate(110deg); }
+        66% { transform: translate(-8px, 16px) scale(0.92) rotate(230deg); }
+      }
+      @keyframes wave-motion-2 {
+        0%, 100% { transform: translate(12px, 10px) scale(1.15) rotate(0deg); }
+        33% { transform: translate(-14px, -8px) scale(0.88) rotate(-115deg); }
+        66% { transform: translate(10px, -14px) scale(1.28) rotate(-235deg); }
+      }
+      @keyframes wave-motion-3 {
+        0%, 100% { transform: translate(-8px, 14px) scale(0.9) rotate(0deg); }
+        50% { transform: translate(12px, -12px) scale(1.3) rotate(180deg); }
+      }
+      @keyframes wave-motion-4 {
+        0%, 100% { transform: translate(14px, -10px) scale(1.2) rotate(0deg); }
+        50% { transform: translate(-12px, 10px) scale(0.85) rotate(-180deg); }
+      }
+      .aurora-spin-group {
+        animation: aurora-spin 20s linear infinite;
+        transform-origin: 50px 50px;
+      }
+      .wave-red {
+        animation: wave-motion-1 7s ease-in-out infinite;
+        transform-origin: 38px 38px;
+      }
+      .wave-blue {
+        animation: wave-motion-2 9s ease-in-out infinite;
+        transform-origin: 62px 62px;
+      }
+      .wave-magenta {
+        animation: wave-motion-3 8s ease-in-out infinite;
+        transform-origin: 60px 36px;
+      }
+      .wave-core {
+        animation: wave-motion-4 11s ease-in-out infinite;
+        transform-origin: 36px 64px;
+      }
+    </style>
+  </defs>
+
+  <!-- Circular Masked Aurora Orb -->
+  <g clip-path="url(#aurora-circle-clip)">
+    <!-- Base Background -->
+    <rect width="100" height="100" fill="url(#aurora-base)" />
+
+    <!-- Moving Aurora Elements with Blur Filter -->
+    <g class="aurora-spin-group" filter="url(#aurora-blur)">
+      <!-- Wave 1: Red / Scarlet / Carmine -->
+      <ellipse class="wave-red" cx="36" cy="36" rx="42" ry="34" fill="url(#aurora-red-scarlet)" />
+      <!-- Wave 2: Indigo / Ultrasonic Blue / Blue -->
+      <ellipse class="wave-blue" cx="64" cy="64" rx="44" ry="38" fill="url(#aurora-indigo-blue)" />
+      <!-- Wave 3: Cherry Rose / Dark Magenta / Purple -->
+      <ellipse class="wave-magenta" cx="64" cy="34" rx="38" ry="42" fill="url(#aurora-magenta-purple)" />
+      <!-- Wave 4: Luminous Core -->
+      <ellipse class="wave-core" cx="36" cy="66" rx="36" ry="36" fill="url(#aurora-electric-core)" />
+    </g>
+
+    <!-- Subtle Inner Glow Rim -->
+    <circle cx="50" cy="50" r="46.5" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1" />
+  </g>
+
+  <!-- Outer Crisp Circular Silhouette Border -->
+  <circle cx="50" cy="50" r="47" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2" />
+</svg>
