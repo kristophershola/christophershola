@@ -11,7 +11,7 @@ interface Segment {
 }
 
 const RAW_BIO =
-  "A global digital and creative agency crafting bold brands and digital experiences through motion, clarity, and timeless craft. We help ambitious teams show the world who they are.";
+  "Shola runs an independent digital and creative practice specializing in strategy, verbal Identity, visual identity, digital experience, go to market strategy, future evolution.";
 
 export default function TypewriterBio({ className }: { className?: string }) {
   // Parse markdown links into structured segments with absolute character offsets
