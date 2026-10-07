@@ -25,10 +25,6 @@ export default function Navbar() {
       )}
     >
       <div className="w-full px-4 md:px-6 flex items-center justify-between">
-        {/* Location + time */}
-        <span className="flex items-center font-mono font-medium text-sm tracking-widest uppercase text-primary">
-          <AbujaClock />
-        </span>
         <button
           type="button"
           data-cal-link="shola-x-cc7czl/30min"
@@ -39,6 +35,10 @@ export default function Navbar() {
           <HugeiconsIcon icon={PlusSignIcon} size={14} color="currentColor" strokeWidth={2} />
           Start A Project
         </button>
+        {/* Location + time */}
+        <span className="flex items-center font-mono font-medium text-sm tracking-widest uppercase text-primary">
+          <AbujaClock />
+        </span>
       </div>
     </header>
   );
