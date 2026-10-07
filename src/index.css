@@ -69,6 +69,10 @@
   --ring: oklch(0.708 0 0);
 
   --radius: 0.625rem;
+
+  --gradient-accent: linear-gradient(135deg, #0000ff 0%, #001ce3 11%, #0039c6 22%, #0055aa 33%, #00718e 44%, #008e71 55%, #00aa55 66%, #00c639 77%, #00e31c 88%, #00ff00 100%);
+  --gradient-accent-h: linear-gradient(90deg, #0000ff 0%, #001ce3 11%, #0039c6 22%, #0055aa 33%, #00718e 44%, #008e71 55%, #00aa55 66%, #00c639 77%, #00e31c 88%, #00ff00 100%);
+  --gradient-accent-v: linear-gradient(180deg, #0000ff 0%, #001ce3 11%, #0039c6 22%, #0055aa 33%, #00718e 44%, #008e71 55%, #00aa55 66%, #00c639 77%, #00e31c 88%, #00ff00 100%);
 }
 
 @theme inline {
@@ -95,6 +99,117 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* User Spectrum Accent Colors */
+  --color-blue: #0000ff;
+  --color-blue-100: #000033;
+  --color-blue-200: #000066;
+  --color-blue-300: #000099;
+  --color-blue-400: #0000cc;
+  --color-blue-500: #0000ff;
+  --color-blue-600: #3333ff;
+  --color-blue-700: #6666ff;
+  --color-blue-800: #9999ff;
+  --color-blue-900: #ccccff;
+
+  --color-ultrasonic-blue: #001ce3;
+  --color-ultrasonic-blue-100: #00052e;
+  --color-ultrasonic-blue-200: #000b5c;
+  --color-ultrasonic-blue-300: #00108a;
+  --color-ultrasonic-blue-400: #0015b8;
+  --color-ultrasonic-blue-500: #001ce3;
+  --color-ultrasonic-blue-600: #1f39ff;
+  --color-ultrasonic-blue-700: #576aff;
+  --color-ultrasonic-blue-800: #8f9cff;
+  --color-ultrasonic-blue-900: #c7cdff;
+
+  --color-persian-blue: #0039c6;
+  --color-persian-blue-100: #000b28;
+  --color-persian-blue-200: #001750;
+  --color-persian-blue-300: #002277;
+  --color-persian-blue-400: #002d9f;
+  --color-persian-blue-500: #0039c6;
+  --color-persian-blue-600: #064dff;
+  --color-persian-blue-700: #4479ff;
+  --color-persian-blue-800: #83a6ff;
+  --color-persian-blue-900: #c1d2ff;
+
+  --color-sapphire: #0055aa;
+  --color-sapphire-100: #001122;
+  --color-sapphire-200: #002243;
+  --color-sapphire-300: #003265;
+  --color-sapphire-400: #004387;
+  --color-sapphire-500: #0055aa;
+  --color-sapphire-600: #0076ed;
+  --color-sapphire-700: #3298ff;
+  --color-sapphire-800: #76bbff;
+  --color-sapphire-900: #bbddff;
+
+  --color-cerulean: #00718e;
+  --color-cerulean-100: #00171d;
+  --color-cerulean-200: #002e39;
+  --color-cerulean-300: #004556;
+  --color-cerulean-400: #005b72;
+  --color-cerulean-500: #00718e;
+  --color-cerulean-600: #00add8;
+  --color-cerulean-700: #23d3ff;
+  --color-cerulean-800: #6ce2ff;
+  --color-cerulean-900: #b6f0ff;
+
+  --color-jungle-teal: #008e71;
+  --color-jungle-teal-100: #001d17;
+  --color-jungle-teal-200: #00392e;
+  --color-jungle-teal-300: #005645;
+  --color-jungle-teal-400: #00725b;
+  --color-jungle-teal-500: #008e71;
+  --color-jungle-teal-600: #00d8ad;
+  --color-jungle-teal-700: #23ffd3;
+  --color-jungle-teal-800: #6cffe2;
+  --color-jungle-teal-900: #b6fff0;
+
+  --color-medium-jungle: #00aa55;
+  --color-medium-jungle-100: #002211;
+  --color-medium-jungle-200: #004322;
+  --color-medium-jungle-300: #006532;
+  --color-medium-jungle-400: #008743;
+  --color-medium-jungle-500: #00aa55;
+  --color-medium-jungle-600: #00ed76;
+  --color-medium-jungle-700: #32ff98;
+  --color-medium-jungle-800: #76ffbb;
+  --color-medium-jungle-900: #bbffdd;
+
+  --color-jade-green: #00c639;
+  --color-jade-green-100: #00280b;
+  --color-jade-green-200: #005017;
+  --color-jade-green-300: #007722;
+  --color-jade-green-400: #009f2d;
+  --color-jade-green-500: #00c639;
+  --color-jade-green-600: #06ff4d;
+  --color-jade-green-700: #44ff79;
+  --color-jade-green-800: #83ffa6;
+  --color-jade-green-900: #c1ffd2;
+
+  --color-radioactive-grass: #00e31c;
+  --color-radioactive-grass-100: #002e05;
+  --color-radioactive-grass-200: #005c0b;
+  --color-radioactive-grass-300: #008a10;
+  --color-radioactive-grass-400: #00b815;
+  --color-radioactive-grass-500: #00e31c;
+  --color-radioactive-grass-600: #1fff39;
+  --color-radioactive-grass-700: #57ff6a;
+  --color-radioactive-grass-800: #8fff9c;
+  --color-radioactive-grass-900: #c7ffcd;
+
+  --color-lime: #00ff00;
+  --color-lime-100: #003300;
+  --color-lime-200: #006600;
+  --color-lime-300: #009900;
+  --color-lime-400: #00cc00;
+  --color-lime-500: #00ff00;
+  --color-lime-600: #33ff33;
+  --color-lime-700: #66ff66;
+  --color-lime-800: #99ff99;
+  --color-lime-900: #ccffcc;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -175,12 +290,37 @@
 
 .blinking-cursor {
   display: inline-block;
-  width: 2px;
+  width: 3px;
   height: 1.15em;
-  background-color: currentColor;
-  margin-left: 2px;
+  background: var(--gradient-accent-v);
+  margin-left: 3px;
   vertical-align: -0.15em;
+  border-radius: 1px;
   animation: blink-cursor 0.75s infinite;
+  box-shadow: 0 0 10px rgba(0, 227, 28, 0.5), 0 0 4px rgba(0, 28, 227, 0.4);
 }
+
+::selection {
+  background: rgba(0, 142, 113, 0.22);
+  color: inherit;
+}
+
+@layer utilities {
+  .bg-accent-gradient {
+    background-image: var(--gradient-accent);
+  }
+
+  .bg-accent-gradient-h {
+    background-image: var(--gradient-accent-h);
+  }
+
+  .text-accent-gradient {
+    background-image: var(--gradient-accent-h);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
 
 

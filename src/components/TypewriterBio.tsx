@@ -169,9 +169,11 @@ export default function TypewriterBio({ className }: { className?: string }) {
             type="button"
             onClick={handleRestart}
             title="Replay typing animation"
-            className="text-xs font-mono text-muted-foreground/60 transition-colors hover:text-foreground hover:underline"
+            className="group text-xs font-mono text-muted-foreground/60 transition-colors inline-flex items-center gap-0.5"
           >
-            [replay]
+            <span>[</span>
+            <span className="group-hover:text-accent-gradient transition-all font-semibold">replay</span>
+            <span>]</span>
           </button>
         </span>
       )}

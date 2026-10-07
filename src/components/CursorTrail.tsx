@@ -60,10 +60,14 @@ export default function CursorTrail() {
         y: smoothY,
         translateX: "-50%",
         translateY: "-50%",
+        background: "linear-gradient(135deg, #0000ff 0%, #001ce3 11%, #0039c6 22%, #0055aa 33%, #00718e 44%, #008e71 55%, #00aa55 66%, #00c639 77%, #00e31c 88%, #00ff00 100%)",
+        boxShadow: isHovered
+          ? "0 0 22px 4px rgba(0, 255, 0, 0.5), 0 0 12px 2px rgba(0, 0, 255, 0.4)"
+          : "0 0 10px 1px rgba(0, 142, 113, 0.4)",
       }}
       className={cn(
         "pointer-events-none fixed top-0 left-0 z-50",
-        "h-4 w-4 rounded-full bg-neutral-900/90 shadow-sm dark:bg-neutral-100/90",
+        "h-4 w-4 rounded-full",
         "transition-opacity duration-200",
         visible ? "opacity-100" : "opacity-0"
       )}
