@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { useSprings, animated, to } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 
@@ -13,15 +13,12 @@ interface PictureStackProps {
 // Organic resting rotation angles for stacked cards
 const RESTING_ROTATIONS = [-4.2, 3.8, -2.5, 4.6, -3.6, 2.9, -1.8, 3.5];
 
-// Helper: target spring configuration for resting / hovered position
-// In hovered state, each card tilts in its opposite direction
-const toSpring = (i: number, hovered = false, isTop = false) => ({
+// Helper: target spring configuration for resting position
+const toSpring = (i: number) => ({
   x: 0,
-  y: i * -2.5 + (hovered && isTop ? -6 : 0),
-  scale: (1 - i * 0.015) * (hovered && isTop ? 1.03 : hovered ? 1.01 : 1),
-  rot: hovered
-    ? -RESTING_ROTATIONS[i % RESTING_ROTATIONS.length] * 1.25
-    : RESTING_ROTATIONS[i % RESTING_ROTATIONS.length],
+  y: i * -2.5,
+  scale: 1 - i * 0.015,
+  rot: RESTING_ROTATIONS[i % RESTING_ROTATIONS.length],
   opacity: 1,
   delay: i * 80,
 });
@@ -46,10 +43,6 @@ export default function PictureStack({
   const [swipedList, setSwipedList] = useState<number[]>([]);
   const goneSet = useMemo(() => new Set(swipedList), [swipedList]);
 
-  const [isHovered, setIsHovered] = useState(false);
-  const isHoveredRef = useRef(false);
-  const isFirstMount = useRef(true);
-
   // Create springs for all cards
   const [springs, api] = useSprings(items.length, (i) => ({
     ...toSpring(i),
@@ -61,7 +54,7 @@ export default function PictureStack({
   const handleReset = useCallback(() => {
     setSwipedList([]);
     api.start((i) => ({
-      ...toSpring(i, isHoveredRef.current, i === 0),
+      ...toSpring(i),
       from: fromSpring(i),
       config: { friction: 30, tension: 380 },
     }));
@@ -107,23 +100,12 @@ export default function PictureStack({
     api.start((i) => {
       if (i !== lastIdx) return;
       return {
-        ...toSpring(i, isHoveredRef.current, true),
+        ...toSpring(i),
         delay: undefined,
         config: { friction: 28, tension: 450 },
       };
     });
   }, [api, swipedList]);
-
-  // Hover handlers for the card stack
-  const handleMouseEnter = useCallback(() => {
-    isHoveredRef.current = true;
-    setIsHovered(true);
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    isHoveredRef.current = false;
-    setIsHovered(false);
-  }, []);
 
   // Keyboard navigation shortcuts
   useEffect(() => {
@@ -151,28 +133,6 @@ export default function PictureStack({
 
   // Find topmost visible card index
   const topVisibleIndex = items.findIndex((_, idx) => !goneSet.has(idx));
-
-  // Update card tilt orientations when hover state changes or top card changes
-  useEffect(() => {
-    if (isFirstMount.current) {
-      isFirstMount.current = false;
-      return;
-    }
-    api.start((i) => {
-      if (goneSet.has(i)) return;
-      const isTop = i === topVisibleIndex;
-      return {
-        x: 0,
-        y: i * -2.5 + (isHovered && isTop ? -6 : 0),
-        rot: isHovered
-          ? -RESTING_ROTATIONS[i % RESTING_ROTATIONS.length] * 1.25
-          : RESTING_ROTATIONS[i % RESTING_ROTATIONS.length],
-        scale: (1 - i * 0.015) * (isHovered && isTop ? 1.03 : isHovered ? 1.01 : 1),
-        delay: undefined,
-        config: { friction: isHovered ? 26 : 30, tension: isHovered ? 280 : 350 },
-      };
-    });
-  }, [api, isHovered, topVisibleIndex, goneSet]);
 
   // Drag gesture binding
   const bind = useDrag(
@@ -205,18 +165,13 @@ export default function PictureStack({
         const isGone = willBeGone || goneSet.has(index);
         const winWidth = typeof window !== "undefined" ? window.innerWidth : 1200;
         const x = isGone ? (winWidth / 2 + 450) * dirX : active ? mx : 0;
-        const targetY = isHoveredRef.current ? index * -2.5 - 6 : index * -2.5;
-        const y = isGone ? my + dirY * 160 : active ? my : targetY;
-        const targetRot = isHoveredRef.current
-          ? -RESTING_ROTATIONS[index % RESTING_ROTATIONS.length] * 1.25
-          : RESTING_ROTATIONS[index % RESTING_ROTATIONS.length];
+        const y = isGone ? my + dirY * 160 : active ? my : index * -2.5;
         const rot = active
-          ? targetRot + mx / 14
+          ? RESTING_ROTATIONS[index % RESTING_ROTATIONS.length] + mx / 14
           : isGone
           ? dirX * 28 * Math.max(vx, 0.4)
-          : targetRot;
-        const targetScale = (1 - index * 0.015) * (isHoveredRef.current ? 1.03 : 1);
-        const scale = active ? 1.05 : targetScale;
+          : RESTING_ROTATIONS[index % RESTING_ROTATIONS.length];
+        const scale = active ? 1.05 : 1 - index * 0.015;
 
         return {
           x,
@@ -242,11 +197,7 @@ export default function PictureStack({
       )}
     >
       {/* Floating 3D Stack Container */}
-      <div
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="relative flex flex-col items-center justify-center animate-float-deck cursor-pointer"
-      >
+      <div className="relative flex flex-col items-center justify-center animate-float-deck">
         <div className="relative flex items-center justify-center w-[270px] h-[360px] sm:w-[300px] sm:h-[400px] md:w-[330px] md:h-[440px] lg:w-[350px] lg:h-[470px]">
         {springs.map(({ x, y, rot, scale, opacity }, i) => {
           const item = items[i];
@@ -271,7 +222,7 @@ export default function PictureStack({
                   transform: to([rot, scale], trans),
                 }}
                 className={cn(
-                  "group relative h-full w-full touch-none overflow-hidden rounded-2xl",
+                  "relative h-full w-full touch-none overflow-hidden rounded-none",
                   "ring-1 ring-black/10 dark:ring-white/10",
                   isTop ? "cursor-grab active:cursor-grabbing" : "cursor-default"
                 )}
@@ -280,7 +231,7 @@ export default function PictureStack({
                   src={item.image}
                   alt={item.title}
                   draggable={false}
-                  className="h-full w-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover select-none pointer-events-none rounded-none"
                 />
               </animated.div>
             </animated.div>
