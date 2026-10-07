@@ -239,7 +239,7 @@
 
 .blinking-cursor {
   display: inline-block;
-  width: 2px;
+  width: 2.5px;
   height: 1.15em;
   background: linear-gradient(
     180deg,
