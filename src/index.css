@@ -73,7 +73,6 @@
 
 @theme inline {
   --font-sans: "Switzer", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Switzer", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --font-serif: "Libre Caslon Text", Georgia, serif;
 
@@ -104,13 +103,13 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
   }
 
   body {
-    min-height: 100%;
-    overflow-x: hidden;
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
