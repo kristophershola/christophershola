@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import CustomCursor from "@/components/CustomCursor";
-import MasonryGrid from "@/components/grid/MasonryGrid";
+import PictureStack from "@/components/stack/PictureStack";
 
 export default function App() {
   return (
@@ -16,8 +16,8 @@ export default function App() {
             Portfolio under construction. Sections coming one by one.
           </p>
         </section>
-        <section className="relative flex w-full min-h-0 flex-1 flex-col items-center justify-center overflow-hidden p-8 md:w-1/2 md:flex-none md:p-16">
-          <MasonryGrid />
+        <section className="relative flex w-full min-h-0 flex-1 flex-col items-center justify-center overflow-hidden p-4 sm:p-8 md:w-1/2 md:flex-none md:p-12">
+          <PictureStack />
         </section>
       </main>
     </>
