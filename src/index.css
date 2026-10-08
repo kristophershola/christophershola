@@ -115,33 +115,36 @@
   --font-sans: "Another Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Flexa Mono", ui-monospace, monospace;
 
-  /* Golden ratio type scale (base 1rem, ratio 1.618) */
-  --text-xs: 0.786rem;     /* phi^-0.5 */
-  --text-xs--line-height: 1.618;
+  /* Minor Second type scale (base 1rem, ratio 1.067) */
+  --text-xs: 0.878rem;     /* 1.067^-2 */
+  --text-xs--line-height: 1.5;
 
-  --text-base: 1rem;       /* phi^0 */
-  --text-base--line-height: 1.618;
+  --text-sm: 0.937rem;     /* 1.067^-1 */
+  --text-sm--line-height: 1.5;
 
-  --text-lg: 1.272rem;     /* phi^0.5 */
-  --text-lg--line-height: 1.618;
+  --text-base: 1rem;       /* 1.067^0 */
+  --text-base--line-height: 1.5;
 
-  --text-xl: 1.618rem;     /* phi^1 */
-  --text-xl--line-height: 1.272;
+  --text-lg: 1.067rem;     /* 1.067^1 */
+  --text-lg--line-height: 1.45;
 
-  --text-2xl: 2.058rem;    /* phi^1.5 */
-  --text-2xl--line-height: 1.272;
+  --text-xl: 1.138rem;     /* 1.067^2 */
+  --text-xl--line-height: 1.4;
 
-  --text-3xl: 2.618rem;    /* phi^2 */
-  --text-3xl--line-height: 1.272;
+  --text-2xl: 1.215rem;    /* 1.067^3 */
+  --text-2xl--line-height: 1.35;
 
-  --text-4xl: 3.33rem;     /* phi^2.5 */
-  --text-4xl--line-height: 1.147;
+  --text-3xl: 1.296rem;    /* 1.067^4 */
+  --text-3xl--line-height: 1.3;
 
-  --text-5xl: 4.236rem;    /* phi^3 */
-  --text-5xl--line-height: 1.147;
+  --text-4xl: 1.383rem;    /* 1.067^5 */
+  --text-4xl--line-height: 1.25;
 
-  --text-6xl: 6.854rem;    /* phi^4 */
-  --text-6xl--line-height: 1;
+  --text-5xl: 1.476rem;    /* 1.067^6 */
+  --text-5xl--line-height: 1.2;
+
+  --text-6xl: 1.575rem;    /* 1.067^7 */
+  --text-6xl--line-height: 1.15;
 
   /* Golden spacing, same ratio */
   --spacing-phi-1: 1rem;
