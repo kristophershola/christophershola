@@ -3,15 +3,7 @@ import { useSpring } from "@react-spring/web";
 import { cn } from "@/lib/utils";
 
 const BIO_HEADER = "Hey! I'm Shola";
-const BIO_BODY = `I help
-ambitious
-teams
-show
-the
-world
-who
-they
-are.`;
+const BIO_BODY = "I help ambitious teams show the world who they are.";
 
 export default function TypewriterBio({ className }: { className?: string }) {
   const [charCount, setCharCount] = useState(0);
@@ -60,7 +52,7 @@ export default function TypewriterBio({ className }: { className?: string }) {
       <h1 className="font-heading font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 sm:mb-6 tracking-tight leading-[1.08]">
         {BIO_HEADER}
       </h1>
-      <p className="font-sans font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.2] text-foreground/90 whitespace-pre-line tracking-tight">
+      <p className="font-sans font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.2] text-foreground/90 tracking-tight">
         {visibleText}
         <span aria-hidden="true" className="blinking-cursor" />
       </p>
