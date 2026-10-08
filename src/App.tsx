@@ -9,7 +9,7 @@ export default function App() {
       <CursorTrail />
       <Navbar />
 
-      <main className="relative flex-1 flex flex-col justify-end px-6 md:px-10 lg:px-14 pb-8 md:pb-12 lg:pb-14">
+      <main className="relative flex-1 flex flex-col justify-end px-6 md:px-10 lg:px-14 pb-6 md:pb-10 lg:pb-14">
         <div className="w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8">
           {/* Bio bottom left */}
           <div className="max-w-4xl lg:max-w-5xl text-left">
