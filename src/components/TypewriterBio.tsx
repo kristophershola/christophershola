@@ -49,10 +49,10 @@ export default function TypewriterBio({ className }: { className?: string }) {
         className
       )}
     >
-      <h1 className="font-heading font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 sm:mb-6 tracking-tight leading-[1.08]">
+      <h1 className="font-heading font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 sm:mb-3 tracking-tight leading-tight whitespace-nowrap">
         {BIO_HEADER}
       </h1>
-      <p className="font-sans font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.2] text-foreground/90 tracking-tight">
+      <p className="font-sans font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl leading-[1.25] text-foreground/90 tracking-tight">
         {visibleText}
         <span aria-hidden="true" className="blinking-cursor" />
       </p>
