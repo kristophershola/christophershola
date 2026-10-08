@@ -1,23 +1,27 @@
 import Navbar from "@/components/Navbar";
 import CursorTrail from "@/components/CursorTrail";
-import PictureStack from "@/components/stack/PictureStack";
 import TypewriterBio from "@/components/TypewriterBio";
+import AbujaClock from "@/components/AbujaClock";
 
 export default function App() {
   return (
-    <>
+    <div className="relative h-dvh w-screen overflow-hidden flex flex-col justify-between">
       <CursorTrail />
       <Navbar />
-      <main className="flex h-dvh overflow-hidden flex-col pt-8 md:flex-row">
-        <section className="flex w-full min-h-0 flex-col justify-center pl-4 pr-6 py-8 sm:pr-10 md:w-1/2 md:pl-6 md:pr-12 md:py-0 lg:pr-16 overflow-y-auto">
-          <div className="max-w-xl text-left">
+
+      <main className="relative flex-1 flex flex-col justify-end px-6 md:px-10 lg:px-14 pb-8 md:pb-12 lg:pb-14">
+        <div className="w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8">
+          {/* Bio bottom left */}
+          <div className="max-w-2xl text-left">
             <TypewriterBio />
           </div>
-        </section>
-        <section className="relative flex w-full min-h-0 flex-1 flex-col items-center justify-center overflow-hidden p-4 sm:p-8 md:w-1/2 md:flex-none md:p-12">
-          <PictureStack />
-        </section>
+
+          {/* Timestamp bottom right */}
+          <div className="self-end md:self-auto font-mono text-xs font-medium tracking-widest uppercase text-primary shrink-0 select-none pb-1">
+            <AbujaClock />
+          </div>
+        </div>
       </main>
-    </>
+    </div>
   );
 }
