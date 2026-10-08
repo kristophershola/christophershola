@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import AbujaClock from "@/components/AbujaClock";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { PlusSignIcon } from "@hugeicons/core-free-icons";
 
@@ -34,6 +35,10 @@ export default function Navbar() {
           <HugeiconsIcon icon={PlusSignIcon} size={14} color="currentColor" strokeWidth={2} />
           Start A Project
         </button>
+        {/* Location + time */}
+        <span className="flex items-center font-mono font-medium text-xs tracking-widest uppercase text-primary">
+          <AbujaClock />
+        </span>
       </div>
     </header>
   );

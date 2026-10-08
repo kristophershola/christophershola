@@ -1,82 +1,25 @@
 @import "tailwindcss";
-@config "../tailwind.config.ts";
 
 @font-face {
-  font-family: "PP Neue Montreal";
-  src: url("../.fonts/PPNeueMontreal-Regular.otf") format("opentype");
+  font-family: "Serrif";
+  src: url("../.fonts/Serrif-TRIAL-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "PP Neue Montreal";
-  src: url("../.fonts/PPNeueMontreal-Semibold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("../.fonts/PPNeueMontreal-Extrabold.otf") format("opentype");
-  font-weight: 700 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("../.fonts/PPNeueMontreal-Italic.otf") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("../.fonts/PPNeueMontreal-SemiboldItalic.otf") format("opentype");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("../.fonts/PPNeueMontreal-ExtraboldItalic.otf") format("opentype");
-  font-weight: 700 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PP Neue Montreal Text";
-  src: url("../.fonts/PPNeueMontrealText-Book.otf") format("opentype");
+  font-family: "Another Sans";
+  src: url("../.fonts/afAnotherSans-Medium-Trial.otf") format("opentype");
   font-weight: 400 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "PP Neue Montreal Text";
-  src: url("../.fonts/PPNeueMontrealText-BookItalic.otf") format("opentype");
+  font-family: "Flexa Mono";
+  src: url("../.fonts/GT-Flexa-Mono-Regular-Trial.woff2") format("woff2");
   font-weight: 400 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PP Neue Montreal Text";
-  src: url("../.fonts/PPNeueMontreal-Semibold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PP Neue Montreal Text";
-  src: url("../.fonts/PPNeueMontreal-Extrabold.otf") format("opentype");
-  font-weight: 700 800;
   font-style: normal;
   font-display: swap;
 }
@@ -166,24 +109,49 @@
   );
 }
 
+@theme {
+  /* Fonts */
+  --font-heading: "Serrif", serif;
+  --font-sans: "Another Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Flexa Mono", ui-monospace, monospace;
+
+  /* Golden ratio type scale (base 1rem, ratio 1.618) */
+  --text-xs: 0.786rem;     /* phi^-0.5 */
+  --text-xs--line-height: 1.618;
+
+  --text-base: 1rem;       /* phi^0 */
+  --text-base--line-height: 1.618;
+
+  --text-lg: 1.272rem;     /* phi^0.5 */
+  --text-lg--line-height: 1.618;
+
+  --text-xl: 1.618rem;     /* phi^1 */
+  --text-xl--line-height: 1.272;
+
+  --text-2xl: 2.058rem;    /* phi^1.5 */
+  --text-2xl--line-height: 1.272;
+
+  --text-3xl: 2.618rem;    /* phi^2 */
+  --text-3xl--line-height: 1.272;
+
+  --text-4xl: 3.33rem;     /* phi^2.5 */
+  --text-4xl--line-height: 1.147;
+
+  --text-5xl: 4.236rem;    /* phi^3 */
+  --text-5xl--line-height: 1.147;
+
+  --text-6xl: 6.854rem;    /* phi^4 */
+  --text-6xl--line-height: 1;
+
+  /* Golden spacing, same ratio */
+  --spacing-phi-1: 1rem;
+  --spacing-phi-2: 1.618rem;
+  --spacing-phi-3: 2.618rem;
+  --spacing-phi-4: 4.236rem;
+  --spacing-phi-5: 6.854rem;
+}
+
 @theme inline {
-  --font-heading: "PP Neue Montreal", sans-serif;
-  --font-body: "PP Neue Montreal Text", sans-serif;
-  --font-sans: "PP Neue Montreal Text", "PP Neue Montreal", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --font-serif: "Libre Caslon Text", Georgia, serif;
-
-  --text-sm: 0.618rem;
-  --text-base: 1rem;
-  --text-xl: 1.618rem;
-  --text-2xl: 2.618rem;
-  --text-3xl: 4.236rem;
-  --text-4xl: 6.854rem;
-  --text-5xl: 11.090rem;
-
-  --font-weight-normal: 400;
-  --font-weight-bold: 700;
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -236,7 +204,8 @@
   }
 
   html {
-    font-family: var(--font-body, var(--font-sans));
+    font-family: var(--font-sans);
+    font-weight: 500;           /* Another Sans Medium */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -245,12 +214,28 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-body, var(--font-sans));
-    font-size: var(--text-base, 1rem);
-    line-height: 1.5;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;           /* Serrif Regular */
+  }
+
+  h1 { font-size: var(--text-5xl); line-height: var(--text-5xl--line-height); }
+  h2 { font-size: var(--text-3xl); line-height: var(--text-3xl--line-height); }
+  h3 { font-size: var(--text-xl);  line-height: var(--text-xl--line-height); }
+  h4 { font-size: var(--text-lg);  line-height: var(--text-lg--line-height); }
+
+  small, .subtext, button.sub {
+    font-family: var(--font-mono);
+    font-weight: 400;           /* Flexa Mono Regular */
+    font-size: var(--text-xs);
   }
 
   button,
