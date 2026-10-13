@@ -23,11 +23,16 @@ export default function CursorTrail() {
     if (!finePointer) return;
 
     const handleMouseMove = (e: MouseEvent) => {
+      const target = e.target as Element | null;
+      if (target?.closest?.("#follow")) {
+        setVisible(false);
+        return;
+      }
+
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
       setVisible(true);
 
-      const target = e.target as Element | null;
       setIsHovered(Boolean(target?.closest?.(INTERACTIVE_SELECTOR)));
     };
 

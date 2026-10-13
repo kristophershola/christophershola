@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -6,22 +6,40 @@ import { PlusSignIcon } from "@hugeicons/core-free-icons";
 import WorkModal from "@/components/WorkModal";
 
 interface NavItem {
-  id: "about" | "work";
+  id: "about" | "work" | "follow";
   label: string;
 }
 
 const NAV_ITEMS: NavItem[] = [
   { id: "about", label: "About" },
   { id: "work", label: "Work" },
+  { id: "follow", label: "Follow" },
 ];
 
 export default function Navbar({ className }: { className?: string }) {
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<string | null>("about");
   const [isWorkOpen, setIsWorkOpen] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isPillHovered, setIsPillHovered] = useState(false);
   const pillRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const followEl = document.getElementById("follow");
+      if (followEl) {
+        const rect = followEl.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5) {
+          setActiveTab("follow");
+          return;
+        }
+      }
+      setActiveTab("about");
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (pillRef.current) {
@@ -33,16 +51,21 @@ export default function Navbar({ className }: { className?: string }) {
     }
   };
 
-  const handleTabClick = (id: "about" | "work") => {
+  const handleTabClick = (id: "about" | "work" | "follow") => {
     setActiveTab(id);
     if (id === "work") {
       setIsWorkOpen(true);
     } else if (id === "about") {
-      const bioEl = document.querySelector("main");
+      const bioEl = document.getElementById("about") || document.querySelector("main");
       if (bioEl) {
         bioEl.scrollIntoView({ behavior: "smooth" });
         bioEl.classList.add("scale-[1.01]");
         setTimeout(() => bioEl.classList.remove("scale-[1.01]"), 300);
+      }
+    } else if (id === "follow") {
+      const followEl = document.getElementById("follow");
+      if (followEl) {
+        followEl.scrollIntoView({ behavior: "smooth" });
       }
     }
   };

@@ -200,13 +200,8 @@
     border-color: var(--border);
   }
 
-  html,
-  body {
-    height: 100%;
-    overflow: hidden;
-  }
-
   html {
+    scroll-behavior: smooth;
     font-family: var(--font-sans);
     font-weight: 500;           /* Another Sans Medium */
     -webkit-font-smoothing: antialiased;
@@ -215,6 +210,8 @@
   }
 
   body {
+    min-height: 100%;
+    overflow-x: hidden;
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
@@ -341,5 +338,62 @@
   border-radius: 1px;
   animation: blink-cursor 0.75s infinite;
 }
+
+.btn-round {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.04) 65%,
+    transparent 100%
+  );
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.08),
+    inset 0 0 12px rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-round::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  transition: transform 0.2s ease;
+}
+
+.btn-round::after {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+.btn-round:hover {
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 32px rgba(255, 255, 255, 0.25),
+    inset 0 0 16px rgba(255, 255, 255, 0.2);
+}
+
+.btn-round:active {
+  transform: scale(0.94);
+}
+
 
 
