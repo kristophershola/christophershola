@@ -51,7 +51,7 @@ export const HomePage: React.FC = () => {
           {/* Body Rationale in Another Sans Thin - Grey tone */}
           <div className="space-y-2 font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.35] tracking-[0.01em] text-[#8E8F94]">
             <p>
-              Tilde Research is a moonshot AI lab advancing mechanistic interpretability, new architectures, and pretraining science.
+              Christopher Shola is a moonshot AI lab advancing mechanistic interpretability, new architectures, and pretraining science.
             </p>
             <p>
               We build foundational understanding of models to advance the frontier of intelligence.

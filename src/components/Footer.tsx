@@ -8,9 +8,9 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ className = "", variant = "static" }) => {
   const links = [
-    { label: "Twitter", href: "https://x.com/tilderesearch" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/tilderesearch/" },
-    { label: "GitHub", href: "https://github.com/tilde-research" },
+    { label: "Twitter", href: "https://x.com/kristophershola" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/kristophershola" },
+    { label: "GitHub", href: "https://github.com/kristophershola" },
   ];
 
   const baseClasses =

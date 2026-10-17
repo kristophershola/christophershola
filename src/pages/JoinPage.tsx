@@ -70,7 +70,7 @@ export const JoinPage: React.FC = () => {
 
             <div className="space-y-5 font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.4] tracking-[0.01em] text-[#F3F3F4]/90">
               <p>
-                At Tilde, we believe achieving true progress in interpretability requires innovation across the entire stack. From uncovering the fundamental building blocks of model computation to enabling precise steering of their behavior, we're driven by the fascinating scientific and mathematical problems that underlie true understanding of intelligence.
+                At Christopher Shola, we believe achieving true progress in interpretability requires innovation across the entire stack. From uncovering the fundamental building blocks of model computation to enabling precise steering of their behavior, we're driven by the fascinating scientific and mathematical problems that underlie true understanding of intelligence.
               </p>
 
               <p className="text-[#8E8F94]">
@@ -79,11 +79,11 @@ export const JoinPage: React.FC = () => {
 
               <div className="pt-2">
                 <a
-                  href="mailto:join@tilderesearch.com"
+                  href="mailto:join@christophershola.com"
                   className="group inline-flex items-center gap-1.5 font-mono text-[13px] text-[#F3F3F4] hover:text-white transition-colors"
                 >
                   <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-white">
-                    join@tilderesearch.com
+                    join@christophershola.com
                   </span>
                   <span className="transition-transform duration-200 group-hover:translate-x-1">
                     →
@@ -95,7 +95,7 @@ export const JoinPage: React.FC = () => {
 
           {/* Bottom Left Subtle Indicator on Desktop */}
           <div className="hidden md:block pt-8 text-[11px] font-mono text-[#8E8F94]/50">
-            TILDE RESEARCH // CAREERS
+            CHRISTOPHER SHOLA // CAREERS
           </div>
         </motion.section>
 
