@@ -8,7 +8,7 @@ export const Navbar: React.FC = () => {
 
   const navItems = [
     { name: "About", num: "(1)", path: "/about" },
-    { name: "Research", num: "(2)", path: "/research" },
+    { name: "Work", num: "(2)", path: "/work" },
     { name: "Join", num: "(3)", path: "/join" },
   ];
 
@@ -38,7 +38,9 @@ export const Navbar: React.FC = () => {
           className="hidden md:flex items-center gap-6 md:gap-7 pointer-events-auto"
         >
           {navItems.map((item) => {
-            const isActive = location.pathname === item.path;
+            const isActive =
+              location.pathname === item.path ||
+              (item.path === "/work" && location.pathname === "/research");
             return (
               <Link
                 key={item.path}

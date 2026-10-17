@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
-import ResearchPage from "@/pages/ResearchPage";
+import WorkPage from "@/pages/WorkPage";
 import JoinPage from "@/pages/JoinPage";
 
 // Scroll restoration helper
@@ -23,7 +23,8 @@ export const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/research" element={<ResearchPage />} />
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="/research" element={<WorkPage />} />
         <Route path="/join" element={<JoinPage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
