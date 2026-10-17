@@ -43,9 +43,7 @@ export const HomePage: React.FC = () => {
         >
           {/* Headline in Serrif Thin */}
           <h1 className="font-serif text-[28px] sm:text-[30px] font-normal leading-[1.05] tracking-[-0.02em] text-[#F3F3F4]">
-            Understanding
-            <br />
-            Intelligence
+            Hi! I'm Shola
           </h1>
 
           {/* Body Rationale in Another Sans Thin - Grey tone */}
