@@ -1,0 +1,142 @@
+import React from "react";
+import { motion } from "motion/react";
+import CoordinateGrid from "@/components/CoordinateGrid";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+
+interface JobRole {
+  title: string;
+  type: "FULL-TIME" | "INTERNSHIP";
+  link: string;
+}
+
+const jobs: JobRole[] = [
+  {
+    title: "ML Engineer",
+    type: "FULL-TIME",
+    link: "https://jobs.ashbyhq.com/tilderesearch/b2e145db-0111-47c1-9d9f-e856a057d8ef",
+  },
+  {
+    title: "ML Researcher",
+    type: "FULL-TIME",
+    link: "https://jobs.ashbyhq.com/tilderesearch/e850d5b0-a5d6-4b9c-9898-f7addb441508/application",
+  },
+  {
+    title: "Hardware/Kernel Engineer",
+    type: "FULL-TIME",
+    link: "https://jobs.ashbyhq.com/tilderesearch/bc4e4071-cf64-4460-8265-b1e5a603d6b8",
+  },
+  {
+    title: "ML Engineer",
+    type: "INTERNSHIP",
+    link: "https://jobs.ashbyhq.com/tilderesearch/b2e145db-0111-47c1-9d9f-e856a057d8ef",
+  },
+  {
+    title: "ML Researcher",
+    type: "INTERNSHIP",
+    link: "https://jobs.ashbyhq.com/tilderesearch/e850d5b0-a5d6-4b9c-9898-f7addb441508/application",
+  },
+  {
+    title: "Hardware/Kernel Engineer",
+    type: "INTERNSHIP",
+    link: "https://jobs.ashbyhq.com/tilderesearch/bc4e4071-cf64-4460-8265-b1e5a603d6b8",
+  },
+];
+
+export const JoinPage: React.FC = () => {
+  return (
+    <div className="relative w-full min-h-screen bg-[#010204] text-[#F3F3F4] select-none flex flex-col justify-between overflow-x-hidden">
+      {/* 6x12 Coordinate Grid */}
+      <CoordinateGrid />
+
+      {/* Global Navigation */}
+      <Navbar />
+
+      {/* Main Careers Split View */}
+      <main className="relative z-10 flex-1 px-6 py-28 md:py-36 lg:py-40">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          {/* Left Column: Mission, Backing & Direct Mail */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="lg:col-span-5 space-y-8"
+          >
+            <h1 className="font-serif text-[28px] sm:text-[32px] font-normal tracking-[-0.02em] text-[#F3F3F4]">
+              Join
+            </h1>
+
+            <div className="space-y-6 font-sans text-[13.5px] sm:text-[14.5px] font-light leading-[1.4] tracking-[0.01em] text-[#F3F3F4]/90">
+              <p>
+                At Tilde, we believe achieving true progress in interpretability requires innovation across the entire stack. From uncovering the fundamental building blocks of model computation to enabling precise steering of their behavior, we're driven by the fascinating scientific and mathematical problems that underlie true understanding of intelligence.
+              </p>
+
+              <p className="text-[#F3F3F4]/80">
+                We are backed by Khosla Ventures, researchers at OpenAI and Anthropic, Yufei Zhao, and others.
+              </p>
+
+              <div className="pt-2">
+                <a
+                  href="mailto:join@tilderesearch.com"
+                  className="group inline-flex items-center gap-1 font-mono text-[13px] text-white hover:text-white/80 transition-colors"
+                >
+                  <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-white">
+                    join@tilderesearch.com
+                  </span>
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Stacked Open Roles */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+            className="lg:col-span-7 divide-y divide-white/10"
+          >
+            {jobs.map((job, idx) => (
+              <div
+                key={`${job.title}-${job.type}-${idx}`}
+                className="py-5 sm:py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group"
+              >
+                <div className="space-y-1">
+                  <h2 className="font-serif text-[20px] sm:text-[22px] font-normal tracking-[-0.01em] text-[#F3F3F4] group-hover:text-white transition-colors">
+                    {job.title}
+                  </h2>
+                </div>
+
+                <div className="flex items-center gap-4 shrink-0">
+                  <Badge variant="outline" className="text-[10px] tracking-widest text-[#F3F3F4]/60">
+                    {job.type}
+                  </Badge>
+
+                  <a
+                    href={job.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="focus:outline-none"
+                  >
+                    <Button variant="pill" size="sm">
+                      Read more
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <Footer variant="static" />
+    </div>
+  );
+};
+
+export default JoinPage;
