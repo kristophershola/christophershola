@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 
 interface FooterProps {
   className?: string;
@@ -14,11 +15,16 @@ export const Footer: React.FC<FooterProps> = ({ className = "", variant = "stati
 
   const baseClasses =
     variant === "fixed"
-      ? "fixed bottom-6 right-6 md:bottom-8 md:right-10 lg:bottom-10 lg:right-14 z-30 pointer-events-auto"
-      : "w-full flex justify-end py-10 px-6 md:px-10 lg:px-14 z-20 pointer-events-auto";
+      ? "fixed bottom-5 right-5 sm:bottom-6 sm:right-6 md:bottom-8 md:right-10 z-30 pointer-events-auto"
+      : "w-full flex justify-end py-6 px-5 sm:px-6 md:px-10 z-20 pointer-events-auto";
 
   return (
-    <footer className={`${baseClasses} ${className}`}>
+    <motion.footer
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className={`${baseClasses} ${className}`}
+    >
       <div className="flex items-center gap-5 sm:gap-6">
         {links.map((link) => (
           <a
@@ -33,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ className = "", variant = "stati
           </a>
         ))}
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

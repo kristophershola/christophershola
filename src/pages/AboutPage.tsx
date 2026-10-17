@@ -15,7 +15,7 @@ export const AboutPage: React.FC = () => {
       <Navbar />
 
       {/* Main About Framing */}
-      <main className="relative z-10 flex-1 flex items-center justify-center px-6 py-28 md:py-36 lg:py-40">
+      <main className="relative z-10 flex-1 flex items-center justify-center px-5 sm:px-6 md:px-10 pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16">
         <div className="w-full max-w-7xl mx-auto flex items-center justify-between gap-6 lg:gap-12">
           {/* Left Input Network Wing */}
           <motion.div

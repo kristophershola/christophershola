@@ -16,14 +16,14 @@ export const ResearchPage: React.FC = () => {
       <Navbar />
 
       {/* Main Research Catalog */}
-      <main className="relative z-10 flex-1 px-6 py-28 md:py-36 lg:py-40">
-        <div className="max-w-7xl mx-auto space-y-12">
+      <main className="relative z-10 flex-1 px-5 sm:px-6 md:px-10 pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16">
+        <div className="max-w-7xl mx-auto space-y-8 md:space-y-10">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="border-b border-white/10 pb-6 flex items-baseline justify-between"
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="border-b border-white/10 pb-5 flex items-baseline justify-between"
           >
             <h1 className="font-serif text-[28px] sm:text-[32px] font-normal tracking-[-0.02em] text-[#F3F3F4]">
               Research
@@ -34,7 +34,7 @@ export const ResearchPage: React.FC = () => {
           </motion.div>
 
           {/* 3-Column Responsive Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
             {researchItems.map((item, idx) => (
               <motion.div
                 key={item.id}

@@ -14,7 +14,13 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 py-6 md:px-10 md:py-8 lg:px-14 lg:py-10 pointer-events-none">
+      {/* Animated slide down on entry */}
+      <motion.header
+        initial={{ opacity: 0, y: -14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-5 py-4 sm:px-6 sm:py-5 md:px-8 md:py-5 pointer-events-none"
+      >
         {/* Tilde Logo Wordmark */}
         <Link
           to="/"
@@ -22,7 +28,7 @@ export const Navbar: React.FC = () => {
           className="pointer-events-auto flex items-center transition-opacity duration-200 hover:opacity-80"
         >
           <svg
-            className="h-[18px] w-auto overflow-visible"
+            className="h-[17px] w-auto overflow-visible"
             viewBox="0 0 147 18.296"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +43,7 @@ export const Navbar: React.FC = () => {
         {/* Desktop Navigation Links */}
         <nav
           aria-label="Main Navigation"
-          className="hidden md:flex items-center gap-6 lg:gap-8 pointer-events-auto"
+          className="hidden md:flex items-center gap-6 md:gap-7 pointer-events-auto"
         >
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -45,7 +51,7 @@ export const Navbar: React.FC = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`group flex items-baseline gap-1 text-[14px] font-sans font-normal tracking-[0.01em] transition-opacity duration-200 ${
+                className={`group flex items-baseline gap-1 text-[13.5px] font-sans font-normal tracking-[0.01em] transition-opacity duration-200 ${
                   isActive ? "text-[#F3F3F4] opacity-100" : "text-[#F3F3F4] opacity-75 hover:opacity-100"
                 }`}
               >
@@ -76,7 +82,7 @@ export const Navbar: React.FC = () => {
             }`}
           />
         </button>
-      </header>
+      </motion.header>
 
       {/* Mobile Fullscreen Overlay Drawer */}
       <AnimatePresence>
