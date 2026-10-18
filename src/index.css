@@ -29,19 +29,19 @@
   --font-sans: "Another Sans", sans-serif;
   --font-mono: "Geist Mono", "Flexa Mono", monospace;
 
-  --color-void: #010204;
+  --color-void: #001f3f;
   --color-star: #F3F3F4;
   --color-badge-bg: #121316;
   --color-badge-border: #23252a;
 }
 
 :root {
-  --background: #010204;
+  --background: #001f3f;
   --foreground: #F3F3F4;
 }
 
 html, body {
-  background-color: #010204;
+  background-color: #001f3f;
   color: #F3F3F4;
   margin: 0;
   padding: 0;
@@ -62,7 +62,7 @@ html, body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #010204;
+  background: #001f3f;
 }
 ::-webkit-scrollbar-thumb {
   background: #1c1e22;

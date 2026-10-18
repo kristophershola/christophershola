@@ -47,7 +47,7 @@ const jobs: JobRole[] = [
 
 export const JoinPage: React.FC = () => {
   return (
-    <div className="relative w-full min-h-screen md:h-screen md:overflow-hidden bg-[#010204] text-[#F3F3F4] select-none flex flex-col justify-between">
+    <div className="relative w-full min-h-screen md:h-screen md:overflow-hidden bg-[#001f3f] text-[#F3F3F4] select-none flex flex-col justify-between">
       {/* 6x12 Coordinate Grid */}
       <CoordinateGrid />
 
