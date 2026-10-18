@@ -198,7 +198,7 @@ export interface ClockProps {
 export const Clock: React.FC<ClockProps> = ({
   className,
   timeZone = "America/Los_Angeles",
-  location = "San Francisco, CA",
+  location,
   locationClassName,
 }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -212,17 +212,27 @@ export const Clock: React.FC<ClockProps> = ({
     ref
   );
 
+  if (!location) {
+    return (
+      <span
+        ref={ref}
+        className={`whitespace-nowrap ${className ?? ""}`}
+        suppressHydrationWarning
+      >
+        <Ticker value={time} />
+      </span>
+    );
+  }
+
   return (
     <div className={`inline-flex items-center gap-4 sm:gap-5 ${className ?? ""}`}>
-      {location && (
-        <span
-          className={`whitespace-nowrap hidden [@media(min-width:360px)]:inline ${
-            locationClassName ?? ""
-          }`}
-        >
-          {location}
-        </span>
-      )}
+      <span
+        className={`whitespace-nowrap hidden [@media(min-width:360px)]:inline ${
+          locationClassName ?? ""
+        }`}
+      >
+        {location}
+      </span>
       <span
         ref={ref}
         className="whitespace-nowrap"
