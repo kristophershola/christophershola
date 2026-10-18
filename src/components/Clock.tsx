@@ -170,13 +170,13 @@ function useVisibleInterval(
   }, [delay, ref]);
 }
 
-function formatCurrentTime(timeZone?: string): string {
+function formatCurrentTime(timeZone: string = "America/Los_Angeles"): string {
   const formatter = new Intl.DateTimeFormat("en-US", {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
     hour12: true,
-    ...(timeZone ? { timeZone } : {}),
+    timeZone,
   });
 
   const parts = formatter.formatToParts(new Date());
@@ -191,9 +191,16 @@ function formatCurrentTime(timeZone?: string): string {
 export interface ClockProps {
   className?: string;
   timeZone?: string;
+  location?: string;
+  locationClassName?: string;
 }
 
-export const Clock: React.FC<ClockProps> = ({ className, timeZone }) => {
+export const Clock: React.FC<ClockProps> = ({
+  className,
+  timeZone = "America/Los_Angeles",
+  location = "San Francisco, CA",
+  locationClassName,
+}) => {
   const ref = useRef<HTMLSpanElement>(null);
   const [time, setTime] = useState<string>(() => formatCurrentTime(timeZone));
 
@@ -206,13 +213,24 @@ export const Clock: React.FC<ClockProps> = ({ className, timeZone }) => {
   );
 
   return (
-    <span
-      ref={ref}
-      className={`whitespace-nowrap ${className ?? ""}`}
-      suppressHydrationWarning
-    >
-      <Ticker value={time} />
-    </span>
+    <div className={`inline-flex items-center gap-4 sm:gap-5 ${className ?? ""}`}>
+      {location && (
+        <span
+          className={`whitespace-nowrap hidden [@media(min-width:360px)]:inline ${
+            locationClassName ?? ""
+          }`}
+        >
+          {location}
+        </span>
+      )}
+      <span
+        ref={ref}
+        className="whitespace-nowrap"
+        suppressHydrationWarning
+      >
+        <Ticker value={time} />
+      </span>
+    </div>
   );
 };
 

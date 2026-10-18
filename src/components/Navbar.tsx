@@ -23,16 +23,13 @@ export const Navbar: React.FC = () => {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-5 py-4 sm:px-6 sm:py-5 md:px-8 md:py-5 bg-black"
       >
-        {/* Top-Left Clock & Home Link */}
+        {/* Top-Left Location & Clock (1:1 copied from chrisrodriguez.me) */}
         <div className="flex items-center">
-          <Link
-            to="/"
-            aria-label="Home"
-            title="Home"
-            className="group flex items-center select-none"
-          >
-            <Clock className="font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-75 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
-          </Link>
+          <Clock
+            location="San Francisco, CA"
+            timeZone="America/Los_Angeles"
+            className="font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-75 hover:opacity-100 transition-opacity duration-200 select-none cursor-default"
+          />
         </div>
 
         {/* Desktop Navigation Links */}
