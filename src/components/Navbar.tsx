@@ -8,10 +8,10 @@ export const Navbar: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: "Home", num: "(0)", path: "/" },
-    { name: "About", num: "(1)", path: "/about" },
-    { name: "Work", num: "(2)", path: "/work" },
-    { name: "Join", num: "(3)", path: "/join" },
+    { name: "Home", num: "(1)", path: "/" },
+    { name: "About", num: "(2)", path: "/about" },
+    { name: "Work", num: "(3)", path: "/work" },
+    { name: "Join", num: "(4)", path: "/join" },
   ];
 
   return (
