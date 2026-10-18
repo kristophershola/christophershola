@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 export const HomePage: React.FC = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[#001f3f] text-[#F3F3F4] select-none">
+    <div className="relative w-full h-screen overflow-hidden bg-[#010204] text-[#F3F3F4] select-none">
       {/* 6x12 Coordinate Grid */}
       <CoordinateGrid />
 

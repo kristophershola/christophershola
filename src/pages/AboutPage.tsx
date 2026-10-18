@@ -7,7 +7,7 @@ import BilateralWing from "@/components/BilateralWing";
 
 export const AboutPage: React.FC = () => {
   return (
-    <div className="relative w-full min-h-screen bg-[#001f3f] text-[#F3F3F4] select-none flex flex-col justify-between overflow-x-hidden">
+    <div className="relative w-full min-h-screen bg-[#010204] text-[#F3F3F4] select-none flex flex-col justify-between overflow-x-hidden">
       {/* 6x12 Coordinate Dot Grid */}
       <CoordinateGrid />
 
