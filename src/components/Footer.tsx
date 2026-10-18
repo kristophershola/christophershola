@@ -4,9 +4,14 @@ import { motion } from "motion/react";
 interface FooterProps {
   className?: string;
   variant?: "fixed" | "static";
+  duration?: number;
 }
 
-export const Footer: React.FC<FooterProps> = ({ className = "", variant = "static" }) => {
+export const Footer: React.FC<FooterProps> = ({
+  className = "",
+  variant = "static",
+  duration = 1.5,
+}) => {
   const links = [
     { label: "Twitter", href: "https://x.com/kristophershola" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/kristophershola" },
@@ -22,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ className = "", variant = "stati
     <motion.footer
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration, ease: [0.16, 1, 0.3, 1] }}
       className={`${baseClasses} ${className}`}
     >
       <div className="flex items-center gap-5 sm:gap-6">

@@ -3,7 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import Clock from "@/components/Clock";
 
-export const Navbar: React.FC = () => {
+export interface NavbarProps {
+  duration?: number;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -20,7 +24,7 @@ export const Navbar: React.FC = () => {
       <motion.header
         initial={{ opacity: 0, y: -14 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-40 bg-black"
       >
         <div className="w-full max-w-[1400px] mx-auto px-5 py-4 sm:py-5 grid grid-cols-4 md:grid-cols-12 gap-5 items-center">
