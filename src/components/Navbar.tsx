@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
+import Clock from "@/components/Clock";
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,16 +22,10 @@ export const Navbar: React.FC = () => {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-5 py-4 sm:px-6 sm:py-5 md:px-8 md:py-5 pointer-events-none"
       >
-        {/* Christopher Shola Wordmark */}
-        <Link
-          to="/"
-          aria-label="Christopher Shola Home"
-          className="pointer-events-auto flex items-center transition-opacity duration-200 hover:opacity-80"
-        >
-          <span className="font-serif text-[18px] sm:text-[20px] font-normal tracking-[-0.02em] text-[#F3F3F4] whitespace-nowrap">
-            Christopher Shola
-          </span>
-        </Link>
+        {/* Top-Left Clock (copied 1:1 from chrisrodriguez.me) */}
+        <div className="pointer-events-auto flex items-center">
+          <Clock className="font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-75 hover:opacity-100 transition-opacity duration-200 select-none cursor-default" />
+        </div>
 
         {/* Desktop Navigation Links */}
         <nav
