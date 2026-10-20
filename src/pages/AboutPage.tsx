@@ -36,7 +36,7 @@ export const AboutPage: React.FC = () => {
           >
             {/* Semantic H1 Headline */}
             <h1 className="font-serif text-[26px] sm:text-[30px] lg:text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#F3F3F4]">
-              Our mission at Christopher Shola is to deeply understand the inner mechanisms of models in order to advance the frontier of intelligence
+              My mission is to connect strategy, design, and digital execution into one continuous system, so nothing feels scattered or out of place.
             </h1>
 
             {/* Semantic Paragraphs */}
