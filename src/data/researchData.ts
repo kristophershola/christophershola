@@ -10,14 +10,14 @@ export interface ResearchItem {
 
 export const researchItems: ResearchItem[] = [
   {
-    id: "popcorn",
-    title: "Popcorn: Democratized Fast Kernel Dispatching",
+    id: "mathevia",
+    title: "Mathevia: A Better Way To Learn",
     description:
-      "Popcorn sits between kernels and users. You call a stable, reference-backed op API; Popcorn routes each call to the fastest implementation validated for those inputs and hardware.",
+      "An online learning platform and tutoring service designed to make mathematics engaging through visual learning, simplified concepts, and student-centered support.",
     category: "VIGNETTE",
     date: "8.11.2026",
-    link: "https://blog.tilderesearch.com/blog/popcorn",
-    image: "https://framerusercontent.com/images/YPZbySMRafMPGIrrgq7vHPmCsiE.png?width=1774&height=887",
+    link: "https://mathevia.co.uk",
+    image: "/mathevia.png",
   },
   {
     id: "one-layer-deeper",
