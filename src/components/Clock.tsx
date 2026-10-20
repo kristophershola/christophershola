@@ -170,7 +170,7 @@ function useVisibleInterval(
   }, [delay, ref]);
 }
 
-function formatCurrentTime(timeZone: string = "America/Los_Angeles"): string {
+function formatCurrentTime(timeZone: string = "Africa/Lagos"): string {
   const formatter = new Intl.DateTimeFormat("en-US", {
     hour: "2-digit",
     minute: "2-digit",
@@ -197,7 +197,7 @@ export interface ClockProps {
 
 export const Clock: React.FC<ClockProps> = ({
   className,
-  timeZone = "America/Los_Angeles",
+  timeZone = "Africa/Lagos",
   location,
   locationClassName,
 }) => {

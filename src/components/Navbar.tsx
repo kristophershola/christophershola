@@ -78,12 +78,12 @@ export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
 
           {/* Location (col-start-8 col-span-3, 1:1 matching chrisrodriguez.me) */}
           <span className="col-start-8 col-span-3 max-md:col-start-auto max-md:col-span-2 max-md:text-right font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-75 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap hidden [@media(min-width:360px)]:inline select-none cursor-default">
-            San Francisco, CA
+            Abuja
           </span>
 
           {/* Clock (col-span-2 text-right, 1:1 matching chrisrodriguez.me) */}
           <span className="col-span-2 max-md:col-span-1 [@media(max-width:359px)]:col-start-4 text-right font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-75 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap select-none cursor-default">
-            <Clock timeZone="America/Los_Angeles" />
+            <Clock timeZone="Africa/Lagos" />
           </span>
         </div>
       </motion.header>
