@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
 import WorkPage from "@/pages/WorkPage";
-import JoinPage from "@/pages/JoinPage";
+import InquiriesPage from "@/pages/InquiriesPage";
 
 // Scroll restoration helper
 function ScrollToTop() {
@@ -25,7 +25,8 @@ export const App: React.FC = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/work" element={<WorkPage />} />
         <Route path="/research" element={<WorkPage />} />
-        <Route path="/join" element={<JoinPage />} />
+        <Route path="/inquiries" element={<InquiriesPage />} />
+        <Route path="/join" element={<InquiriesPage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
     </>

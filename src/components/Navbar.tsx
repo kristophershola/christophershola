@@ -15,7 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
     { name: "Home", num: "(1)", path: "/" },
     { name: "About", num: "(2)", path: "/about" },
     { name: "Work", num: "(3)", path: "/work" },
-    { name: "Join", num: "(4)", path: "/join" },
+    { name: "Inquiries", num: "(4)", path: "/inquiries" },
   ];
 
   return (
@@ -38,7 +38,8 @@ export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
               {navItems.map((item) => {
                 const isActive =
                   location.pathname === item.path ||
-                  (item.path === "/work" && location.pathname === "/research");
+                  (item.path === "/work" && location.pathname === "/research") ||
+                  (item.path === "/inquiries" && location.pathname === "/join");
                 return (
                   <Link
                     key={item.path}
@@ -102,7 +103,8 @@ export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
               {navItems.map((item) => {
                 const isActive =
                   location.pathname === item.path ||
-                  (item.path === "/work" && location.pathname === "/research");
+                  (item.path === "/work" && location.pathname === "/research") ||
+                  (item.path === "/inquiries" && location.pathname === "/join");
                 return (
                   <Link
                     key={item.path}
