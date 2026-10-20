@@ -78,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
 
           {/* Location (col-start-8 col-span-3, 1:1 matching chrisrodriguez.me) */}
           <span className="col-start-8 col-span-3 max-md:col-start-auto max-md:col-span-2 max-md:text-right font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-75 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap hidden [@media(min-width:360px)]:inline select-none cursor-default">
-            Abuja
+            Abuja, NG
           </span>
 
           {/* Clock (col-span-2 text-right, 1:1 matching chrisrodriguez.me) */}
