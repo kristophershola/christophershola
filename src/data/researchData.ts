@@ -20,14 +20,14 @@ export const researchItems: ResearchItem[] = [
     image: "/mathevia.png",
   },
   {
-    id: "one-layer-deeper",
-    title: "One Layer Deeper Competition",
+    id: "population-media-center",
+    title: "Population Media Centre: Discovering Nigeria's Impact",
     description:
-      "We are launching One Layer Deeper, a competition for studying whether architectures, objectives and optimizers can be co-designed to learn deeper serial computation and productively extrapolate beyond the reasoning depths seen during training.",
+      "A multimedia documentary and impact narrative highlighting 25 years of transformative storytelling, community empowerment, and social change across Nigeria.",
     category: "ANNOUNCEMENT",
     date: "8.3.26",
-    link: "https://blog.tilderesearch.com/blog/one-layer-deeper",
-    image: "https://framerusercontent.com/images/TQxwJVS9hfvbOQaC6DgjX0CcKvo.png?width=1774&height=887",
+    link: "https://www.populationmedia.org",
+    image: "/population-media-center.png",
   },
   {
     id: "online-kl-shampoo",
