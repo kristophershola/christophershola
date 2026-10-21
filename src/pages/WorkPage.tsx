@@ -29,7 +29,7 @@ export const WorkPage: React.FC = () => {
               Work
             </h1>
             <span className="font-mono text-xs text-[#F3F3F4]/50">
-              {researchItems.length} RELEASES
+              {researchItems.length} CASE STUDIES
             </span>
           </motion.div>
 
