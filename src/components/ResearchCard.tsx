@@ -15,7 +15,7 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
       className="group block relative flex flex-col justify-between space-y-4 p-0 select-none cursor-pointer focus:outline-none"
     >
       {/* Thumbnail Container */}
-      <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[2px] border border-[#78350F]/15 bg-[#FFFDF7]/60">
+      <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[2px] border border-white/10 bg-[#090b0e]">
         <img
           src={item.image}
           alt={`Diagram visualization for ${item.title}`}
@@ -35,22 +35,22 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
       <div className="space-y-2 flex-1 flex flex-col justify-between">
         <div className="space-y-2">
           {/* Title in Serif */}
-          <h2 className="font-serif text-[18px] sm:text-[19px] font-normal leading-[1.2] tracking-[-0.01em] text-[#78350F] group-hover:text-[#92400E] transition-colors">
+          <h2 className="font-serif text-[18px] sm:text-[19px] font-normal leading-[1.2] tracking-[-0.01em] text-[#F3F3F4] group-hover:text-white transition-colors">
             {item.title}
           </h2>
 
           {/* Description in Another Sans */}
-          <p className="font-sans text-[13px] font-light leading-[1.38] text-[#92400E]/80 line-clamp-3">
+          <p className="font-sans text-[13px] font-light leading-[1.38] text-[#F3F3F4]/70 line-clamp-3">
             {item.description}
           </p>
         </div>
 
         {/* Metadata: Category Badge & Date */}
-        <div className="pt-3 flex items-center justify-between border-t border-[#78350F]/10">
-          <Badge variant="default" className="text-[10px] bg-[#78350F]/10 text-[#78350F] border-[#78350F]/20">
+        <div className="pt-3 flex items-center justify-between border-t border-white/5">
+          <Badge variant="default" className="text-[10px]">
             {item.category}
           </Badge>
-          <span className="font-mono text-[11px] text-[#92400E]/70">
+          <span className="font-mono text-[11px] text-[#F3F3F4]/50">
             {item.date}
           </span>
         </div>

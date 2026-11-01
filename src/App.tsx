@@ -4,8 +4,7 @@ import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
 import WorkPage from "@/pages/WorkPage";
 import InquiriesPage from "@/pages/InquiriesPage";
-import HoneyEmberBackgroundDemo from "@/pages/HoneyEmberBackgroundDemo";
-import { HoneyEmberBackground } from "@/components/ui/honey-ember-background";
+import RadialGradientBackground from "@/components/RadialGradientBackground";
 
 // Scroll restoration helper
 function ScrollToTop() {
@@ -20,7 +19,7 @@ function ScrollToTop() {
 
 export const App: React.FC = () => {
   return (
-    <HoneyEmberBackground className="min-h-screen w-full">
+    <RadialGradientBackground>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -29,10 +28,9 @@ export const App: React.FC = () => {
         <Route path="/research" element={<WorkPage />} />
         <Route path="/inquiries" element={<InquiriesPage />} />
         <Route path="/join" element={<InquiriesPage />} />
-        <Route path="/demo" element={<HoneyEmberBackgroundDemo />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
-    </HoneyEmberBackground>
+    </RadialGradientBackground>
   );
 };
 

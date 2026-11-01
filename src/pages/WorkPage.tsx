@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "motion/react";
-import CoordinateGrid from "@/components/CoordinateGrid";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ResearchCard from "@/components/ResearchCard";
@@ -8,10 +7,7 @@ import { researchItems } from "@/data/researchData";
 
 export const WorkPage: React.FC = () => {
   return (
-    <div className="relative w-full min-h-screen bg-transparent text-[#78350F] select-none flex flex-col justify-between overflow-x-hidden">
-      {/* 6x12 Coordinate Grid */}
-      <CoordinateGrid className="opacity-40 [&>div>div]:!bg-[#78350F]" />
-
+    <div className="relative w-full min-h-screen text-[#F3F3F4] select-none flex flex-col justify-between overflow-x-hidden">
       {/* Global Navigation */}
       <Navbar />
 
@@ -23,12 +19,12 @@ export const WorkPage: React.FC = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="border-b border-[#78350F]/15 pb-5 flex items-baseline justify-between"
+            className="border-b border-white/10 pb-5 flex items-baseline justify-between"
           >
-            <h1 className="font-serif text-[28px] sm:text-[32px] font-normal tracking-[-0.02em] text-[#78350F]">
+            <h1 className="font-serif text-[28px] sm:text-[32px] font-normal tracking-[-0.02em] text-[#F3F3F4]">
               Work
             </h1>
-            <span className="font-mono text-xs text-[#92400E]/70">
+            <span className="font-mono text-xs text-[#F3F3F4]/50">
               {researchItems.length} CASE STUDIES
             </span>
           </motion.div>
@@ -50,7 +46,7 @@ export const WorkPage: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <Footer variant="static" className="[&_a]:!text-[#78350F]/80 [&_a:hover]:!text-[#78350F] [&_span.bg-white]:!bg-[#78350F]" />
+      <Footer variant="static" />
     </div>
   );
 };
