@@ -29,6 +29,9 @@
   --font-sans: "Another Sans", sans-serif;
   --font-mono: "Geist Mono", "Flexa Mono", monospace;
 
+  --color-accent: #2563eb;
+  --color-ink: #F3F3F4;
+  --color-surface: #010204;
   --color-void: #010204;
   --color-star: #F3F3F4;
   --color-badge-bg: #121316;
@@ -36,6 +39,9 @@
 }
 
 :root {
+  --color-accent: #2563eb;
+  --color-ink: #F3F3F4;
+  --color-surface: #010204;
   --background: #010204;
   --foreground: #F3F3F4;
 }

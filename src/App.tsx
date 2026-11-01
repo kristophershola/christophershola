@@ -4,7 +4,7 @@ import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
 import WorkPage from "@/pages/WorkPage";
 import InquiriesPage from "@/pages/InquiriesPage";
-import RadialGradientBackground from "@/components/RadialGradientBackground";
+import { ShaderCanvas } from "@/components/ui/shader-canvas";
 
 // Scroll restoration helper
 function ScrollToTop() {
@@ -19,7 +19,7 @@ function ScrollToTop() {
 
 export const App: React.FC = () => {
   return (
-    <RadialGradientBackground>
+    <ShaderCanvas className="min-h-screen w-full">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -30,7 +30,7 @@ export const App: React.FC = () => {
         <Route path="/join" element={<InquiriesPage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
-    </RadialGradientBackground>
+    </ShaderCanvas>
   );
 };
 

@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
         initial={{ opacity: 0, y: -14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 right-0 z-40 bg-[#010204]/40 backdrop-blur-xl backdrop-saturate-150 border-b border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.37),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+        className="fixed top-0 left-0 right-0 z-40 bg-transparent"
       >
         <div className="w-full max-w-[1400px] mx-auto px-5 py-4 sm:py-5 grid grid-cols-4 md:grid-cols-12 gap-5 items-center">
           {/* Navigation (Left, columns 1-7 on desktop, col 1 on mobile) */}
