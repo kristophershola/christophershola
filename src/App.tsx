@@ -4,7 +4,6 @@ import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
 import WorkPage from "@/pages/WorkPage";
 import InquiriesPage from "@/pages/InquiriesPage";
-import { ShaderCanvas } from "@/components/ui/shader-canvas";
 
 // Scroll restoration helper
 function ScrollToTop() {
@@ -19,7 +18,7 @@ function ScrollToTop() {
 
 export const App: React.FC = () => {
   return (
-    <ShaderCanvas className="min-h-screen w-full">
+    <div className="relative isolate min-h-screen w-full bg-[#191817] text-[#F3F3F4]">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -30,7 +29,7 @@ export const App: React.FC = () => {
         <Route path="/join" element={<InquiriesPage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
-    </ShaderCanvas>
+    </div>
   );
 };
 

@@ -37,10 +37,10 @@ export const Footer: React.FC<FooterProps> = ({
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative text-[12px] font-mono font-normal tracking-[0.01em] text-neutral-600 hover:text-black transition-colors duration-200"
+            className="group relative text-[12px] font-mono font-normal tracking-[0.01em] text-[#F3F3F4]/80 hover:text-white transition-colors duration-200"
           >
             <span>{link.label}</span>
-            <span className="absolute left-0 -bottom-0.5 w-0 h-[1px] bg-black transition-all duration-200 group-hover:w-full" />
+            <span className="absolute left-0 -bottom-0.5 w-0 h-[1px] bg-white transition-all duration-200 group-hover:w-full" />
           </a>
         ))}
       </div>
