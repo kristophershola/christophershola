@@ -30,6 +30,16 @@ export const researchItems: ResearchItem[] = [
     image: "/population-media-center.png",
   },
   {
+    id: "wrapa-gender-online-academy",
+    title: "WRAPA: Gender Online Academy",
+    description:
+      "A digital learning initiative and e-learning platform providing Nigerian girls and women with barrier-free access to foundational STEM education, life skills, and digital entrepreneurship.",
+    category: "VIGNETTE",
+    date: "7.30.26",
+    link: "https://www.wrapagenderonlineacademy.com",
+    image: "/wrapa.png",
+  },
+  {
     id: "online-kl-shampoo",
     title: "Online KL Shampoo",
     description:
