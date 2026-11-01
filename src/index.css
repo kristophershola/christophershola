@@ -29,20 +29,20 @@
   --font-sans: "Another Sans", sans-serif;
   --font-mono: "Geist Mono", "Flexa Mono", monospace;
 
-  --color-void: #010204;
-  --color-star: #F3F3F4;
-  --color-badge-bg: #121316;
-  --color-badge-border: #23252a;
+  --color-void: #FFFDF7;
+  --color-star: #78350F;
+  --color-badge-bg: rgba(251, 191, 36, 0.15);
+  --color-badge-border: rgba(245, 158, 11, 0.3);
 }
 
 :root {
-  --background: #010204;
-  --foreground: #F3F3F4;
+  --background: #FFFDF7;
+  --foreground: #78350F;
 }
 
 html, body {
-  background-color: #010204;
-  color: #F3F3F4;
+  background-color: #FFFDF7;
+  color: #78350F;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -52,7 +52,7 @@ html, body {
 
 /* Accessible focus rings */
 :focus-visible {
-  outline: 1px dashed rgba(243, 243, 244, 0.6);
+  outline: 1px dashed rgba(120, 53, 15, 0.6);
   outline-offset: 3px;
 }
 
@@ -62,12 +62,12 @@ html, body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #010204;
+  background: #FFFDF7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1c1e22;
+  background: rgba(120, 53, 15, 0.2);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2d3036;
+  background: rgba(120, 53, 15, 0.4);
 }

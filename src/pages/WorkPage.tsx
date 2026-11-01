@@ -8,9 +8,9 @@ import { researchItems } from "@/data/researchData";
 
 export const WorkPage: React.FC = () => {
   return (
-    <div className="relative w-full min-h-screen bg-[#010204] text-[#F3F3F4] select-none flex flex-col justify-between overflow-x-hidden">
+    <div className="relative w-full min-h-screen bg-transparent text-[#78350F] select-none flex flex-col justify-between overflow-x-hidden">
       {/* 6x12 Coordinate Grid */}
-      <CoordinateGrid />
+      <CoordinateGrid className="opacity-40 [&>div>div]:!bg-[#78350F]" />
 
       {/* Global Navigation */}
       <Navbar />
@@ -23,12 +23,12 @@ export const WorkPage: React.FC = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="border-b border-white/10 pb-5 flex items-baseline justify-between"
+            className="border-b border-[#78350F]/15 pb-5 flex items-baseline justify-between"
           >
-            <h1 className="font-serif text-[28px] sm:text-[32px] font-normal tracking-[-0.02em] text-[#F3F3F4]">
+            <h1 className="font-serif text-[28px] sm:text-[32px] font-normal tracking-[-0.02em] text-[#78350F]">
               Work
             </h1>
-            <span className="font-mono text-xs text-[#F3F3F4]/50">
+            <span className="font-mono text-xs text-[#92400E]/70">
               {researchItems.length} CASE STUDIES
             </span>
           </motion.div>
@@ -50,7 +50,7 @@ export const WorkPage: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <Footer variant="static" />
+      <Footer variant="static" className="[&_a]:!text-[#78350F]/80 [&_a:hover]:!text-[#78350F] [&_span.bg-white]:!bg-[#78350F]" />
     </div>
   );
 };

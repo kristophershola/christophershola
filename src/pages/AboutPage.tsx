@@ -7,9 +7,9 @@ import BilateralWing from "@/components/BilateralWing";
 
 export const AboutPage: React.FC = () => {
   return (
-    <div className="relative w-full min-h-screen bg-[#010204] text-[#F3F3F4] select-none flex flex-col justify-between overflow-x-hidden">
+    <div className="relative w-full min-h-screen bg-transparent text-[#78350F] select-none flex flex-col justify-between overflow-x-hidden">
       {/* 6x12 Coordinate Dot Grid */}
-      <CoordinateGrid />
+      <CoordinateGrid className="opacity-40 [&>div>div]:!bg-[#78350F]" />
 
       {/* Global Navigation */}
       <Navbar />
@@ -24,7 +24,7 @@ export const AboutPage: React.FC = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="hidden md:block w-[160px] lg:w-[220px] xl:w-[280px] shrink-0"
           >
-            <BilateralWing />
+            <BilateralWing className="[&_svg]:text-[#78350F]" />
           </motion.div>
 
           {/* Central Manifesto Content */}
@@ -35,12 +35,12 @@ export const AboutPage: React.FC = () => {
             className="flex-1 max-w-[620px] mx-auto text-left space-y-8"
           >
             {/* Semantic H1 Headline */}
-            <h1 className="font-serif text-[26px] sm:text-[30px] lg:text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#F3F3F4]">
+            <h1 className="font-serif text-[26px] sm:text-[30px] lg:text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#78350F]">
               My mission is to connect strategy, design, and digital execution into one continuous system, so nothing feels scattered or out of place.
             </h1>
 
             {/* Semantic Paragraphs */}
-            <div className="space-y-6 font-sans text-[13.5px] sm:text-[14.5px] font-light leading-[1.4] tracking-[0.01em] text-[#F3F3F4]/90">
+            <div className="space-y-6 font-sans text-[13.5px] sm:text-[14.5px] font-light leading-[1.4] tracking-[0.01em] text-[#92400E]">
               <p>
                 Models compress the universe into their weights through beautiful, intricate, and complex mechanisms. We understand much less than we can build – and that tension leaves us in the compelling position of having many more questions than answers.
               </p>
@@ -62,13 +62,13 @@ export const AboutPage: React.FC = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="hidden md:block w-[160px] lg:w-[220px] xl:w-[280px] shrink-0"
           >
-            <BilateralWing mirrored />
+            <BilateralWing mirrored className="[&_svg]:text-[#78350F]" />
           </motion.div>
         </div>
       </main>
 
       {/* Footer Social Outbound Links */}
-      <Footer variant="static" />
+      <Footer variant="static" className="[&_a]:!text-[#78350F]/80 [&_a:hover]:!text-[#78350F] [&_span.bg-white]:!bg-[#78350F]" />
     </div>
   );
 };
