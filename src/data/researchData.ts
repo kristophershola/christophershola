@@ -43,6 +43,16 @@ export const researchItems: ResearchItem[] = [
     video: "/wrapa.mp4",
   },
   {
+    id: "lorewa",
+    title: "Lorewa: A Brand That Speaks Her Language",
+    description:
+      "A brand identity, strategy, and online learning platform built for Hausa women—empowering communities with healthcare education, vocational skills, and digital literacy.",
+    category: "VIGNETTE",
+    date: "7.25.26",
+    link: "https://www.instagram.com/thelorewa",
+    image: "/lorewa.jpg",
+  },
+  {
     id: "online-kl-shampoo",
     title: "Online KL Shampoo",
     description:
