@@ -15,34 +15,36 @@ export const HomePage: React.FC = () => {
           {/* Bottom-Left Editorial Content */}
           <div className="max-w-[378px] pointer-events-auto">
             <div className="space-y-4">
-              {/* Animated Headline: Starts in grey & smaller font, fills white left-to-right, then scales up */}
+              {/* Animated Headline: Tito Adegbamigbe Framer spring physics & kinetic sweep */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.76 }}
-                animate={{
-                  opacity: [0, 1, 1, 1],
-                  scale: [0.76, 0.76, 0.76, 1],
-                }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{
-                  duration: 2.2,
-                  times: [0, 0.16, 0.64, 1],
-                  ease: [0.16, 1, 0.3, 1],
+                  opacity: { duration: 0.25, ease: "easeOut" },
+                  scale: {
+                    delay: 0.72,
+                    type: "spring",
+                    stiffness: 480,
+                    damping: 46,
+                    mass: 1,
+                  },
                 }}
                 className="origin-bottom-left inline-block"
               >
                 <h1 className="relative font-serif text-[28px] sm:text-[30px] font-normal leading-[1.05] tracking-[-0.02em] select-none">
-                  {/* Base Grey Layer */}
+                  {/* Base Muted Grey Layer */}
                   <span className="text-[#8E8F94]">
                     Hi! I'm Shola
                   </span>
 
-                  {/* Animated White Fill Overlay */}
+                  {/* High-Velocity White Fill Sweep */}
                   <motion.span
                     initial={{ clipPath: "inset(0 100% 0 0)" }}
                     animate={{ clipPath: "inset(0 0% 0 0)" }}
                     transition={{
-                      delay: 0.45,
-                      duration: 0.85,
-                      ease: [0.65, 0, 0.35, 1],
+                      delay: 0.3,
+                      duration: 0.75,
+                      ease: [0.84, 0, 0.24, 1],
                     }}
                     className="absolute inset-0 text-[#F3F3F4]"
                     aria-hidden="true"
@@ -52,11 +54,15 @@ export const HomePage: React.FC = () => {
                 </h1>
               </motion.div>
 
-              {/* Body Rationale in Another Sans Thin - Neutral grey tone */}
+              {/* Body Rationale in Another Sans Thin - Enters smoothly as headline settles */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.5, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                transition={{
+                  delay: 1.05,
+                  duration: 0.6,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
                 className="space-y-2 font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.35] tracking-[0.01em] text-[#8E8F94]"
               >
                 <p>
