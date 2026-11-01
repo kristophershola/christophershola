@@ -9,9 +9,15 @@ interface ResearchCardProps {
 export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
   const handleMouseEnter = () => {
-    if (item.video && videoRef.current) {
+    if (!item.video) return;
+
+    if (!shouldLoadVideo) {
+      // Lazy-load the video on first hover intent
+      setShouldLoadVideo(true);
+    } else if (videoRef.current) {
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise
@@ -51,14 +57,16 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
           className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:brightness-95"
         />
 
-        {item.video && (
+        {item.video && shouldLoadVideo && (
           <video
             ref={videoRef}
             src={item.video}
             muted
             playsInline
             loop
-            preload="metadata"
+            autoPlay
+            preload="auto"
+            onPlaying={() => setIsPlaying(true)}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-out group-hover:scale-[1.02] ${
               isPlaying ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
