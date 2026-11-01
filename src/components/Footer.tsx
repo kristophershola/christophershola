@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 interface FooterProps {
   className?: string;
-  variant?: "fixed" | "static";
+  variant?: "fixed" | "static" | "inline";
   duration?: number;
 }
 
@@ -18,9 +18,28 @@ export const Footer: React.FC<FooterProps> = ({
     { label: "GitHub", href: "https://github.com/kristophershola" },
   ];
 
+  if (variant === "inline") {
+    return (
+      <div className={`flex items-center gap-5 sm:gap-6 ${className}`}>
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative text-[12px] font-mono font-normal tracking-[0.01em] text-[#F3F3F4]/80 hover:text-white transition-colors duration-200"
+          >
+            <span>{link.label}</span>
+            <span className="absolute left-0 -bottom-0.5 w-0 h-[1px] bg-white transition-all duration-200 group-hover:w-full" />
+          </a>
+        ))}
+      </div>
+    );
+  }
+
   const baseClasses =
     variant === "fixed"
-      ? "fixed bottom-5 right-5 sm:bottom-6 sm:right-6 md:bottom-8 md:right-10 z-30 pointer-events-auto"
+      ? "fixed bottom-0 left-0 right-0 z-30 pointer-events-none pb-5 sm:pb-6 md:pb-8"
       : "w-full flex justify-end py-6 px-5 sm:px-6 md:px-10 z-20 pointer-events-auto";
 
   return (
@@ -30,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({
       transition={{ duration, ease: [0.16, 1, 0.3, 1] }}
       className={`${baseClasses} ${className}`}
     >
-      <div className="flex items-center gap-5 sm:gap-6">
+      <div className="flex items-center gap-5 sm:gap-6 pointer-events-auto">
         {links.map((link) => (
           <a
             key={link.label}
