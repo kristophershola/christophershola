@@ -38,7 +38,7 @@ export const researchItems: ResearchItem[] = [
       "A digital learning initiative and e-learning platform providing Nigerian girls and women with barrier-free access to foundational STEM education, life skills, and digital entrepreneurship.",
     category: "VIGNETTE",
     date: "7.30.26",
-    link: "https://www.wrapagenderonlineacademy.com",
+    link: "https://web.archive.org/web/20230505001522/https://www.wrapagenderonlineacademy.com/",
     image: "/wrapa.png",
     video: "/wrapa.mp4",
   },
