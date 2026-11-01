@@ -3,25 +3,20 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import Clock from "@/components/Clock";
 
-interface NavItem {
-  name: string;
-  path: string;
-  num: string;
-}
-
-const navItems: NavItem[] = [
-  { name: "About", path: "/about", num: "01" },
-  { name: "Work", path: "/work", num: "02" },
-  { name: "Inquiries", path: "/inquiries", num: "03" },
-];
-
-interface NavbarProps {
+export interface NavbarProps {
   duration?: number;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
-  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const navItems = [
+    { name: "Home", num: "(1)", path: "/" },
+    { name: "About", num: "(2)", path: "/about" },
+    { name: "Work", num: "(3)", path: "/work" },
+    { name: "Inquiries", num: "(4)", path: "/inquiries" },
+  ];
 
   return (
     <>
@@ -50,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
                     key={item.path}
                     to={item.path}
                     className={`group flex items-baseline gap-1 text-[13.5px] font-sans font-normal tracking-[0.01em] transition-opacity duration-200 ${
-                      isActive ? "text-[#F3F3F4] opacity-100 font-medium" : "text-[#F3F3F4] opacity-75 hover:opacity-100"
+                      isActive ? "text-[#F3F3F4] opacity-100 font-medium" : "text-[#F3F3F4] opacity-60 hover:opacity-100"
                     }`}
                   >
                     <span>{item.name}</span>
@@ -83,17 +78,14 @@ export const Navbar: React.FC<NavbarProps> = ({ duration = 1.5 }) => {
           </div>
 
           {/* Location (col-start-8 col-span-3, 1:1 matching chrisrodriguez.me) */}
-          <span className="col-start-8 col-span-3 max-md:col-start-auto max-md:col-span-2 max-md:text-right font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-75 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap hidden [@media(min-width:360px)]:inline select-none cursor-default">
+          <span className="col-start-8 col-span-3 max-md:col-start-auto max-md:col-span-2 max-md:text-right font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-60 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap hidden [@media(min-width:360px)]:inline select-none cursor-default">
             Abuja, NG
           </span>
 
           {/* Clock (col-span-2 text-right, 1:1 matching chrisrodriguez.me) */}
-          <div className="col-span-2 text-right hidden sm:flex items-center justify-end">
-            <Clock
-              timeZone="Africa/Lagos"
-              className="font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-75 hover:opacity-100 transition-opacity duration-200"
-            />
-          </div>
+          <span className="col-span-2 max-md:col-span-1 [@media(max-width:359px)]:col-start-4 text-right font-sans text-[13.5px] font-normal tracking-[0.01em] text-[#F3F3F4] opacity-60 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap select-none cursor-default">
+            <Clock timeZone="Africa/Lagos" />
+          </span>
         </div>
       </motion.header>
 
