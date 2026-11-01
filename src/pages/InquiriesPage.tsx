@@ -46,7 +46,7 @@ const jobs: JobRole[] = [
 
 export const InquiriesPage: React.FC = () => {
   return (
-    <div className="relative w-full min-h-screen md:h-screen md:overflow-hidden text-[#F3F3F4] select-none flex flex-col justify-between">
+    <div className="relative w-full min-h-screen md:h-screen md:overflow-hidden text-black select-none flex flex-col justify-between">
       {/* Global Navigation */}
       <Navbar />
 
@@ -60,25 +60,25 @@ export const InquiriesPage: React.FC = () => {
           className="w-full md:w-5/12 xl:w-5/12 shrink-0 pt-20 sm:pt-24 md:pt-28 pb-8 md:pb-12 px-5 sm:px-6 md:px-8 lg:px-10 flex flex-col justify-between pointer-events-auto"
         >
           <div className="space-y-6 sm:space-y-8 max-w-lg">
-            <h1 className="font-serif text-[28px] sm:text-[32px] font-normal tracking-[-0.02em] text-[#F3F3F4]">
+            <h1 className="font-serif text-[28px] sm:text-[32px] font-normal tracking-[-0.02em] text-black">
               Inquiries
             </h1>
 
-            <div className="space-y-5 font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.4] tracking-[0.01em] text-[#F3F3F4]/90">
+            <div className="space-y-5 font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.4] tracking-[0.01em] text-neutral-700">
               <p>
                 At Christopher Shola, we believe achieving true progress in interpretability requires innovation across the entire stack. From uncovering the fundamental building blocks of model computation to enabling precise steering of their behavior, we're driven by the fascinating scientific and mathematical problems that underlie true understanding of intelligence.
               </p>
 
-              <p className="text-[#8E8F94]">
+              <p className="text-neutral-500">
                 We are backed by Khosla Ventures, researchers at OpenAI and Anthropic, Yufei Zhao, and others.
               </p>
 
               <div className="pt-2">
                 <a
                   href="mailto:inquiries@christophershola.com"
-                  className="group inline-flex items-center gap-1.5 font-mono text-[13px] text-[#F3F3F4] hover:text-white transition-colors"
+                  className="group inline-flex items-center gap-1.5 font-mono text-[13px] text-black hover:text-blue-600 transition-colors"
                 >
-                  <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-white">
+                  <span className="underline underline-offset-4 decoration-black/30 group-hover:decoration-black">
                     inquiries@christophershola.com
                   </span>
                   <span className="transition-transform duration-200 group-hover:translate-x-1">
@@ -90,18 +90,18 @@ export const InquiriesPage: React.FC = () => {
           </div>
 
           {/* Bottom Left Subtle Indicator on Desktop */}
-          <div className="hidden md:block pt-8 text-[11px] font-mono text-[#8E8F94]/50">
+          <div className="hidden md:block pt-8 text-[11px] font-mono text-neutral-400">
             CHRISTOPHER SHOLA // INQUIRIES
           </div>
         </motion.section>
 
         {/* Right Section: Independently Scrollable Stacked Positions */}
-        <section className="w-full md:w-7/12 xl:w-7/12 md:h-full md:overflow-y-auto pt-4 sm:pt-6 md:pt-28 pb-16 px-5 sm:px-6 md:px-8 lg:px-10 pointer-events-auto scrollbar-thin scrollbar-thumb-white/10">
+        <section className="w-full md:w-7/12 xl:w-7/12 md:h-full md:overflow-y-auto pt-4 sm:pt-6 md:pt-28 pb-16 px-5 sm:px-6 md:px-8 lg:px-10 pointer-events-auto scrollbar-thin scrollbar-thumb-neutral-300">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="divide-y divide-white/10 max-w-2xl"
+            className="divide-y divide-black/10 max-w-2xl"
           >
             {jobs.map((job, idx) => (
               <div
@@ -109,13 +109,13 @@ export const InquiriesPage: React.FC = () => {
                 className="py-5 sm:py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group transition-colors"
               >
                 <div className="space-y-1">
-                  <h2 className="font-serif text-[19px] sm:text-[21px] font-normal tracking-[-0.01em] text-[#F3F3F4] group-hover:text-white transition-colors">
+                  <h2 className="font-serif text-[19px] sm:text-[21px] font-normal tracking-[-0.01em] text-black group-hover:text-blue-600 transition-colors">
                     {job.title}
                   </h2>
                 </div>
 
                 <div className="flex items-center gap-3.5 shrink-0">
-                  <Badge variant="outline" className="text-[10px] tracking-widest text-[#F3F3F4]/60 font-mono py-0.5 px-2">
+                  <Badge variant="outline" className="text-[10px] tracking-widest text-neutral-600 font-mono py-0.5 px-2 border-neutral-300">
                     {job.type}
                   </Badge>
 
@@ -125,7 +125,7 @@ export const InquiriesPage: React.FC = () => {
                     rel="noopener noreferrer"
                     className="focus:outline-none"
                   >
-                    <Button variant="pill" size="sm">
+                    <Button variant="pill" size="sm" className="bg-black text-white hover:bg-neutral-800">
                       Read more
                     </Button>
                   </a>
@@ -134,7 +134,7 @@ export const InquiriesPage: React.FC = () => {
             ))}
 
             {/* Footer Inside the Right Scrollable Column */}
-            <div className="pt-10 pb-6 border-t border-white/10">
+            <div className="pt-10 pb-6 border-t border-black/10">
               <Footer variant="static" className="p-0 justify-start sm:justify-end" />
             </div>
           </motion.div>

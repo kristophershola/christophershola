@@ -45,11 +45,11 @@ void main() {
 }
 `;
 
-// Blue accent instead of green
+// White surface with blue accent and dark ink
 const DEFAULT_COLORS: Record<string, string> = {
   u_accent: "var(--color-accent, #3b82f6)",
-  u_ink: "var(--color-ink, #F3F3F4)",
-  u_surface: "var(--color-surface, #010204)",
+  u_ink: "var(--color-ink, #000000)",
+  u_surface: "var(--color-surface, #ffffff)",
 };
 
 const VERTEX = `
@@ -78,7 +78,7 @@ function toRgb(value: string, host: HTMLElement, probe: CanvasRenderingContext2D
   host.style.color = value;
   const computed = getComputedStyle(host).color;
   host.style.color = "";
-  if (!probe) return [0.23, 0.51, 0.96]; // fallback blue (#3b82f6)
+  if (!probe) return [1, 1, 1]; // fallback white
   probe.clearRect(0, 0, 1, 1);
   probe.fillStyle = computed;
   probe.fillRect(0, 0, 1, 1);
@@ -88,7 +88,7 @@ function toRgb(value: string, host: HTMLElement, probe: CanvasRenderingContext2D
 
 /**
  * A WebGL fragment shader as a background, fed the theme.
- * Configured with blue instead of green.
+ * White surface background with fluid blue waves.
  */
 export function ShaderCanvas({
   fragment = DEFAULT_FRAGMENT,
@@ -211,8 +211,8 @@ export function ShaderCanvas({
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
       const ratio = Math.min(2, window.devicePixelRatio || 1) * resolution;
-      canvas.width = Math.max(1, Math.round(rect.width * ratio))
-      canvas.height = Math.max(1, Math.round(rect.height * ratio))
+      canvas.width = Math.max(1, Math.round(rect.width * ratio));
+      canvas.height = Math.max(1, Math.round(rect.height * ratio));
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
 
@@ -234,7 +234,7 @@ export function ShaderCanvas({
     };
 
     const stop = () => {
-      cancelAnimationFrame(frame);
+      cancelAnimationFrame(frame)
       last = 0;
     };
     const start = () => {
@@ -311,11 +311,11 @@ export function ShaderCanvas({
   const drawing = status === "running";
 
   return (
-    <div className={cn("relative isolate overflow-hidden min-h-screen w-full", className)}>
-      {/* Blue fallback gradient */}
+    <div className={cn("relative isolate overflow-hidden min-h-screen w-full bg-white", className)}>
+      {/* Light blue fallback gradient on white */}
       <div
         aria-hidden="true"
-        className="fixed inset-0 -z-10 bg-[radial-gradient(120%_90%_at_20%_110%,var(--color-accent,#2563eb)_0%,color-mix(in_oklab,var(--color-accent,#2563eb)_35%,var(--color-surface,#010204))_45%,var(--color-surface,#010204)_100%)]"
+        className="fixed inset-0 -z-10 bg-[radial-gradient(120%_90%_at_20%_110%,color-mix(in_oklab,var(--color-accent,#3b82f6)_20%,white)_0%,color-mix(in_oklab,var(--color-accent,#3b82f6)_8%,white)_45%,#ffffff_100%)]"
       />
       <canvas
         ref={canvasRef}
@@ -328,7 +328,7 @@ export function ShaderCanvas({
         <pre
           role="alert"
           tabIndex={0}
-          className="absolute inset-x-3 top-3 z-10 max-h-[60%] overflow-auto whitespace-pre-wrap rounded-md border border-red-500 bg-black/80 p-3 font-mono text-[11px] leading-relaxed text-red-400"
+          className="absolute inset-x-3 top-3 z-10 max-h-[60%] overflow-auto whitespace-pre-wrap rounded-md border border-red-500 bg-white p-3 font-mono text-[11px] leading-relaxed text-red-600"
         >
           {error}
         </pre>
