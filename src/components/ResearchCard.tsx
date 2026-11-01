@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import type { ResearchItem } from "@/data/researchData";
 import { Badge } from "@/components/ui/badge";
 
@@ -7,11 +7,39 @@ interface ResearchCardProps {
 }
 
 export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (item.video && videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch(() => {
+            // Autoplay was prevented or interrupted, handle silently
+          });
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (item.video && videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+      setIsPlaying(false);
+    }
+  };
+
   return (
     <a
       href={item.link}
       target="_blank"
       rel="noopener noreferrer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className="group block relative flex flex-col justify-between space-y-4 p-0 select-none cursor-pointer focus:outline-none"
     >
       {/* Thumbnail Container */}
@@ -23,8 +51,22 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
           className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:brightness-95"
         />
 
+        {item.video && (
+          <video
+            ref={videoRef}
+            src={item.video}
+            muted
+            playsInline
+            loop
+            preload="metadata"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-out group-hover:scale-[1.02] ${
+              isPlaying ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          />
+        )}
+
         {/* Read More Hover Reveal */}
-        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <div className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           <span className="font-serif text-xs font-normal text-white bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-[2px] border border-white/20">
             Read More
           </span>

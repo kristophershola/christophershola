@@ -6,6 +6,7 @@ export interface ResearchItem {
   date: string;
   link: string;
   image: string;
+  video?: string;
 }
 
 export const researchItems: ResearchItem[] = [
@@ -28,6 +29,7 @@ export const researchItems: ResearchItem[] = [
     date: "8.3.26",
     link: "https://www.populationmedia.org",
     image: "/population-media-center.png",
+    video: "/population-media-center.mp4",
   },
   {
     id: "wrapa-gender-online-academy",
@@ -38,6 +40,7 @@ export const researchItems: ResearchItem[] = [
     date: "7.30.26",
     link: "https://www.wrapagenderonlineacademy.com",
     image: "/wrapa.png",
+    video: "/wrapa.mp4",
   },
   {
     id: "online-kl-shampoo",
