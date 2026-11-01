@@ -39,7 +39,7 @@ export const researchItems: ResearchItem[] = [
     category: "VIGNETTE",
     date: "7.30.26",
     link: "https://web.archive.org/web/20230505001522/https://www.wrapagenderonlineacademy.com/",
-    image: "/wrapa.png",
+    image: "/wrapa-hero.jpg",
     video: "/wrapa.mp4",
   },
   {
