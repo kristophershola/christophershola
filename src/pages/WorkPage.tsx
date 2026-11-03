@@ -25,7 +25,7 @@ export const WorkPage: React.FC = () => {
               Work
             </h1>
             <span className="font-mono text-xs text-[#F3F3F4]/50">
-              {researchItems.length} CASE STUDIES
+              {researchItems.length} {researchItems.length === 1 ? "CASE STUDY" : "CASE STUDIES"}
             </span>
           </motion.div>
 

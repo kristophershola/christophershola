@@ -11,16 +11,6 @@ export interface ResearchItem {
 
 export const researchItems: ResearchItem[] = [
   {
-    id: "mathevia",
-    title: "Mathevia: A Better Way To Learn",
-    description:
-      "An online learning platform and tutoring service designed to make mathematics engaging through visual learning, simplified concepts, and student-centered support.",
-    category: "VIGNETTE",
-    date: "8.11.2026",
-    link: "https://mathevia.co.uk",
-    image: "/mathevia.png",
-  },
-  {
     id: "population-media-center",
     title: "Population Media Centre: Discovering Nigeria's Impact",
     description:
@@ -30,6 +20,19 @@ export const researchItems: ResearchItem[] = [
     link: "https://www.populationmedia.org",
     image: "/population-media-center.png",
     video: "/population-media-center.mp4",
+  },
+];
+
+export const archivedWorkItems: ResearchItem[] = [
+  {
+    id: "mathevia",
+    title: "Mathevia: A Better Way To Learn",
+    description:
+      "An online learning platform and tutoring service designed to make mathematics engaging through visual learning, simplified concepts, and student-centered support.",
+    category: "VIGNETTE",
+    date: "8.11.2026",
+    link: "https://mathevia.co.uk",
+    image: "/mathevia.png",
   },
   {
     id: "wrapa-gender-online-academy",
@@ -52,6 +55,9 @@ export const researchItems: ResearchItem[] = [
     link: "https://www.instagram.com/thelorewa",
     image: "/lorewa.jpg",
   },
+];
+
+export const legacyResearchArchive: ResearchItem[] = [
   {
     id: "online-kl-shampoo",
     title: "Online KL Shampoo",
