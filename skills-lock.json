@@ -1,6 +1,13 @@
 {
   "version": 1,
   "skills": {
+    "ghosty-reveal": {
+      "source": "design.how",
+      "sourceUrl": "https://design.how/vault/ghosty-reveal",
+      "sourceType": "well-known",
+      "computedHash": "c270ccdce50f752a427883a66a735992ae3aa3a2620e2cfe15f38d8aa03d6537",
+      "wellKnownDigest": "sha256:a1648ef29631e44c0866078b5b06ceab86eead1fbd68cdffc4ea395ccd27bb7a"
+    },
     "image-galaxy": {
       "source": "design.how",
       "sourceUrl": "https://design.how/vault/image-galaxy",

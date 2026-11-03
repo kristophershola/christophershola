@@ -5,11 +5,9 @@ import Footer from "@/components/Footer";
 
 export const HomePage: React.FC = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden text-[#F3F3F4] select-none pointer-events-none">
+    <div className="relative w-full h-screen overflow-hidden text-[#F3F3F4] select-none">
       {/* Global Navigation */}
-      <div className="pointer-events-auto">
-        <Navbar />
-      </div>
+      <Navbar />
 
       {/* Bottom Bar: Aligned 1:1 with Navbar's left and right vertical axes */}
       <div className="fixed bottom-0 left-0 right-0 z-20 pointer-events-none pb-5 sm:pb-6 md:pb-8">
