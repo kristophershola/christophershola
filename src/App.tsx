@@ -4,7 +4,7 @@ import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
 import WorkPage from "@/pages/WorkPage";
 import InquiriesPage from "@/pages/InquiriesPage";
-import ImageGalaxyCard from "@/components/image-galaxy/card";
+import GhostyRevealCard from "@/components/ghosty-reveal/card";
 
 // Scroll restoration helper
 function ScrollToTop() {
@@ -25,14 +25,14 @@ export const App: React.FC = () => {
     <div className="relative isolate min-h-screen w-full bg-[#191817] text-[#F3F3F4]">
       <ScrollToTop />
 
-      {/* Ambient 3D Image Galaxy Background */}
+      {/* Ambient Ghosty Reveal Background */}
       <div
-        className={`fixed inset-0 z-0 pointer-events-auto overflow-hidden transition-opacity duration-700 ease-out ${
-          isHome ? "opacity-85" : "opacity-40"
+        className={`fixed inset-0 z-0 pointer-events-none overflow-hidden transition-opacity duration-700 ease-out ${
+          isHome ? "opacity-85" : "opacity-35"
         }`}
         aria-hidden="true"
       >
-        <ImageGalaxyCard className="w-full h-full" />
+        <GhostyRevealCard className="w-full h-full" />
       </div>
 
       {/* Foreground Routes Layer */}
