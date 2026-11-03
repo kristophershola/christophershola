@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "skills": {
+    "image-galaxy": {
+      "source": "design.how",
+      "sourceUrl": "https://design.how/vault/image-galaxy",
+      "sourceType": "well-known",
+      "computedHash": "96cf99a74a0c18544e029757221c83897848c8cdb3bdb053cdf997acfe43fb44",
+      "wellKnownDigest": "sha256:9215d69a13911ebb8000be7cc594ff68e5d7fbaf5bfc33b2083a63a8edeec367"
+    }
+  }
+}
