@@ -137,6 +137,9 @@ export const PopulationMediaCenterPage: React.FC = () => {
     if (!videoRef.current) return;
     const newMuted = !isMuted;
     videoRef.current.muted = newMuted;
+    if (!newMuted) {
+      videoRef.current.volume = 1.0;
+    }
     setIsMuted(newMuted);
   };
 
