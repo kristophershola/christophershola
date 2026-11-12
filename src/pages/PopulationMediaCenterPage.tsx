@@ -12,106 +12,7 @@ import {
   ArrowUpRight,
   ChevronLeft,
   Tv,
-  PenTool,
 } from "lucide-react";
-
-interface CampaignItem {
-  id: string;
-  image: string;
-  title: string;
-  category: string;
-  theme: string;
-  quote?: string;
-  description: string;
-  aspect?: string;
-}
-
-const campaignArtworks: CampaignItem[] = [
-  {
-    id: "pmc-25-years",
-    image: "/pmc/pmc-25-years.jpg",
-    title: "25 Years of Transformative Impact",
-    category: "Brand Strategy & Milestone",
-    theme: "Retrospective",
-    description:
-      "Commemorating a quarter-century of entertainment-education. The visual identity pairs an illustrated portrait of the founding methodology with traditional African geometric border motifs and vibrant color blocking, reinforcing institutional credibility and grassroots trust.",
-    aspect: "aspect-[1024/858]",
-  },
-  {
-    id: "sinalamba-stat",
-    image: "/pmc/sinalamba-stat.jpg",
-    title: "Siñalamba: HIV Dialogue Impact",
-    category: "PR & Media Strategy",
-    theme: "Behavioral Metric",
-    quote: "Siñalamba listeners were 1.5 times more likely than non-listeners to discuss HIV-risk with others, such as their partner, spouse, friend or relatives.",
-    description:
-      "Translating empirical sociological data into clear public communication. Field evaluations proved that PMC's hit radio drama Siñalamba broke deep cultural silences, prompting a 1.5× surge in interpersonal HIV prevention dialogue across target communities.",
-    aspect: "aspect-square",
-  },
-  {
-    id: "mandela-day",
-    image: "/pmc/mandela-day.jpg",
-    title: "Nelson Mandela Day: Emancipation of Women",
-    category: "Campaign Ideation",
-    theme: "Gender Equity",
-    quote: "“Freedom cannot be achieved unless women have been emancipated from all forms of oppression” — Nelson Mandela",
-    description:
-      "A campaign aligning global human rights milestones with gender equality mandates. Bold typography and organic brushwork center women's bodily autonomy and systemic emancipation as essential requirements for societal progress.",
-    aspect: "aspect-square",
-  },
-  {
-    id: "doughnut-economics",
-    image: "/pmc/doughnut-economics.jpg",
-    title: "What Is Doughnut Economics?",
-    category: "Graphic Design",
-    theme: "Ecology & Economics",
-    description:
-      "Translating Kate Raworth's planetary boundaries framework into an accessible visual hook. The surreal Earth-doughnut metaphor communicates complex macroeconomic concepts—balancing ecological ceilings with social foundations—for digital audiences.",
-    aspect: "aspect-square",
-  },
-  {
-    id: "fgm-global-problem",
-    image: "/pmc/fgm-global-problem.jpg",
-    title: "Ending FGM: A Global Solidarity Effort",
-    category: "PR & Media Strategy",
-    theme: "Human Rights (UNHCR Collaboration)",
-    quote: "“FGM is a global problem”",
-    description:
-      "Developed in partnership with UNHCR guidelines to dismantle the misconception that Female Genital Mutilation is an isolated regional practice. Hand-drawn global motifs elevate bodily integrity to an urgent international priority.",
-    aspect: "aspect-square",
-  },
-  {
-    id: "mental-health-day",
-    image: "/pmc/mental-health-day.jpg",
-    title: "World Mental Health Day: It's Okay to Ask for Help",
-    category: "Storytelling & Narrative Development",
-    theme: "Mental Wellbeing",
-    quote: "“It's okay to ask for help”",
-    description:
-      "Addressing mental health stigma through visual empathy. A silhouette composed of interlocking puzzle pieces visualizes the quiet vulnerability of cognitive struggle, encouraging open conversation where psychological distress is frequently silenced.",
-    aspect: "aspect-square",
-  },
-  {
-    id: "vote-amplifies-voice",
-    image: "/pmc/vote-amplifies-voice.jpg",
-    title: "Civic Voice: Your Vote Amplifies Your Voice",
-    category: "Campaign Ideation",
-    theme: "Civic Mobilization",
-    description:
-      "A democratic participation campaign built for young voters. Pop-line iconography and energetic megaphone linework reframe voting as an active, personal loudspeaker for community decision-making.",
-    aspect: "aspect-square",
-  },
-  {
-    id: "world-environment-day",
-    image: "/pmc/world-environment-day.jpg",
-    title: "World Environment Day: Community & Planet",
-    category: "Graphic Design",
-    theme: "Ecological Stewardship",
-    description:
-      "Putting a human face on ecological resilience. Centering portraits of Nigerian women, mothers, and children alongside robust condensed editorial typography to demonstrate that environmental stewardship and community survival are linked.",
-    aspect: "aspect-square",
-  },
-];
 
 export const PopulationMediaCenterPage: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -165,9 +66,9 @@ export const PopulationMediaCenterPage: React.FC = () => {
       {/* Global Navigation */}
       <Navbar />
 
-      {/* Main Split Layout: Fixed Left, Independently Scrolling Right on Desktop & Tablet */}
+      {/* Main Split Layout: Fixed Left, Static Right on Desktop */}
       <main className="relative z-10 flex-1 flex flex-col md:flex-row w-full md:h-full md:overflow-hidden">
-        {/* Left Section: Static Agency-Style Case Narrative & Impact Metrics */}
+        {/* Left Section: Agency-Style Case Narrative & Impact Metrics */}
         <motion.section
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -326,15 +227,15 @@ export const PopulationMediaCenterPage: React.FC = () => {
           </div>
         </motion.section>
 
-        {/* Right Section: Independently Scrollable Video Reel & Campaign Posters */}
-        <section className="w-full md:w-7/12 xl:w-7/12 md:h-full md:overflow-y-auto pt-4 sm:pt-6 md:pt-28 pb-16 px-5 sm:px-6 md:px-8 lg:px-10 pointer-events-auto scrollbar-thin scrollbar-thumb-white/10 space-y-12">
-          {/* Featured Documentary Reel Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-3"
-          >
+        {/* Right Section: Static Video Reel Only (Not Scrollable) */}
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full md:w-7/12 xl:w-7/12 shrink-0 pt-4 sm:pt-6 md:pt-28 pb-8 md:pb-12 px-5 sm:px-6 md:px-8 lg:px-10 flex flex-col justify-between pointer-events-auto md:h-full md:overflow-hidden"
+        >
+          {/* Featured Video Container & Header */}
+          <div className="space-y-4 my-auto">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/70">
                 <Tv className="w-3.5 h-3.5 text-[#F3F3F4]/50" />
@@ -345,8 +246,8 @@ export const PopulationMediaCenterPage: React.FC = () => {
               </Badge>
             </div>
 
-            {/* Video Container */}
-            <div className="relative w-full aspect-video rounded-[2px] overflow-hidden border border-white/10 bg-[#222120] group">
+            {/* 16:9 Video Player */}
+            <div className="relative w-full aspect-video rounded-[2px] overflow-hidden border border-white/10 bg-[#222120] group shadow-2xl">
               <video
                 ref={videoRef}
                 src="/population-media-center.mp4"
@@ -411,79 +312,13 @@ export const PopulationMediaCenterPage: React.FC = () => {
                 25-Year Retrospective Reel // Broadcast Cut
               </span>
             </div>
-          </motion.div>
-
-          {/* Section Divider & Campaign Artwork Stream Heading */}
-          <div className="pt-4 space-y-2 border-b border-white/10 pb-4">
-            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/70">
-              <PenTool className="w-3.5 h-3.5 text-[#F3F3F4]/50" />
-              <span>Campaign Artifacts & Creative Assets</span>
-            </div>
-            <p className="font-sans text-[13px] font-light text-[#8E8F94]">
-              High-resolution posters, public health communications, and educational artifacts produced across brand strategy, storytelling, and graphic design.
-            </p>
           </div>
 
-          {/* Campaign Artworks Stream */}
-          <div className="space-y-12">
-            {campaignArtworks.map((item, idx) => (
-              <motion.article
-                key={item.id}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: Math.min(idx * 0.05, 0.3), ease: [0.16, 1, 0.3, 1] }}
-                className="space-y-4 group"
-              >
-                {/* Image Container */}
-                <div className="relative w-full overflow-hidden rounded-[2px] border border-white/10 bg-[#222120]">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    loading="lazy"
-                    className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-[1.01]"
-                  />
-                </div>
-
-                {/* Artwork Metadata & Caption */}
-                <div className="space-y-2 pt-1">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="text-[10px] tracking-wider text-[#F3F3F4]/70 font-mono">
-                        {item.category}
-                      </Badge>
-                      <Badge variant="default" className="text-[10px] tracking-wider bg-white/5 text-[#8E8F94] font-mono">
-                        {item.theme}
-                      </Badge>
-                    </div>
-
-                    <span className="font-mono text-[11px] text-[#8E8F94]/50">
-                      0{idx + 1} // 08
-                    </span>
-                  </div>
-
-                  <h3 className="font-serif text-[19px] sm:text-[21px] font-normal tracking-[-0.01em] text-[#F3F3F4]">
-                    {item.title}
-                  </h3>
-
-                  {item.quote && (
-                    <blockquote className="border-l-2 border-white/20 pl-3 italic font-serif text-[13.5px] text-[#F3F3F4]/90">
-                      {item.quote}
-                    </blockquote>
-                  )}
-
-                  <p className="font-sans text-[13px] font-light leading-[1.45] text-[#8E8F94]">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.article>
-            ))}
+          {/* Bottom Right Aligned Footer */}
+          <div className="flex justify-end pt-4">
+            <Footer variant="inline" />
           </div>
-
-          {/* Footer Inside the Right Scrollable Column */}
-          <div className="pt-10 pb-6 border-t border-white/10">
-            <Footer variant="static" className="p-0 justify-start sm:justify-end" />
-          </div>
-        </section>
+        </motion.section>
       </main>
     </div>
   );
