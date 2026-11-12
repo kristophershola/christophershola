@@ -4,6 +4,7 @@ import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
 import WorkPage from "@/pages/WorkPage";
 import InquiriesPage from "@/pages/InquiriesPage";
+import PopulationMediaCenterPage from "@/pages/PopulationMediaCenterPage";
 
 // Scroll restoration helper
 function ScrollToTop() {
@@ -24,6 +25,7 @@ export const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/work" element={<WorkPage />} />
+        <Route path="/work/population-media-center" element={<PopulationMediaCenterPage />} />
         <Route path="/research" element={<WorkPage />} />
         <Route path="/inquiries" element={<InquiriesPage />} />
         <Route path="/join" element={<InquiriesPage />} />
