@@ -12,13 +12,49 @@ import {
   ArrowUpRight,
   ChevronLeft,
   Tv,
+  X,
 } from "lucide-react";
+
+interface CampaignPhoto {
+  id: string;
+  image: string;
+  title: string;
+  label: string;
+}
+
+const campaignPhotos: CampaignPhoto[] = [
+  {
+    id: "stats",
+    image: "/pmc/pmc-stats-card.jpg",
+    title: "Empirical Clinic Attendance & Behavioral Shift Metrics",
+    label: "Impact Metrics",
+  },
+  {
+    id: "rights",
+    image: "/pmc/pmc-human-rights-day.jpg",
+    title: "International Human Rights Day // 25-Year Anniversary Campaign",
+    label: "Human Rights Day",
+  },
+  {
+    id: "patriotism",
+    image: "/pmc/pmc-patriotism-okon.jpg",
+    title: "Patriotism & Community Leadership Initiative // Ephraim Victor Okon",
+    label: "Civic Outreach",
+  },
+  {
+    id: "jangala",
+    image: "/pmc/pmc-jangala-radio.jpg",
+    title: "Jangala Radio Serial Drama // Live on Sparkling 92.3 FM Calabar",
+    label: "Radio Drama",
+  },
+];
 
 export const PopulationMediaCenterPage: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const [progress, setProgress] = useState<number>(0);
+  const [activePhoto, setActivePhoto] = useState<CampaignPhoto | null>(null);
 
   // Video playback management
   const togglePlay = () => {
@@ -126,24 +162,39 @@ export const PopulationMediaCenterPage: React.FC = () => {
               </p>
             </div>
 
-            {/* Disciplines in Execution */}
-            <div className="space-y-3 pt-3 border-t border-white/10">
-              <div className="space-y-2.5">
-                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">Brand Strategy:</strong> Positioned PMC Nigeria's social and behavior change communication (SBCC) model as an evidence-based engine for health equity, maternal wellbeing, and community trust.
-                </p>
-                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">Campaign Ideation:</strong> Conceived localized broadcast campaigns and community-tailored narratives that resonate across diverse Nigerian cultural, religious, and linguistic landscapes.
-                </p>
-                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">Storytelling & Narrative Development:</strong> Developed character-driven serialized radio dramas addressing reproductive health, family planning, and gender equality, replacing didactic lectures with gripping, relatable human dilemmas.
-                </p>
-                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">Graphic Design:</strong> Created visual identity collateral and grassroots campaign materials pairing indigenous motifs with contemporary editorial design to reinforce broadcast themes in community hubs.
-                </p>
-                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">PR & Media Strategy:</strong> Orchestrated widespread radio syndication across regional and national stations to reach both urban centers and isolated, rural communities across Nigeria.
-                </p>
+            {/* Campaign Artifacts & Field Photography Grid (2x2) */}
+            <div className="pt-3 border-t border-white/10 space-y-2.5">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/70">
+                  Campaign Artifacts // Field Communications
+                </span>
+                <span className="font-mono text-[10px] text-[#8E8F94]/50">
+                  04 Plates
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
+                {campaignPhotos.map((photo) => (
+                  <div
+                    key={photo.id}
+                    onClick={() => setActivePhoto(photo)}
+                    className="group relative cursor-pointer overflow-hidden rounded-[2px] border border-white/10 bg-[#222120] transition-all hover:border-white/30"
+                  >
+                    <div className="aspect-square w-full overflow-hidden">
+                      <img
+                        src={photo.image}
+                        alt={photo.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-2 text-left opacity-90 transition-opacity group-hover:opacity-100">
+                      <span className="font-mono text-[9.5px] uppercase tracking-wider text-[#F3F3F4]/90 block truncate">
+                        {photo.label}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -320,6 +371,44 @@ export const PopulationMediaCenterPage: React.FC = () => {
           </div>
         </motion.section>
       </main>
+      {/* Lightbox / Zoom Modal for Field Plates */}
+      {activePhoto && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setActivePhoto(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4 sm:p-6"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-lg w-full bg-[#191817] border border-white/15 rounded-[4px] p-3 sm:p-4 space-y-3 shadow-2xl"
+          >
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/70">
+                {activePhoto.label}
+              </span>
+              <button
+                type="button"
+                onClick={() => setActivePhoto(null)}
+                className="p-1 rounded text-[#8E8F94] hover:text-[#F3F3F4] transition-colors"
+                aria-label="Close image preview"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="relative w-full max-h-[65vh] flex items-center justify-center overflow-hidden rounded-[2px] bg-[#111]">
+              <img
+                src={activePhoto.image}
+                alt={activePhoto.title}
+                className="max-h-[65vh] w-auto object-contain rounded-[2px]"
+              />
+            </div>
+            <p className="font-serif text-[13.5px] sm:text-[14px] text-[#F3F3F4]/90">
+              {activePhoto.title}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
