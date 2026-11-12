@@ -17,7 +17,7 @@ export const researchItems: ResearchItem[] = [
       "A multimedia documentary and impact narrative highlighting 25 years of transformative storytelling, community empowerment, and social change across Nigeria.",
     category: "ANNOUNCEMENT",
     date: "8.3.26",
-    link: "https://www.populationmedia.org",
+    link: "/work/population-media-center",
     image: "/population-media-center.png",
     video: "/population-media-center.mp4",
   },

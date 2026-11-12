@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import type { ResearchItem } from "@/data/researchData";
 import { Badge } from "@/components/ui/badge";
 
@@ -39,15 +40,8 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
     }
   };
 
-  return (
-    <a
-      href={item.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="group block relative flex flex-col justify-between space-y-4 p-0 select-none cursor-pointer focus:outline-none"
-    >
+  const content = (
+    <>
       {/* Thumbnail Container */}
       <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[2px] border border-white/10 bg-[#222120]">
         <img
@@ -105,6 +99,35 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
           </span>
         </div>
       </div>
+    </>
+  );
+
+  const sharedClassName =
+    "group block relative flex flex-col justify-between space-y-4 p-0 select-none cursor-pointer focus:outline-none";
+
+  if (item.link.startsWith("/")) {
+    return (
+      <Link
+        to={item.link}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={sharedClassName}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={sharedClassName}
+    >
+      {content}
     </a>
   );
 };
