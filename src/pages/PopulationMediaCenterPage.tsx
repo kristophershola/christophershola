@@ -94,7 +94,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
               </h1>
 
               <p className="font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.45] text-[#8E8F94]">
-                Population Media Center (PMC) is a global non-profit that creates hit entertainment to change behavior on public health, gender equality, and environmental protection. For over 25 years, PMC has produced long-running serial dramas across Africa, Asia, and Latin America, addressing complex social norms around reproductive autonomy, girls' education, maternal health, and civic participation.
+                Population Media Center (PMC) has undertaken significant work in Nigeria, focusing on social and behavior change communication (SBCC). Through long-running serialized radio dramas, PMC addresses critical social issues—including reproductive health, family planning, and gender equality—specifically designed to engage and educate audiences across Nigeria, particularly in rural and hard-to-reach communities. By leveraging the power of culturally grounded storytelling, PMC drives positive shifts in attitudes and behaviors to foster healthier, more equitable societies.
               </p>
             </div>
 
@@ -108,7 +108,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
             {/* The Core Challenge */}
             <div className="space-y-2 pt-2">
               <p className="font-sans text-[13px] sm:text-[13.5px] font-light leading-[1.45] text-[#8E8F94]">
-                The core challenge was shifting entrenched cultural norms without triggering community resistance. Issues like reproductive autonomy, female genital mutilation, and mental health carry deep social taboos. Traditional public service messaging often creates defensiveness or skepticism. The campaign needed to educate, engage, and shift mindsets organically from within the community.
+                The core challenge was shifting entrenched cultural norms and taboos without triggering community resistance. In Nigeria, critical issues surrounding reproductive health, family planning, and gender equality are often met with institutional hesitation, social silence, or resistance. Traditional top-down public service announcements frequently encounter skepticism or defensiveness, especially across rural and hard-to-reach communities. The campaign needed to educate, engage, and shift mindsets organically from within the community fabric.
               </p>
             </div>
 
@@ -122,7 +122,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
             {/* Strategic Approach */}
             <div className="space-y-2">
               <p className="font-sans text-[13px] sm:text-[13.5px] font-light leading-[1.45] text-[#8E8F94]">
-                We built the campaign around video-led storytelling and the scientifically validated Sabido methodology. By creating multi-layered narrative arcs where transitional characters navigate real-world moral and health choices, the content allowed audiences to build emotional connections and adopt positive behaviors as they saw them play out in familiar cultural settings.
+                We built the campaign around serialized radio drama broadcasting and the scientifically validated Sabido methodology. By engineering multi-layered narrative arcs with relatable positive, negative, and transitional characters, the dramas allowed audiences across Nigeria to confront real-world health and moral dilemmas without feeling judged—prompting personal reflection, household dialogue, and measurable community adoption of healthier practices.
               </p>
             </div>
 
@@ -130,19 +130,19 @@ export const PopulationMediaCenterPage: React.FC = () => {
             <div className="space-y-3 pt-3 border-t border-white/10">
               <div className="space-y-2.5">
                 <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">Brand Strategy:</strong> Reframed PMC's 25-year milestone to position entertainment-education as an evidence-based engine for systemic social change and donor trust.
+                  <strong className="text-[#F3F3F4] font-medium">Brand Strategy:</strong> Positioned PMC Nigeria's social and behavior change communication (SBCC) model as an evidence-based engine for health equity, maternal wellbeing, and community trust.
                 </p>
                 <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">Campaign Ideation:</strong> Developed culturally localized campaigns around global moments, including Nelson Mandela Day, Doughnut Economics, and youth voter participation.
+                  <strong className="text-[#F3F3F4] font-medium">Campaign Ideation:</strong> Conceived localized broadcast campaigns and community-tailored narratives that resonate across diverse Nigerian cultural, religious, and linguistic landscapes.
                 </p>
                 <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">Storytelling & Narrative Development:</strong> Structured character journeys that model positive behavioral alternatives, breaking taboos through relatable drama rather than didactic instruction.
+                  <strong className="text-[#F3F3F4] font-medium">Storytelling & Narrative Development:</strong> Developed character-driven serialized radio dramas addressing reproductive health, family planning, and gender equality, replacing didactic lectures with gripping, relatable human dilemmas.
                 </p>
                 <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">Graphic Design:</strong> Established a visual system uniting indigenous African geometric motifs with clean editorial typography, surreal conceptual metaphors, and community portraiture.
+                  <strong className="text-[#F3F3F4] font-medium">Graphic Design:</strong> Created visual identity collateral and grassroots campaign materials pairing indigenous motifs with contemporary editorial design to reinforce broadcast themes in community hubs.
                 </p>
                 <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
-                  <strong className="text-[#F3F3F4] font-medium">PR & Media Strategy:</strong> Coordinated broadcast distribution across radio and television networks, paired with targeted field advocacy and institutional partnerships with UNHCR.
+                  <strong className="text-[#F3F3F4] font-medium">PR & Media Strategy:</strong> Orchestrated widespread radio syndication across regional and national stations to reach both urban centers and isolated, rural communities across Nigeria.
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                     +500m
                   </div>
                   <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
-                    Over 500 million people reached across radio serial dramas and televised broadcasts in more than 50 countries.
+                    Over 500 million people reached globally across serialized dramas, with Nigeria serving as a cornerstone for community-level behavior change.
                   </p>
                 </div>
 
