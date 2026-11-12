@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Badge } from "@/components/ui/badge";
 import {
   Play,
   Pause,
@@ -11,42 +10,14 @@ import {
   VolumeX,
   ArrowUpRight,
   ChevronLeft,
-  Tv,
   X,
 } from "lucide-react";
 
-interface CampaignPhoto {
-  id: string;
-  image: string;
-  title: string;
-  label: string;
-}
-
-const campaignPhotos: CampaignPhoto[] = [
-  {
-    id: "stats",
-    image: "/pmc/pmc-stats-card.jpg",
-    title: "Empirical Clinic Attendance & Behavioral Shift Metrics",
-    label: "Impact Metrics",
-  },
-  {
-    id: "rights",
-    image: "/pmc/pmc-human-rights-day.jpg",
-    title: "International Human Rights Day // 25-Year Anniversary Campaign",
-    label: "Human Rights Day",
-  },
-  {
-    id: "patriotism",
-    image: "/pmc/pmc-patriotism-okon.jpg",
-    title: "Patriotism & Community Leadership Initiative // Ephraim Victor Okon",
-    label: "Civic Outreach",
-  },
-  {
-    id: "jangala",
-    image: "/pmc/pmc-jangala-radio.jpg",
-    title: "Jangala Radio Serial Drama // Live on Sparkling 92.3 FM Calabar",
-    label: "Radio Drama",
-  },
+const campaignPhotos: string[] = [
+  "/pmc/pmc-stats-card.jpg",
+  "/pmc/pmc-human-rights-day.jpg",
+  "/pmc/pmc-patriotism-okon.jpg",
+  "/pmc/pmc-jangala-radio.jpg",
 ];
 
 export const PopulationMediaCenterPage: React.FC = () => {
@@ -54,7 +25,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const [progress, setProgress] = useState<number>(0);
-  const [activePhoto, setActivePhoto] = useState<CampaignPhoto | null>(null);
+  const [activePhoto, setActivePhoto] = useState<string | null>(null);
 
   // Video playback management
   const togglePlay = () => {
@@ -162,39 +133,58 @@ export const PopulationMediaCenterPage: React.FC = () => {
               </p>
             </div>
 
-            {/* Campaign Artifacts & Field Photography Grid (2x2) */}
-            <div className="pt-3 border-t border-white/10 space-y-2.5">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/70">
-                  Campaign Artifacts // Field Communications
-                </span>
-                <span className="font-mono text-[10px] text-[#8E8F94]/50">
-                  04 Plates
-                </span>
-              </div>
-
-              <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
-                {campaignPhotos.map((photo) => (
+            {/* Campaign Photography Grid (Natural Source Aspect Ratios, No Tags/Subtext/Headings) */}
+            <div className="pt-3 border-t border-white/10">
+              <div className="grid grid-cols-2 gap-2.5 items-start">
+                <div className="flex flex-col gap-2.5">
                   <div
-                    key={photo.id}
-                    onClick={() => setActivePhoto(photo)}
-                    className="group relative cursor-pointer overflow-hidden rounded-[2px] border border-white/10 bg-[#222120] transition-all hover:border-white/30"
+                    onClick={() => setActivePhoto(campaignPhotos[0])}
+                    className="group cursor-pointer overflow-hidden rounded-[2px] border border-white/10 bg-[#222120] transition-all hover:border-white/30"
                   >
-                    <div className="aspect-square w-full overflow-hidden">
-                      <img
-                        src={photo.image}
-                        alt={photo.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-2 text-left opacity-90 transition-opacity group-hover:opacity-100">
-                      <span className="font-mono text-[9.5px] uppercase tracking-wider text-[#F3F3F4]/90 block truncate">
-                        {photo.label}
-                      </span>
-                    </div>
+                    <img
+                      src={campaignPhotos[0]}
+                      alt="PMC Campaign Material"
+                      loading="lazy"
+                      className="w-full h-auto block transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+                    />
                   </div>
-                ))}
+                  <div
+                    onClick={() => setActivePhoto(campaignPhotos[2])}
+                    className="group cursor-pointer overflow-hidden rounded-[2px] border border-white/10 bg-[#222120] transition-all hover:border-white/30"
+                  >
+                    <img
+                      src={campaignPhotos[2]}
+                      alt="PMC Campaign Material"
+                      loading="lazy"
+                      className="w-full h-auto block transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2.5">
+                  <div
+                    onClick={() => setActivePhoto(campaignPhotos[1])}
+                    className="group cursor-pointer overflow-hidden rounded-[2px] border border-white/10 bg-[#222120] transition-all hover:border-white/30"
+                  >
+                    <img
+                      src={campaignPhotos[1]}
+                      alt="PMC Campaign Material"
+                      loading="lazy"
+                      className="w-full h-auto block transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+                    />
+                  </div>
+                  <div
+                    onClick={() => setActivePhoto(campaignPhotos[3])}
+                    className="group cursor-pointer overflow-hidden rounded-[2px] border border-white/10 bg-[#222120] transition-all hover:border-white/30"
+                  >
+                    <img
+                      src={campaignPhotos[3]}
+                      alt="PMC Campaign Material"
+                      loading="lazy"
+                      className="w-full h-auto block transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -285,18 +275,8 @@ export const PopulationMediaCenterPage: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="w-full md:w-7/12 xl:w-7/12 shrink-0 pt-4 sm:pt-6 md:pt-28 pb-8 md:pb-12 px-5 sm:px-6 md:px-8 lg:px-10 flex flex-col justify-between pointer-events-auto md:h-full md:overflow-hidden"
         >
-          {/* Featured Video Container & Header */}
-          <div className="space-y-4 my-auto">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/70">
-                <Tv className="w-3.5 h-3.5 text-[#F3F3F4]/50" />
-                <span>Featured Documentary Reel // 16:9 Video</span>
-              </div>
-              <Badge variant="outline" className="text-[10px] tracking-wider text-emerald-400/90 border-emerald-500/30">
-                ACTIVE REEL
-              </Badge>
-            </div>
-
+          {/* Featured Video Container (No Headings, Tags, or Subtext) */}
+          <div className="my-auto w-full">
             {/* 16:9 Video Player */}
             <div className="relative w-full aspect-video rounded-[2px] overflow-hidden border border-white/10 bg-[#222120] group shadow-2xl">
               <video
@@ -311,12 +291,9 @@ export const PopulationMediaCenterPage: React.FC = () => {
                 className="w-full h-full object-cover cursor-pointer"
               />
 
-              {/* Minimalist Top/Bottom Controls Overlay */}
+              {/* Minimalist Controls Overlay (No Tags / No Subtext) */}
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-between p-4">
-                <div className="flex justify-between items-center">
-                  <span className="font-mono text-[11px] text-white/80 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-[2px]">
-                    PMC: Discovering Nigeria's Impact
-                  </span>
+                <div className="flex justify-end items-center">
                   <button
                     type="button"
                     onClick={(e) => {
@@ -353,16 +330,6 @@ export const PopulationMediaCenterPage: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Video Caption & Analytical Notes */}
-            <div className="pt-1 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-white/10 pb-4">
-              <span className="font-serif text-[15px] text-[#F3F3F4]">
-                Population Media Centre: Discovering Nigeria's Impact
-              </span>
-              <span className="font-mono text-[11px] text-[#8E8F94]">
-                25-Year Retrospective Reel // Broadcast Cut
-              </span>
-            </div>
           </div>
 
           {/* Bottom Right Aligned Footer */}
@@ -371,22 +338,20 @@ export const PopulationMediaCenterPage: React.FC = () => {
           </div>
         </motion.section>
       </main>
-      {/* Lightbox / Zoom Modal for Field Plates */}
+
+      {/* Lightbox / Zoom Modal (No Tags / No Subtext) */}
       {activePhoto && (
         <div
           role="dialog"
           aria-modal="true"
           onClick={() => setActivePhoto(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4 sm:p-6"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-6"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-lg w-full bg-[#191817] border border-white/15 rounded-[4px] p-3 sm:p-4 space-y-3 shadow-2xl"
+            className="relative max-w-xl w-full bg-[#191817] border border-white/15 rounded-[4px] p-2 sm:p-3 shadow-2xl"
           >
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/70">
-                {activePhoto.label}
-              </span>
+            <div className="flex justify-end pb-2">
               <button
                 type="button"
                 onClick={() => setActivePhoto(null)}
@@ -396,16 +361,13 @@ export const PopulationMediaCenterPage: React.FC = () => {
                 <X className="w-4 h-4" />
               </button>
             </div>
-            <div className="relative w-full max-h-[65vh] flex items-center justify-center overflow-hidden rounded-[2px] bg-[#111]">
+            <div className="relative w-full max-h-[80vh] flex items-center justify-center overflow-hidden rounded-[2px] bg-[#111]">
               <img
-                src={activePhoto.image}
-                alt={activePhoto.title}
-                className="max-h-[65vh] w-auto object-contain rounded-[2px]"
+                src={activePhoto}
+                alt="PMC Campaign Asset"
+                className="max-h-[80vh] w-auto h-auto object-contain rounded-[2px]"
               />
             </div>
-            <p className="font-serif text-[13.5px] sm:text-[14px] text-[#F3F3F4]/90">
-              {activePhoto.title}
-            </p>
           </div>
         </div>
       )}
