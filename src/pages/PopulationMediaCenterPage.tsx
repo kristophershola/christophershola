@@ -11,11 +11,8 @@ import {
   VolumeX,
   ArrowUpRight,
   ChevronLeft,
-  Sparkles,
-  BarChart3,
   Tv,
   PenTool,
-  Layers,
 } from "lucide-react";
 
 interface CampaignItem {
@@ -37,7 +34,7 @@ const campaignArtworks: CampaignItem[] = [
     category: "Brand Strategy & Milestone",
     theme: "Retrospective",
     description:
-      "Commemorating a quarter-century of pioneering entertainment-education. The visual identity integrates an illustrated portrait of the founding methodology with traditional African geometric borders and vibrant color planes, framing PMC's institutional authority and enduring grassroots trust.",
+      "Commemorating a quarter-century of entertainment-education. The visual identity pairs an illustrated portrait of the founding methodology with traditional African geometric border motifs and vibrant color blocking, reinforcing institutional credibility and grassroots trust.",
     aspect: "aspect-[1024/858]",
   },
   {
@@ -48,7 +45,7 @@ const campaignArtworks: CampaignItem[] = [
     theme: "Behavioral Metric",
     quote: "Siñalamba listeners were 1.5 times more likely than non-listeners to discuss HIV-risk with others, such as their partner, spouse, friend or relatives.",
     description:
-      "Translating empirical sociological data into compelling public infographics. Evaluative field studies proved that PMC's hit radio drama Siñalamba broke deep cultural taboos, prompting a 1.5× surge in interpersonal HIV prevention dialogue across target rural communities.",
+      "Translating empirical sociological data into clear public communication. Field evaluations proved that PMC's hit radio drama Siñalamba broke deep cultural silences, prompting a 1.5× surge in interpersonal HIV prevention dialogue across target communities.",
     aspect: "aspect-square",
   },
   {
@@ -59,7 +56,7 @@ const campaignArtworks: CampaignItem[] = [
     theme: "Gender Equity",
     quote: "“Freedom cannot be achieved unless women have been emancipated from all forms of oppression” — Nelson Mandela",
     description:
-      "A campaign aligning global human rights milestones with PMC's ongoing gender equality mandates. Bold typography and organic brushwork center women's bodily autonomy and systemic emancipation as indispensable prerequisites for societal liberation.",
+      "A campaign aligning global human rights milestones with gender equality mandates. Bold typography and organic brushwork center women's bodily autonomy and systemic emancipation as essential requirements for societal progress.",
     aspect: "aspect-square",
   },
   {
@@ -69,18 +66,18 @@ const campaignArtworks: CampaignItem[] = [
     category: "Graphic Design",
     theme: "Ecology & Economics",
     description:
-      "Translating Kate Raworth's planetary boundary framework into an accessible, viral visual hook. The surreal Earth-doughnut metaphor communicates complex macroeconomic concepts—balancing ecological ceiling limits with essential social foundations—for mainstream digital audiences.",
+      "Translating Kate Raworth's planetary boundaries framework into an accessible visual hook. The surreal Earth-doughnut metaphor communicates complex macroeconomic concepts—balancing ecological ceilings with social foundations—for digital audiences.",
     aspect: "aspect-square",
   },
   {
     id: "fgm-global-problem",
     image: "/pmc/fgm-global-problem.jpg",
-    title: "Ending FGM: A Global Solidarity Crisis",
+    title: "Ending FGM: A Global Solidarity Effort",
     category: "PR & Media Strategy",
     theme: "Human Rights (UNHCR Collaboration)",
     quote: "“FGM is a global problem”",
     description:
-      "Developed in strategic alignment with UNHCR guidelines, this visual intervention dismantles the misconception that Female Genital Mutilation is an isolated regional practice. Hand-drawn global solidarity motifs elevate bodily integrity to an urgent international human rights priority.",
+      "Developed in partnership with UNHCR guidelines to dismantle the misconception that Female Genital Mutilation is an isolated regional practice. Hand-drawn global motifs elevate bodily integrity to an urgent international priority.",
     aspect: "aspect-square",
   },
   {
@@ -91,7 +88,7 @@ const campaignArtworks: CampaignItem[] = [
     theme: "Mental Wellbeing",
     quote: "“It's okay to ask for help”",
     description:
-      "Dismantling mental health stigma through visual empathy. A silhouette composed of interlocking puzzle pieces visualizes the quiet vulnerability of cognitive struggle, encouraging open dialogue in cultural contexts where psychological distress is frequently silenced.",
+      "Addressing mental health stigma through visual empathy. A silhouette composed of interlocking puzzle pieces visualizes the quiet vulnerability of cognitive struggle, encouraging open conversation where psychological distress is frequently silenced.",
     aspect: "aspect-square",
   },
   {
@@ -101,7 +98,7 @@ const campaignArtworks: CampaignItem[] = [
     category: "Campaign Ideation",
     theme: "Civic Mobilization",
     description:
-      "A high-energy democratic participation campaign built for Nigerian youth. Vibrant pop-line iconography and energetic megaphone linework reframe electoral participation not as a passive civic chore, but as an active loudspeaker for community self-determination.",
+      "A democratic participation campaign built for young voters. Pop-line iconography and energetic megaphone linework reframe voting as an active, personal loudspeaker for community decision-making.",
     aspect: "aspect-square",
   },
   {
@@ -111,7 +108,7 @@ const campaignArtworks: CampaignItem[] = [
     category: "Graphic Design",
     theme: "Ecological Stewardship",
     description:
-      "Putting a human face on ecological resilience. Centering portraits of Nigerian women, mothers, and children alongside robust condensed editorial typography to demonstrate that planetary health and community survival are inextricably linked.",
+      "Putting a human face on ecological resilience. Centering portraits of Nigerian women, mothers, and children alongside robust condensed editorial typography to demonstrate that environmental stewardship and community survival are linked.",
     aspect: "aspect-square",
   },
 ];
@@ -167,15 +164,15 @@ export const PopulationMediaCenterPage: React.FC = () => {
 
       {/* Main Split Layout: Fixed Left, Independently Scrolling Right on Desktop & Tablet */}
       <main className="relative z-10 flex-1 flex flex-col md:flex-row w-full md:h-full md:overflow-hidden">
-        {/* Left Section: Static Overview, 5 Pillars & Impact Stats */}
+        {/* Left Section: Static Agency-Style Case Narrative & Impact Metrics */}
         <motion.section
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="w-full md:w-5/12 xl:w-5/12 shrink-0 pt-20 sm:pt-24 md:pt-28 pb-8 md:pb-12 px-5 sm:px-6 md:px-8 lg:px-10 flex flex-col justify-between pointer-events-auto md:overflow-y-auto md:h-full scrollbar-none"
         >
-          <div className="space-y-8 max-w-xl">
-            {/* Back to Work Link */}
+          <div className="space-y-6 sm:space-y-7 max-w-xl">
+            {/* Back to Work Navigation */}
             <div>
               <Link
                 to="/work"
@@ -186,170 +183,110 @@ export const PopulationMediaCenterPage: React.FC = () => {
               </Link>
             </div>
 
-            {/* Header Badges & Title */}
+            {/* Title & Introduction */}
             <div className="space-y-3">
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge variant="outline" className="text-[10px] tracking-widest text-[#F3F3F4]/70">
-                  CASE STUDY // 2026
-                </Badge>
-                <Badge variant="default" className="text-[10px] tracking-widest bg-white/5 text-[#F3F3F4]/80">
-                  ENTERTAINMENT-EDUCATION
-                </Badge>
-              </div>
-
               <h1 className="font-serif text-[30px] sm:text-[34px] lg:text-[38px] font-normal leading-[1.08] tracking-[-0.02em] text-[#F3F3F4]">
                 Population Media Center
               </h1>
 
-              <p className="font-sans text-[14px] sm:text-[15px] font-normal leading-[1.35] text-[#8E8F94]">
-                25 Years of Transformative Entertainment-Education across Nigeria & Worldwide
+              <p className="font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.45] text-[#8E8F94]">
+                Population Media Center (PMC) is a global non-profit that creates hit entertainment to change behavior on public health, gender equality, and environmental protection. For over 25 years, PMC has produced long-running serial dramas across Africa, Asia, and Latin America, addressing complex social norms around reproductive autonomy, girls' education, maternal health, and civic participation.
               </p>
             </div>
 
-            {/* Introduction: Who Population Media Center Are */}
-            <div className="space-y-3 pt-2 border-t border-white/10">
-              <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/60">
-                <Sparkles className="w-3 h-3 text-[#F3F3F4]/40" />
-                <span>Who They Are</span>
-              </div>
-              <div className="space-y-3 font-sans text-[13px] sm:text-[13.5px] font-light leading-[1.45] text-[#8E8F94]">
-                <p>
-                  <strong className="text-[#F3F3F4] font-medium">Population Media Center (PMC)</strong> is a global nonprofit leader that unleashes the power of mass-media entertainment to spark measurable, enduring behavioral and cultural change.
+            {/* Disciplines / Services (Anakle Header Style) */}
+            <div className="pt-2 border-t border-white/10">
+              <p className="font-sans text-[13px] font-medium text-[#F3F3F4]/90 tracking-[0.01em]">
+                Brand Strategy, Campaign Ideation, Storytelling & Narrative Development, Graphic Design, PR & Media Strategy
+              </p>
+            </div>
+
+            {/* The Core Challenge */}
+            <div className="space-y-2 pt-2">
+              <p className="font-sans text-[13px] sm:text-[13.5px] font-light leading-[1.45] text-[#8E8F94]">
+                The core challenge was shifting entrenched cultural norms without triggering community resistance. Issues like reproductive autonomy, female genital mutilation, and mental health carry deep social taboos. Traditional public service messaging often creates defensiveness or skepticism. The campaign needed to educate, engage, and shift mindsets organically from within the community.
+              </p>
+            </div>
+
+            {/* Editorial Pull Quote (H4 in Anakle) */}
+            <div className="py-2">
+              <h4 className="font-serif text-[17px] sm:text-[19px] font-normal italic leading-[1.3] text-[#F3F3F4]/95 border-l-2 border-white/30 pl-3.5">
+                “Entertainment that mirrors reality, shifting social norms from within the community.”
+              </h4>
+            </div>
+
+            {/* Strategic Approach */}
+            <div className="space-y-2">
+              <p className="font-sans text-[13px] sm:text-[13.5px] font-light leading-[1.45] text-[#8E8F94]">
+                We built the campaign around video-led storytelling and the scientifically validated Sabido methodology. By creating multi-layered narrative arcs where transitional characters navigate real-world moral and health choices, the content allowed audiences to build emotional connections and adopt positive behaviors as they saw them play out in familiar cultural settings.
+              </p>
+            </div>
+
+            {/* Disciplines in Execution */}
+            <div className="space-y-3 pt-3 border-t border-white/10">
+              <div className="space-y-2.5">
+                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
+                  <strong className="text-[#F3F3F4] font-medium">Brand Strategy:</strong> Reframed PMC's 25-year milestone to position entertainment-education as an evidence-based engine for systemic social change and donor trust.
                 </p>
-                <p>
-                  Rather than broadcasting didactic public service announcements, PMC uses the scientifically validated <strong className="text-[#F3F3F4] font-normal">Sabido methodology</strong> to produce long-running, character-driven radio dramas and televised narratives. Across 50+ nations, PMC storylines address deeply rooted challenges—women's rights, maternal health, FGM eradication, girls' schooling, HIV prevention, and ecological stewardship—by allowing listeners to evolve alongside nuanced characters.
+                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
+                  <strong className="text-[#F3F3F4] font-medium">Campaign Ideation:</strong> Developed culturally localized campaigns around global moments, including Nelson Mandela Day, Doughnut Economics, and youth voter participation.
+                </p>
+                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
+                  <strong className="text-[#F3F3F4] font-medium">Storytelling & Narrative Development:</strong> Structured character journeys that model positive behavioral alternatives, breaking taboos through relatable drama rather than didactic instruction.
+                </p>
+                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
+                  <strong className="text-[#F3F3F4] font-medium">Graphic Design:</strong> Established a visual system uniting indigenous African geometric motifs with clean editorial typography, surreal conceptual metaphors, and community portraiture.
+                </p>
+                <p className="font-sans text-[12.5px] sm:text-[13px] font-light leading-[1.4] text-[#8E8F94]">
+                  <strong className="text-[#F3F3F4] font-medium">PR & Media Strategy:</strong> Coordinated broadcast distribution across radio and television networks, paired with targeted field advocacy and institutional partnerships with UNHCR.
                 </p>
               </div>
             </div>
 
-            {/* Areas Worked: The 5 Core Disciplines */}
-            <div className="space-y-4 pt-4 border-t border-white/10">
-              <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/60">
-                <Layers className="w-3 h-3 text-[#F3F3F4]/40" />
-                <span>Areas of Contribution</span>
-              </div>
-
-              <div className="space-y-3.5">
-                {/* 1. Brand Strategy */}
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-[11px] text-[#F3F3F4]/40">01</span>
-                    <h3 className="font-serif text-[15px] text-[#F3F3F4] font-normal">
-                      Brand Strategy
-                    </h3>
-                  </div>
-                  <p className="font-sans text-[12.5px] font-light leading-[1.4] text-[#8E8F94] pl-5">
-                    Architected the 25th-anniversary retrospective narrative. Repositioned entertainment-education not merely as broadcast programming, but as a proven systemic engine for institutional trust and public health progress.
-                  </p>
-                </div>
-
-                {/* 2. Campaign Ideation */}
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-[11px] text-[#F3F3F4]/40">02</span>
-                    <h3 className="font-serif text-[15px] text-[#F3F3F4] font-normal">
-                      Campaign Ideation
-                    </h3>
-                  </div>
-                  <p className="font-sans text-[12.5px] font-light leading-[1.4] text-[#8E8F94] pl-5">
-                    Conceived cross-cutting cultural interventions translating complex global mandates into resonant grassroots moments—including Nelson Mandela Day women's emancipation, Doughnut Economics, and youth civic voting drives.
-                  </p>
-                </div>
-
-                {/* 3. Storytelling & Narrative Development */}
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-[11px] text-[#F3F3F4]/40">03</span>
-                    <h3 className="font-serif text-[15px] text-[#F3F3F4] font-normal">
-                      Storytelling & Narrative Development
-                    </h3>
-                  </div>
-                  <p className="font-sans text-[12.5px] font-light leading-[1.4] text-[#8E8F94] pl-5">
-                    Leveraged the Sabido entertainment-education model to shape empathetic story arcs. Characters embody realistic positive and transitional behaviors, allowing community listeners to navigate sensitive social taboos without alienating cultural traditions.
-                  </p>
-                </div>
-
-                {/* 4. Graphic Design */}
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-[11px] text-[#F3F3F4]/40">04</span>
-                    <h3 className="font-serif text-[15px] text-[#F3F3F4] font-normal">
-                      Graphic Design
-                    </h3>
-                  </div>
-                  <p className="font-sans text-[12.5px] font-light leading-[1.4] text-[#8E8F94] pl-5">
-                    Established a high-contrast visual system uniting indigenous African border motifs with clean Swiss typography, bold conceptual metaphors (the Earth doughnut, puzzle-piece psyche), and striking community portraiture.
-                  </p>
-                </div>
-
-                {/* 5. PR and Media Strategy */}
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-[11px] text-[#F3F3F4]/40">05</span>
-                    <h3 className="font-serif text-[15px] text-[#F3F3F4] font-normal">
-                      PR & Media Strategy
-                    </h3>
-                  </div>
-                  <p className="font-sans text-[12.5px] font-light leading-[1.4] text-[#8E8F94] pl-5">
-                    Coordinated multi-channel broadcast syndication, radio drama listenership campaigns (such as <em>Siñalamba</em>), and strategic institutional alignment with partners like UNHCR to amplify earned media and civic advocacy.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Impact Statistics Bento Grid */}
+            {/* Impact Bridge Statement & Stat Grid (Verbatim Anakle Format) */}
             <div className="space-y-3 pt-4 border-t border-white/10">
-              <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/60">
-                <BarChart3 className="w-3 h-3 text-[#F3F3F4]/40" />
-                <span>Verified Impact Metrics</span>
-              </div>
+              <p className="font-sans text-[13px] font-normal text-[#F3F3F4]/90">
+                These shifts translated into measurable improvements:
+              </p>
 
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                <div className="p-3.5 rounded-[2px] bg-[#222120] border border-white/10 space-y-1">
-                  <div className="font-serif text-[24px] sm:text-[26px] font-normal leading-none text-[#F3F3F4]">
+              <div className="grid grid-cols-2 gap-3.5 pt-1">
+                {/* Stat 1 */}
+                <div className="space-y-1">
+                  <div className="font-serif text-[26px] sm:text-[28px] font-normal leading-none text-[#F3F3F4]">
                     1.5×
                   </div>
-                  <div className="font-mono text-[10.5px] uppercase tracking-wider text-[#F3F3F4]/70">
-                    HIV Dialogue Surge
-                  </div>
-                  <p className="font-sans text-[11px] font-light leading-[1.3] text-[#8E8F94]">
-                    <em>Siñalamba</em> listeners were 1.5× more likely to discuss HIV risk with partners.
+                  <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
+                    <em>Siñalamba</em> listeners were 1.5 times more likely than non-listeners to discuss HIV risk with their partner, spouse, or relatives.
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-[2px] bg-[#222120] border border-white/10 space-y-1">
-                  <div className="font-serif text-[24px] sm:text-[26px] font-normal leading-none text-[#F3F3F4]">
-                    500M+
+                {/* Stat 2 */}
+                <div className="space-y-1">
+                  <div className="font-serif text-[26px] sm:text-[28px] font-normal leading-none text-[#F3F3F4]">
+                    +500m
                   </div>
-                  <div className="font-mono text-[10.5px] uppercase tracking-wider text-[#F3F3F4]/70">
-                    Global Audience
-                  </div>
-                  <p className="font-sans text-[11px] font-light leading-[1.3] text-[#8E8F94]">
-                    Individuals reached across award-winning serial dramas worldwide.
+                  <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
+                    Over 500 million people reached across radio serial dramas and televised broadcasts in more than 50 countries.
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-[2px] bg-[#222120] border border-white/10 space-y-1">
-                  <div className="font-serif text-[24px] sm:text-[26px] font-normal leading-none text-[#F3F3F4]">
+                {/* Stat 3 */}
+                <div className="space-y-1">
+                  <div className="font-serif text-[26px] sm:text-[28px] font-normal leading-none text-[#F3F3F4]">
                     50+
                   </div>
-                  <div className="font-mono text-[10.5px] uppercase tracking-wider text-[#F3F3F4]/70">
-                    Countries Reached
-                  </div>
-                  <p className="font-sans text-[11px] font-light leading-[1.3] text-[#8E8F94]">
-                    Nations with custom localized broadcast interventions.
+                  <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
+                    Countries with localized broadcast interventions, proving the model across distinct linguistic and cultural landscapes.
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-[2px] bg-[#222120] border border-white/10 space-y-1">
-                  <div className="font-serif text-[24px] sm:text-[26px] font-normal leading-none text-[#F3F3F4]">
+                {/* Stat 4 */}
+                <div className="space-y-1">
+                  <div className="font-serif text-[26px] sm:text-[28px] font-normal leading-none text-[#F3F3F4]">
                     25 Yrs
                   </div>
-                  <div className="font-mono text-[10.5px] uppercase tracking-wider text-[#F3F3F4]/70">
-                    Sustained Change
-                  </div>
-                  <p className="font-sans text-[11px] font-light leading-[1.3] text-[#8E8F94]">
-                    Transforming social norms through ethical entertainment-education.
+                  <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
+                    A quarter-century of documented social and behavioral change, setting the benchmark for entertainment-education worldwide.
                   </p>
                 </div>
               </div>
@@ -477,10 +414,10 @@ export const PopulationMediaCenterPage: React.FC = () => {
           <div className="pt-4 space-y-2 border-b border-white/10 pb-4">
             <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#F3F3F4]/70">
               <PenTool className="w-3.5 h-3.5 text-[#F3F3F4]/50" />
-              <span>Campaign Artifacts & Creative Direction</span>
+              <span>Campaign Artifacts & Creative Assets</span>
             </div>
             <p className="font-sans text-[13px] font-light text-[#8E8F94]">
-              High-resolution campaign posters, public health communications, and educational artifacts produced across brand strategy, storytelling, and graphic design.
+              High-resolution posters, public health communications, and educational artifacts produced across brand strategy, storytelling, and graphic design.
             </p>
           </div>
 
