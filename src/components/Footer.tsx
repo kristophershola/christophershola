@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({
   duration = 1.5,
 }) => {
   const links = [
-    { label: "Twitter", href: "https://x.com/kristophershola" },
+    { label: "X", href: "https://x.com/kristophershola" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/kristophershola" },
     { label: "GitHub", href: "https://github.com/kristophershola" },
   ];

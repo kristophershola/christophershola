@@ -4,8 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ResearchCard from "@/components/ResearchCard";
 import { researchItems } from "@/data/researchData";
+import usePageMeta from "@/lib/usePageMeta";
 
 export const WorkPage: React.FC = () => {
+  usePageMeta(
+    "Work | Christopher Shola, Brand and Campaign Creative",
+    "Selected work by Christopher Shola: stories and campaigns that help communities feel seen, starting with Population Media Center."
+  );
+
   return (
     <div className="relative w-full min-h-screen text-[#F3F3F4] select-none flex flex-col justify-between overflow-x-hidden">
       {/* Global Navigation */}
@@ -25,7 +31,7 @@ export const WorkPage: React.FC = () => {
               Work
             </h1>
             <span className="font-mono text-xs text-[#F3F3F4]/50">
-              {researchItems.length} {researchItems.length === 1 ? "CASE STUDY" : "CASE STUDIES"}
+              {researchItems.length} {researchItems.length === 1 ? "STORY" : "STORIES"} SO FAR
             </span>
           </motion.div>
 

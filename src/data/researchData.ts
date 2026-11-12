@@ -2,7 +2,14 @@ export interface ResearchItem {
   id: string;
   title: string;
   description: string;
-  category: "VIGNETTE" | "TECHNICAL RELEASE" | "ANNOUNCEMENT";
+  category:
+    | "VIGNETTE"
+    | "TECHNICAL RELEASE"
+    | "ANNOUNCEMENT"
+    | "UNDERSTOOD"
+    | "CAPABLE"
+    | "WELCOME"
+    | "SEEN";
   date: string;
   link: string;
   image: string;
@@ -12,10 +19,10 @@ export interface ResearchItem {
 export const researchItems: ResearchItem[] = [
   {
     id: "population-media-center",
-    title: "Population Media Centre: Discovering Nigeria's Impact",
+    title: "Population Media Center: Stories That Sound Like Home",
     description:
-      "A multimedia documentary and impact narrative highlighting 25 years of transformative storytelling, community empowerment, and social change across Nigeria.",
-    category: "ANNOUNCEMENT",
+      "A documentary marking 25 years of Population Media Center's radio dramas, and the conversations they started in families across Nigeria.",
+    category: "UNDERSTOOD",
     date: "8.3.26",
     link: "/work/population-media-center",
     image: "/population-media-center.png",
@@ -26,20 +33,20 @@ export const researchItems: ResearchItem[] = [
 export const archivedWorkItems: ResearchItem[] = [
   {
     id: "mathevia",
-    title: "Mathevia: A Better Way To Learn",
+    title: "Mathevia: Maths Without the Dread",
     description:
-      "An online learning platform and tutoring service designed to make mathematics engaging through visual learning, simplified concepts, and student-centered support.",
-    category: "VIGNETTE",
+      "An online maths platform and tutoring service for students who have learned to dread the subject. Visual lessons, simpler ideas and a tutor on their side.",
+    category: "CAPABLE",
     date: "8.11.2026",
     link: "https://mathevia.co.uk",
     image: "/mathevia.png",
   },
   {
     id: "wrapa-gender-online-academy",
-    title: "WRAPA: Gender Online Academy",
+    title: "WRAPA Gender Online Academy: Learning With the Door Open",
     description:
-      "A digital learning initiative and e-learning platform providing Nigerian girls and women with barrier-free access to foundational STEM education, life skills, and digital entrepreneurship.",
-    category: "VIGNETTE",
+      "An e-learning platform opening STEM, life skills and digital entrepreneurship to Nigerian girls and women, with no barriers at the door.",
+    category: "WELCOME",
     date: "7.30.26",
     link: "https://web.archive.org/web/20230505001522/https://www.wrapagenderonlineacademy.com/",
     image: "/wrapa-hero.jpg",
@@ -49,8 +56,8 @@ export const archivedWorkItems: ResearchItem[] = [
     id: "lorewa",
     title: "Lorewa: A Brand That Speaks Her Language",
     description:
-      "A brand identity, strategy, and online learning platform built for Hausa women—empowering communities with healthcare education, vocational skills, and digital literacy.",
-    category: "VIGNETTE",
+      "Brand identity, strategy and a learning platform for Hausa women, offering health education, vocational skills and digital literacy in a voice that feels like their own.",
+    category: "SEEN",
     date: "7.25.26",
     link: "https://www.instagram.com/thelorewa",
     image: "/lorewa.jpg",

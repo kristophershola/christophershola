@@ -1,10 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BilateralWing from "@/components/BilateralWing";
+import usePageMeta from "@/lib/usePageMeta";
 
 export const AboutPage: React.FC = () => {
+  usePageMeta(
+    "About Christopher Shola | Brand and Campaign Creative, Abuja",
+    "I listen first, then build the stories, brands and visuals that help communities feel seen. Based in Abuja, working across Nigeria and abroad."
+  );
+
   return (
     <div className="relative w-full min-h-screen text-[#F3F3F4] select-none flex flex-col justify-between overflow-x-hidden">
       {/* Global Navigation */}
@@ -32,21 +39,30 @@ export const AboutPage: React.FC = () => {
           >
             {/* Semantic H1 Headline */}
             <h1 className="font-serif text-[26px] sm:text-[30px] lg:text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#F3F3F4]">
-              Good campaigns start with the truths communities already live by, then build the words, visuals, and media to carry them.
+              People change when a story makes them feel seen.
             </h1>
 
             {/* Semantic Paragraphs */}
             <div className="space-y-6 font-sans text-[13.5px] sm:text-[14.5px] font-light leading-[1.45] tracking-[0.01em] text-[#8E8F94]">
               <p>
-                Most communication fails because it treats people as audiences to be persuaded rather than communities with their own culture, humor, and habits. Whether addressing reproductive health in northern Nigeria or building digital platforms for students, I start by listening to how people talk when no broadcast microphone is on.
+                I'm Christopher Shola, a brand and campaign creative in Abuja. Most communication fails because it talks at people, and nobody who feels talked at feels seen. I start somewhere else. I listen to how a community talks when no broadcast microphone is on, what makes them laugh, and what they have learned not to say.
               </p>
 
               <p>
-                My practice covers brand strategy, narrative development, and visual direction. That work has meant writing serialized radio dramas for Population Media Center, building barrier-free learning platforms for women with WRAPA, and shaping brand identities for independent ventures. I keep the output focused: clear positioning, restrained typography, and stories built on real human stakes.
+                That way of working has meant writing serialized radio dramas for Population Media Center, building a learning platform with WRAPA where girls and women can learn without barriers, and finding a brand voice for Lorewa that speaks to Hausa women in a language that feels like their own. The format changes. What I'm after stays the same: a person who finally feels understood.
               </p>
 
               <p>
-                I work with founders, non-profits, and creative agencies from initial strategy through production-ready delivery. I live and work in Abuja, collaborating with partners across Nigeria and internationally.
+                I work with founders, non-profits and creative agencies, from the first conversation to the final file. Not sure what you need yet? That is a fine place to start. I live in Abuja and work with partners across Nigeria and abroad.
+              </p>
+
+              <p>
+                <Link
+                  to="/inquiries"
+                  className="font-mono text-[12px] text-[#F3F3F4] underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
+                >
+                  Tell me what you're working on
+                </Link>
               </p>
             </div>
           </motion.div>

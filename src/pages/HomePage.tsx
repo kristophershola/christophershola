@@ -2,8 +2,14 @@ import React from "react";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import usePageMeta from "@/lib/usePageMeta";
 
 export const HomePage: React.FC = () => {
+  usePageMeta(
+    "Christopher Shola | Brand and Campaign Creative, Abuja",
+    "Christopher Shola is a brand and campaign creative in Abuja, Nigeria. Stories, identities and design that make people feel seen. See the work."
+  );
+
   return (
     <div className="relative w-full h-screen overflow-hidden text-[#F3F3F4] select-none">
       {/* Global Navigation */}
@@ -66,7 +72,7 @@ export const HomePage: React.FC = () => {
                 className="space-y-2 font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.35] tracking-[0.01em] text-[#8E8F94]"
               >
                 <p>
-                  I run an independent creative practice specializing in high-impact, cross-channel campaigns. Known for turning data into culture-shaping narratives.
+                  I help brands and causes make people feel something first. Understanding comes after. Brand, story and design from Abuja.
                 </p>
               </motion.div>
             </div>
