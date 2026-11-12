@@ -32,21 +32,21 @@ export const AboutPage: React.FC = () => {
           >
             {/* Semantic H1 Headline */}
             <h1 className="font-serif text-[26px] sm:text-[30px] lg:text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#F3F3F4]">
-              My mission is to connect strategy, design, and digital execution into one continuous system, so nothing feels scattered or out of place.
+              Good campaigns start with the truths communities already live by, then build the words, visuals, and media to carry them.
             </h1>
 
             {/* Semantic Paragraphs */}
-            <div className="space-y-6 font-sans text-[13.5px] sm:text-[14.5px] font-light leading-[1.4] tracking-[0.01em] text-[#8E8F94]">
+            <div className="space-y-6 font-sans text-[13.5px] sm:text-[14.5px] font-light leading-[1.45] tracking-[0.01em] text-[#8E8F94]">
               <p>
-                Models compress the universe into their weights through beautiful, intricate, and complex mechanisms. We understand much less than we can build – and that tension leaves us in the compelling position of having many more questions than answers.
+                Most communication fails because it treats people as audiences to be persuaded rather than communities with their own culture, humor, and habits. Whether addressing reproductive health in northern Nigeria or building digital platforms for students, I start by listening to how people talk when no broadcast microphone is on.
               </p>
 
               <p>
-                To make progress on that gap, we believe you must first understand intelligence itself in order to even pose the right questions. As we build more and more capable models, the search space for principled ideas to test grows exponentially; mechanistic insights provide the A* heuristic that guides us toward better model design.
+                My practice covers brand strategy, narrative development, and visual direction. That work has meant writing serialized radio dramas for Population Media Center, building barrier-free learning platforms for women with WRAPA, and shaping brand identities for independent ventures. I keep the output focused: clear positioning, restrained typography, and stories built on real human stakes.
               </p>
 
               <p>
-                The future of intelligent systems is profoundly exciting, and we’re eager to shape it together. Ultimately, there is no greater pursuit than understanding – not as a means to an end, but as an end in and of itself.
+                I work with founders, non-profits, and creative agencies from initial strategy through production-ready delivery. I live and work in Abuja, collaborating with partners across Nigeria and internationally.
               </p>
             </div>
           </motion.div>
