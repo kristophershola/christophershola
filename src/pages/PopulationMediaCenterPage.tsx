@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import usePageMeta from "@/lib/usePageMeta";
 import {
   Play,
   Pause,
@@ -20,7 +21,19 @@ const campaignPhotos: string[] = [
   "/pmc/pmc-jangala-radio.jpg",
 ];
 
+const campaignAlts: string[] = [
+  "Four impact figures from Population Media Center campaigns, including 41% of new clinic visitors in Nigeria citing the Jolokoto drama as their reason for coming in",
+  "International Human Rights Day graphic with raised hands, from Population Media Center's 25th anniversary year",
+  "Book cover for Patriotism by Ephraim Victor Okon, shared by Population Media Center",
+  "Poster for Jangala, a radio serial drama on Sparkling 92.3 FM in Calabar, Cross River State",
+];
+
 export const PopulationMediaCenterPage: React.FC = () => {
+  usePageMeta(
+    "Population Media Center Case Study | Christopher Shola",
+    "How I helped carry Population Media Center's radio dramas to the people they were made for: brand, campaign, design and media. A case study."
+  );
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [isMuted, setIsMuted] = useState<boolean>(true);
@@ -101,8 +114,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
               </h1>
 
               <p className="font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.45] text-[#8E8F94]">
-                Population Media Center (PMC) has undertaken significant work in Nigeria, focusing on social and behavior change communication (SBCC). Through long-running serialized radio dramas, PMC addresses critical social issues—including reproductive health, family planning, and gender equality—specifically designed to engage and educate audiences across Nigeria, particularly in rural and hard-to-reach communities. By leveraging the power of culturally grounded storytelling, PMC drives positive shifts in attitudes and behaviors to foster healthier, more equitable societies.
-              </p>
+                Population Media Center (PMC) makes radio dramas that get people talking about the things they have gone quiet on. My job was to help those stories travel further: the brand, the campaign ideas, the visuals and the media that put the dramas in front of the right people and made them feel like their own.</p>
             </div>
 
             {/* Disciplines / Services (Anakle Header Style) */}
@@ -115,22 +127,20 @@ export const PopulationMediaCenterPage: React.FC = () => {
             {/* The Core Challenge */}
             <div className="space-y-2 pt-2">
               <p className="font-sans text-[13px] sm:text-[13.5px] font-light leading-[1.45] text-[#8E8F94]">
-                The core challenge was shifting entrenched cultural norms and taboos without triggering community resistance. In Nigeria, critical issues surrounding reproductive health, family planning, and gender equality are often met with institutional hesitation, social silence, or resistance. Traditional top-down public service announcements frequently encounter skepticism or defensiveness, especially across rural and hard-to-reach communities. The campaign needed to educate, engage, and shift mindsets organically from within the community fabric.
-              </p>
+                The brief sounded simple and was not: how do you say something to people who have already decided not to hear it? A message that arrives as instruction gets defended against. The work had to feel like it came from inside the room, not from outside it.</p>
             </div>
 
             {/* Editorial Pull Quote (H4 in Anakle) */}
             <div className="py-2">
               <h4 className="font-serif text-[17px] sm:text-[19px] font-normal italic leading-[1.3] text-[#F3F3F4]/95 border-l-2 border-white/30 pl-3.5">
-                “Entertainment that mirrors reality, shifting social norms from within the community.”
+                Nobody argues with a story that sounds like their own life.
               </h4>
             </div>
 
             {/* Strategic Approach */}
             <div className="space-y-2">
               <p className="font-sans text-[13px] sm:text-[13.5px] font-light leading-[1.45] text-[#8E8F94]">
-                We built the campaign around serialized radio drama broadcasting and the scientifically validated Sabido methodology. By engineering multi-layered narrative arcs with relatable positive, negative, and transitional characters, the dramas allowed audiences across Nigeria to confront real-world health and moral dilemmas without feeling judged—prompting personal reflection, household dialogue, and measurable community adoption of healthier practices.
-              </p>
+                So I built the communications around the dramas, not on top of them. I shaped the narrative and campaign ideas around characters people already recognize: the one doing the right thing, the one doing the wrong thing, and the one still deciding. Then I designed the visuals and planned the media to keep that voice the same wherever someone met it, from a radio schedule to a social card to a press line.</p>
             </div>
 
             {/* Campaign Photography Grid (Natural Source Aspect Ratios, No Tags/Subtext/Headings) */}
@@ -143,7 +153,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                   >
                     <img
                       src={campaignPhotos[0]}
-                      alt="PMC Campaign Material"
+                      alt={campaignAlts[0]}
                       loading="lazy"
                       className="w-full h-auto block transition-transform duration-300 ease-out group-hover:scale-[1.02]"
                     />
@@ -154,7 +164,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                   >
                     <img
                       src={campaignPhotos[2]}
-                      alt="PMC Campaign Material"
+                      alt={campaignAlts[2]}
                       loading="lazy"
                       className="w-full h-auto block transition-transform duration-300 ease-out group-hover:scale-[1.02]"
                     />
@@ -168,7 +178,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                   >
                     <img
                       src={campaignPhotos[1]}
-                      alt="PMC Campaign Material"
+                      alt={campaignAlts[1]}
                       loading="lazy"
                       className="w-full h-auto block transition-transform duration-300 ease-out group-hover:scale-[1.02]"
                     />
@@ -179,7 +189,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                   >
                     <img
                       src={campaignPhotos[3]}
-                      alt="PMC Campaign Material"
+                      alt={campaignAlts[3]}
                       loading="lazy"
                       className="w-full h-auto block transition-transform duration-300 ease-out group-hover:scale-[1.02]"
                     />
@@ -191,7 +201,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
             {/* Impact Bridge Statement & Stat Grid (Verbatim Anakle Format) */}
             <div className="space-y-3 pt-4 border-t border-white/10">
               <p className="font-sans text-[13px] font-normal text-[#F3F3F4]/90">
-                These shifts translated into measurable improvements:
+                The stories did the changing. My job was getting people to hear them. Here is what happened.
               </p>
 
               <div className="grid grid-cols-2 gap-3.5 pt-1">
@@ -201,8 +211,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                     1.5×
                   </div>
                   <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
-                    <em>Siñalamba</em> listeners were 1.5 times more likely than non-listeners to discuss HIV risk with their partner, spouse, or relatives.
-                  </p>
+                    <em>Siñalamba</em> listeners were 1.5 times more likely than non-listeners to open up a hard health conversation with a partner, spouse or relative.</p>
                 </div>
 
                 {/* Stat 2 */}
@@ -211,7 +220,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                     +500m
                   </div>
                   <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
-                    Over 500 million people reached globally across serialized dramas, with Nigeria serving as a cornerstone for community-level behavior change.
+                    Over 500 million people reached by PMC dramas around the world. Nigeria is a cornerstone of that reach.
                   </p>
                 </div>
 
@@ -221,7 +230,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                     50+
                   </div>
                   <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
-                    Countries with localized broadcast interventions, proving the model across distinct linguistic and cultural landscapes.
+                    Countries with dramas made locally, each in its own language and culture.
                   </p>
                 </div>
 
@@ -231,7 +240,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                     25 Yrs
                   </div>
                   <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
-                    A quarter-century of documented social and behavioral change, setting the benchmark for entertainment-education worldwide.
+                    A quarter century of documented change in how people think, talk and act.
                   </p>
                 </div>
               </div>
@@ -257,14 +266,14 @@ export const PopulationMediaCenterPage: React.FC = () => {
                 to="/work"
                 className="font-mono text-[12px] text-[#8E8F94] hover:text-[#F3F3F4] transition-colors"
               >
-                All Projects
+                More work
               </Link>
             </div>
           </div>
 
           {/* Bottom Left Subtle Indicator */}
           <div className="hidden md:block pt-8 text-[11px] font-mono text-[#8E8F94]/50">
-            KRISTOPHER SHOLA // POPULATION MEDIA CENTER CASE STUDY
+            CHRISTOPHER SHOLA // POPULATION MEDIA CENTER CASE STUDY
           </div>
         </motion.section>
 
@@ -282,6 +291,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
               <video
                 ref={videoRef}
                 src="/population-media-center.mp4"
+                aria-label="Documentary on 25 years of Population Media Center radio drama in Nigeria"
                 playsInline
                 loop
                 muted={isMuted}
@@ -364,7 +374,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
             <div className="relative w-full max-h-[80vh] flex items-center justify-center overflow-hidden rounded-[2px] bg-[#111]">
               <img
                 src={activePhoto}
-                alt="PMC Campaign Asset"
+                alt="Population Media Center campaign artwork, enlarged"
                 className="max-h-[80vh] w-auto h-auto object-contain rounded-[2px]"
               />
             </div>

@@ -2,8 +2,14 @@ import React from "react";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import usePageMeta from "@/lib/usePageMeta";
 
 export const HomePage: React.FC = () => {
+  usePageMeta(
+    "Christopher Shola | Brand, Story and Campaign Creative",
+    "Christopher Shola shapes brands, stories and campaigns that make people feel something first. Strategy, narrative and design from first idea to final file."
+  );
+
   return (
     <div className="relative w-full h-screen overflow-hidden text-[#F3F3F4] select-none">
       {/* Global Navigation */}
@@ -13,7 +19,7 @@ export const HomePage: React.FC = () => {
       <div className="fixed bottom-0 left-0 right-0 z-20 pointer-events-none pb-5 sm:pb-6 md:pb-8">
         <div className="w-full max-w-[1400px] mx-auto px-5 flex items-end justify-between gap-6">
           {/* Bottom-Left Editorial Content */}
-          <div className="max-w-[378px] pointer-events-auto">
+          <div className="max-w-[420px] pointer-events-auto">
             <div className="space-y-4">
               {/* Animated Headline: Tito Adegbamigbe Framer spring physics & kinetic sweep */}
               <motion.div
@@ -63,10 +69,13 @@ export const HomePage: React.FC = () => {
                   duration: 0.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="space-y-2 font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.35] tracking-[0.01em] text-[#8E8F94]"
+                className="space-y-3 font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.35] tracking-[0.01em] text-[#8E8F94]"
               >
                 <p>
-                  I run an independent creative practice specializing in high-impact, cross-channel campaigns. Known for turning data into culture-shaping narratives.
+                  I'm a brand and campaign creative. People forget what a message said long before they forget how it made them feel, so I start with the feeling.
+                </p>
+                <p>
+                  From there I build everything that carries it: the strategy, the story, the visual world and the campaign around it. I work with founders, institutions and teams who want to be believed, from the first idea to the final file.
                 </p>
               </motion.div>
             </div>

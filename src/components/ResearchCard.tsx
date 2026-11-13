@@ -46,7 +46,7 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
       <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[2px] border border-white/10 bg-[#222120]">
         <img
           src={item.image}
-          alt={`Diagram visualization for ${item.title}`}
+          alt={`${item.title}, a case study by Christopher Shola`}
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:brightness-95"
         />
@@ -70,7 +70,7 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ item }) => {
         {/* Read More Hover Reveal */}
         <div className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           <span className="font-serif text-xs font-normal text-white bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-[2px] border border-white/20">
-            Read More
+            Read the story
           </span>
         </div>
       </div>
