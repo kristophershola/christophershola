@@ -31,7 +31,7 @@ const campaignAlts: string[] = [
 export const PopulationMediaCenterPage: React.FC = () => {
   usePageMeta(
     "Population Media Center Case Study | Christopher Shola",
-    "How radio drama gave families across Nigeria a gentler way into hard conversations about health and family. A Population Media Center case study."
+    "How I helped carry Population Media Center's radio dramas to the people they were made for: brand, campaign, design and media. A case study."
   );
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -114,7 +114,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
               </h1>
 
               <p className="font-sans text-[13.5px] sm:text-[14px] font-light leading-[1.45] text-[#8E8F94]">
-                Some conversations never happen at home. Reproductive health. Family planning. Who gets a say in a marriage. Population Media Center (PMC) found a way in: long-running radio dramas, made for rural and hard-to-reach communities across Nigeria, where the characters start the conversation and listeners join when they are ready.</p>
+                Population Media Center (PMC) makes radio dramas that get people talking about the things they have gone quiet on. My job was to help those stories travel further: the brand, the campaign ideas, the visuals and the media that put the dramas in front of the right people and made them feel like their own.</p>
             </div>
 
             {/* Disciplines / Services (Anakle Header Style) */}
@@ -127,20 +127,20 @@ export const PopulationMediaCenterPage: React.FC = () => {
             {/* The Core Challenge */}
             <div className="space-y-2 pt-2">
               <p className="font-sans text-[13px] sm:text-[13.5px] font-light leading-[1.45] text-[#8E8F94]">
-                The hard part was getting in without getting shut out. Reproductive health, family planning and gender equality are the topics a community learns to go quiet about. A public service announcement can feel like a lecture from outside, and a lecture gets defensiveness or silence. That silence usually exists for a reason, so the work had to earn its place from the inside.</p>
+                The brief sounded simple and was not: how do you say something to people who have already decided not to hear it? A message that arrives as instruction gets defended against. The work had to feel like it came from inside the room, not from outside it.</p>
             </div>
 
             {/* Editorial Pull Quote (H4 in Anakle) */}
             <div className="py-2">
               <h4 className="font-serif text-[17px] sm:text-[19px] font-normal italic leading-[1.3] text-[#F3F3F4]/95 border-l-2 border-white/30 pl-3.5">
-                When a story sounds like your own life, you stop defending yourself and start listening.
+                Nobody argues with a story that sounds like their own life.
               </h4>
             </div>
 
             {/* Strategic Approach */}
             <div className="space-y-2">
               <p className="font-sans text-[13px] sm:text-[13.5px] font-light leading-[1.45] text-[#8E8F94]">
-                So we told a story instead. Serialized radio drama, built on the evidence-backed Sabido methodology, with characters you recognize: the one who does the right thing, the one who does not, and the one still making up their mind. Dramas like Jangala, on Sparkling 92.3 FM in Calabar, let listeners watch a hard choice play out with nobody pointing a finger. Then the questions moved into living rooms.</p>
+                So I built the communications around the dramas, not on top of them. I shaped the narrative and campaign ideas around characters people already recognize: the one doing the right thing, the one doing the wrong thing, and the one still deciding. Then I designed the visuals and planned the media to keep that voice the same wherever someone met it, from a radio schedule to a social card to a press line.</p>
             </div>
 
             {/* Campaign Photography Grid (Natural Source Aspect Ratios, No Tags/Subtext/Headings) */}
@@ -201,7 +201,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
             {/* Impact Bridge Statement & Stat Grid (Verbatim Anakle Format) */}
             <div className="space-y-3 pt-4 border-t border-white/10">
               <p className="font-sans text-[13px] font-normal text-[#F3F3F4]/90">
-                And the numbers followed.
+                The stories did the changing. My job was getting people to hear them. Here is what happened.
               </p>
 
               <div className="grid grid-cols-2 gap-3.5 pt-1">
@@ -211,8 +211,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                     1.5×
                   </div>
                   <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
-                    <em>Siñalamba</em> listeners were 1.5 times more likely than non-listeners to talk about HIV risk with a partner, spouse or relative. A hard conversation, started.
-                  </p>
+                    <em>Siñalamba</em> listeners were 1.5 times more likely than non-listeners to open up a hard health conversation with a partner, spouse or relative.</p>
                 </div>
 
                 {/* Stat 2 */}
@@ -221,7 +220,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                     +500m
                   </div>
                   <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
-                    More than 500 million people reached by PMC's serialized dramas worldwide. Nigeria is a cornerstone of that work.
+                    Over 500 million people reached by PMC dramas around the world. Nigeria is a cornerstone of that reach.
                   </p>
                 </div>
 
@@ -231,7 +230,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                     50+
                   </div>
                   <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
-                    Countries with locally made dramas, each shaped by its own language and culture.
+                    Countries with dramas made locally, each in its own language and culture.
                   </p>
                 </div>
 
@@ -241,7 +240,7 @@ export const PopulationMediaCenterPage: React.FC = () => {
                     25 Yrs
                   </div>
                   <p className="font-sans text-[11.5px] font-light leading-[1.35] text-[#8E8F94]">
-                    A quarter century of stories that changed how communities talk about hard things.
+                    A quarter century of documented change in how people think, talk and act.
                   </p>
                 </div>
               </div>

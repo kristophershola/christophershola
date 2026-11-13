@@ -21,7 +21,7 @@ export const researchItems: ResearchItem[] = [
     id: "population-media-center",
     title: "Population Media Center: Stories That Sound Like Home",
     description:
-      "A documentary marking 25 years of Population Media Center's radio dramas, and the conversations they started in families across Nigeria.",
+      "The story of 25 years of Population Media Center's radio drama, and the brand, campaign and design work that carried it to the people it was made for.",
     category: "UNDERSTOOD",
     date: "8.3.26",
     link: "/work/population-media-center",
@@ -56,7 +56,7 @@ export const archivedWorkItems: ResearchItem[] = [
     id: "lorewa",
     title: "Lorewa: A Brand That Speaks Her Language",
     description:
-      "Brand identity, strategy and a learning platform for Hausa women, offering health education, vocational skills and digital literacy in a voice that feels like their own.",
+      "Brand identity, strategy and a learning platform for Hausa women, built to teach in a voice that feels like their own.",
     category: "SEEN",
     date: "7.25.26",
     link: "https://www.instagram.com/thelorewa",

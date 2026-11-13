@@ -9,7 +9,7 @@ import usePageMeta from "@/lib/usePageMeta";
 export const WorkPage: React.FC = () => {
   usePageMeta(
     "Work | Christopher Shola, Brand and Campaign Creative",
-    "Selected work by Christopher Shola: stories and campaigns that help communities feel seen, starting with Population Media Center."
+    "Selected brand, story and campaign work by Christopher Shola, built to make people feel something and then act on it."
   );
 
   return (
