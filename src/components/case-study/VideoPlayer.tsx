@@ -5,12 +5,14 @@ export interface VideoPlayerProps {
   src: string;
   poster?: string;
   ariaLabel?: string;
+  aspectRatio?: "16/9" | "9/16" | "auto";
 }
 
 export const VideoPlayer: React.FC<VideoPlayerProps> = ({
   src,
   poster,
   ariaLabel = "Featured video reel",
+  aspectRatio = "16/9",
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
@@ -50,15 +52,21 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
+      video.muted = isMuted;
       video
         .play()
         .then(() => setIsPlaying(true))
         .catch(() => setIsPlaying(false));
     }
-  }, [src]);
+  }, [src, isMuted]);
+
+  const containerClasses =
+    aspectRatio === "9/16"
+      ? "relative w-full max-w-[320px] sm:max-w-[340px] mx-auto aspect-[9/16] rounded-[4px] overflow-hidden border border-white/10 bg-[#222120] group shadow-2xl"
+      : "relative w-full aspect-video rounded-[2px] overflow-hidden border border-white/10 bg-[#222120] group shadow-2xl";
 
   return (
-    <div className="relative w-full aspect-video rounded-[2px] overflow-hidden border border-white/10 bg-[#222120] group shadow-2xl">
+    <div className={containerClasses}>
       <video
         ref={videoRef}
         src={src}
@@ -73,8 +81,8 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         className="w-full h-full object-cover cursor-pointer"
       />
 
-      {/* Minimalist Controls Overlay */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-between p-4">
+      {/* Minimalist Controls Overlay with group-focus-within */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200 flex flex-col justify-between p-4">
         <div className="flex justify-end items-center">
           <button
             type="button"

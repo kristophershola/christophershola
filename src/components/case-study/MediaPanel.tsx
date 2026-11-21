@@ -17,6 +17,7 @@ export const MediaPanel: React.FC<MediaPanelProps> = ({ media }) => {
           src={media.primaryMediaSrc}
           poster={media.posterSrc}
           ariaLabel={media.videoAriaLabel}
+          aspectRatio={media.aspectRatio}
         />
       </div>
     );

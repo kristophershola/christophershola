@@ -24,6 +24,7 @@ export interface CaseStudyMediaConfig {
   mobileSrc?: string;
   desktopSrc?: string;
   videoAriaLabel?: string;
+  aspectRatio?: "16/9" | "9/16" | "auto";
   items?: Array<{ src: string; alt: string; caption?: string }>;
 }
 
@@ -148,7 +149,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "mathevia",
     title: "Mathevia: Maths Without the Dread",
     category: "CAPABLE",
-    date: "8.11.2026",
+    date: "8.11.26",
     client: "Mathevia UK",
     metaDescription:
       "Visual learning architecture and digital product experience for students who dread mathematics. A case study by Christopher Shola.",
@@ -290,6 +291,7 @@ export const caseStudies: CaseStudy[] = [
     media: {
       type: "video",
       primaryMediaSrc: "/work/lorewa/lorewa-reel.mp4",
+      aspectRatio: "9/16",
       videoAriaLabel: "Brand motion reel and identity showcase for Lorewa",
     },
     outboundLink: {
@@ -445,8 +447,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     media: {
       type: "device-toggle",
-      desktopSrc: "/work/juno/juno-desktop-screen.png",
-      mobileSrc: "/work/juno/juno-mobile-screen.png",
+      desktopSrc: "/work/juno/juno-desktop-screen.webp",
+      mobileSrc: "/work/juno/juno-mobile-screen.webp",
       videoAriaLabel:
         "Interactive desktop and mobile viewports for Juno Boutique Hotel",
     },
@@ -584,7 +586,9 @@ export const caseStudies: CaseStudy[] = [
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
-  return caseStudies.find((item) => item.slug === slug);
+  return caseStudies.find(
+    (item) => item.slug.toLowerCase() === slug.toLowerCase()
+  );
 }
 
 export function getPublishedCaseStudies(): CaseStudy[] {
